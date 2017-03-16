@@ -23,8 +23,9 @@ namespace BarbershopTech.Registros
 
         public void Limpiar()
         {
-            NombrecomboBox.Text = "";
-            PeluquerocomboBox.Text = "";
+            NombrecomboBox.Text = null;
+            PeluquerocomboBox.Text = null;
+            comboBoxServicio.Text = null;
 
 
         }
@@ -60,14 +61,50 @@ namespace BarbershopTech.Registros
         public void LlenarComboServicio()
         {
             List<TipoServicios> lista = BLL.TipoServicioBLL.GetListTodo();
-            PeluquerocomboBox.DataSource = lista;
-            PeluquerocomboBox.DisplayMember = "Nombre";
-            PeluquerocomboBox.ValueMember = "ServicioId";
+            comboBoxServicio.DataSource = lista;
+            comboBoxServicio.DisplayMember = "Nombre";
+            comboBoxServicio.ValueMember = "ServicioId";
 
             if (comboBoxServicio.Items.Count >= 1)
             {
                 comboBoxServicio.SelectedIndex = -1;
             }
+        }
+
+        public bool Validar()
+        {
+            if(string.IsNullOrEmpty(NombrecomboBox.Text))
+            {
+                errorProvider1.SetError(NombrecomboBox, "Favor Llenar");
+                return false;
+            }
+
+
+            if (string.IsNullOrEmpty(PeluquerocomboBox.Text))
+            {
+                errorProvider1.SetError(PeluquerocomboBox, "Favor Llenar");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(dateTimePicker2.Text))
+            {
+                errorProvider1.SetError(dateTimePicker2, "Favor Llenar");
+                return false;
+            }
+            return true;
+        }
+
+        public Turnos LlenarCampos()
+        {
+            Turnos turno = new Turnos();
+            turno.ClienteId = Utilidades.TOINT(NombrecomboBox.SelectedValue.ToString());
+            turno.PeluqueroId = Utilidades.TOINT(PeluquerocomboBox.SelectedValue.ToString());
+            turno.ServicioId = Utilidades.TOINT(comboBoxServicio.SelectedValue.ToString());
+            turno.NombreCliente = NombrecomboBox.Text;
+            turno.NombrePeluquero = PeluquerocomboBox.Text;
+            turno.NombreServicio = comboBoxServicio.Text;
+            turno.PeluqueroId = Utilidades.TOINT(PeluquerocomboBox.SelectedValue.ToString());
+            return turno;
         }
 
         public static void ValidarNumero(KeyPressEventArgs pE)
@@ -114,21 +151,80 @@ namespace BarbershopTech.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Turnos turno = new Turnos();
-            turno.NombreCliente = NombrecomboBox.Text;
-            turno.ClienteId = Utilidades.TOINT(NombrecomboBox.SelectedValue.ToString());
-            turno.NombrePeluquero = PeluquerocomboBox.Text;
-            turno.PeluqueroId = Utilidades.TOINT(PeluquerocomboBox.SelectedValue.ToString());
 
-            if (BLL.TurnoBLL.Guardar(turno))
-                MessageBox.Show("Se guardo");
+            if(!Validar())
+            {
+                MessageBox.Show("Favor Llenar");
+
+            }
             else
-                MessageBox.Show("No se guardo");
+            {
+                Turnos turno = new Turnos();
+                turno = LlenarCampos();
+                BLL.TurnoBLL.Guardar(turno);
+                    MessageBox.Show("Se guardo");
+            }
+            Limpiar();
+            
+            
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            int id = int.Parse(IdtextBox.Text);
+            Turnos conn = BLL.TurnoBLL.Buscar((p => p.TurnosId == id));
 
+            if (conn != null)
+            {
+                BLL.TurnoBLL.Eliminar(conn);
+                MessageBox.Show("Se ha eliminado Correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se ha Eliminado");
+
+            }
+            Limpiar();
+        }
+
+        private void buttonNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(IdtextBox.Text);
+            Turnos conn = BLL.TurnoBLL.Buscar((p => p.TurnosId == id));
+
+            if (conn != null)
+            {
+                NombrecomboBox.Text = conn.NombreCliente;
+                PeluquerocomboBox.Text = conn.NombrePeluquero;
+                comboBoxServicio.Text = conn.NombreServicio;
+                MessageBox.Show("Se ha eliminado Correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se ha Eliminado");
+
+            }
+            Limpiar();
+        }
+
+        private void NombrecomboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void PeluquerocomboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void comboBoxServicio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

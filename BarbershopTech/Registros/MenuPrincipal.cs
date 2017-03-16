@@ -19,9 +19,9 @@ namespace BarbershopTech.Registros
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            Bitmap img = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\Img\menu.jpg");
+           /* Bitmap img = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\Img\menu.jpg");
             this.BackgroundImage = img;
-            BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImageLayout = ImageLayout.Stretch;*/
         }
 
         private void registrarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,7 +68,8 @@ namespace BarbershopTech.Registros
 
         private void consultaDeTurnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            ConsultaTurnos c = new ConsultaTurnos();
+            c.Show();
         }
 
         private void consultaDePeluquerosToolStripMenuItem_Click(object sender, EventArgs e)

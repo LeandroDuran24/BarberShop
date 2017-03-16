@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BarbershopTech.Registros;
+using DAL;
 
 namespace BarbershopTech
 {
@@ -30,6 +31,12 @@ namespace BarbershopTech
                 return false;
             }
             return true;
+        }
+
+        public void Limpiar()
+        {
+            NombretextBox.Clear();
+            ContraseñamaskedTextBox.Clear();
         }
 
         public static void ValidarNumero(KeyPressEventArgs pE)
@@ -81,9 +88,35 @@ namespace BarbershopTech
 
         private void entrar_Click(object sender, EventArgs e)
         {
-            MenuPrincipal mp = new MenuPrincipal();
-            mp.Show();
-            this.Hide();
+
+            if (!Validar())
+            {
+                MessageBox.Show("Favor Llenar");
+            }
+            else
+            {
+                string username = NombretextBox.Text;
+                string clave = ContraseñamaskedTextBox.Text;
+
+                using (BarberShopDb db = new BarberShopDb())
+                {
+                    var user = (from u in db.usuario where u.Nombres == username select u.Nombres).FirstOrDefault();
+                    var passw = (from u in db.usuario where u.Contrasena == clave select u.Contrasena).FirstOrDefault();
+
+                    if (user == username || passw == clave)
+                    {
+                        MenuPrincipal mp = new MenuPrincipal();
+                        mp.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Los datos estan incompletos");
+                        
+                    }
+                    Limpiar();
+                }
+            }
         }
 
         private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)

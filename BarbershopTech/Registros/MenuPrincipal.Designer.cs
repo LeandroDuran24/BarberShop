@@ -84,7 +84,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(864, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -146,7 +146,7 @@
             // 
             this.consultaDeUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaDeUsuariosToolStripMenuItem.Image")));
             this.consultaDeUsuariosToolStripMenuItem.Name = "consultaDeUsuariosToolStripMenuItem";
-            this.consultaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.consultaDeUsuariosToolStripMenuItem.Text = "Usuarios";
             this.consultaDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeUsuariosToolStripMenuItem_Click);
             // 
@@ -154,7 +154,7 @@
             // 
             this.consultaEmpleadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaEmpleadosToolStripMenuItem.Image")));
             this.consultaEmpleadosToolStripMenuItem.Name = "consultaEmpleadosToolStripMenuItem";
-            this.consultaEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.consultaEmpleadosToolStripMenuItem.Text = "Clientes";
             this.consultaEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.consultaEmpleadosToolStripMenuItem_Click);
             // 
@@ -162,7 +162,7 @@
             // 
             this.consultaDeTurnosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaDeTurnosToolStripMenuItem.Image")));
             this.consultaDeTurnosToolStripMenuItem.Name = "consultaDeTurnosToolStripMenuItem";
-            this.consultaDeTurnosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaDeTurnosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.consultaDeTurnosToolStripMenuItem.Text = "Turnos";
             this.consultaDeTurnosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeTurnosToolStripMenuItem_Click);
             // 
@@ -170,14 +170,14 @@
             // 
             this.consultaDePeluquerosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaDePeluquerosToolStripMenuItem.Image")));
             this.consultaDePeluquerosToolStripMenuItem.Name = "consultaDePeluquerosToolStripMenuItem";
-            this.consultaDePeluquerosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaDePeluquerosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.consultaDePeluquerosToolStripMenuItem.Text = "Peluqueros";
             this.consultaDePeluquerosToolStripMenuItem.Click += new System.EventHandler(this.consultaDePeluquerosToolStripMenuItem_Click);
             // 
             // serviciosToolStripMenuItem1
             // 
             this.serviciosToolStripMenuItem1.Name = "serviciosToolStripMenuItem1";
-            this.serviciosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.serviciosToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.serviciosToolStripMenuItem1.Text = "Servicios";
             this.serviciosToolStripMenuItem1.Click += new System.EventHandler(this.serviciosToolStripMenuItem1_Click);
             // 
@@ -199,10 +199,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 363);
+            this.ClientSize = new System.Drawing.Size(1006, 478);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonTurnos);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

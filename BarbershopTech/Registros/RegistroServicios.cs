@@ -125,6 +125,29 @@ namespace BarbershopTech.Registros
             Limpiar();
         }
 
+        private void buttonNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(idSeriviciotextBox.Text);
+            TipoServicios conn = BLL.TipoServicioBLL.Buscar((p => p.ServicioId == id));
+
+            if (conn != null)
+            {
+                nombretextBox3.Text = conn.Nombre;
+                MessageBox.Show("Se ha encontrado Correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se ha Eliminado");
+
+            }
+            Limpiar();
+        }
+
         private void idSeriviciotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarNumero(e);
@@ -134,5 +157,11 @@ namespace BarbershopTech.Registros
         {
             ValidarLetras(e);
         }
+
+        private void nombretextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

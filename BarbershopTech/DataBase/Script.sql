@@ -25,10 +25,12 @@ Nombre varchar(25),
 
 create table Turnos(
 TurnosId int identity(1,1) primary key,
-NombreId int,
+ClienteId int,
 PeluqueroId int,
+ServicioId int,
 NombrePeluquero varchar(50),
 NombreCliente varchar(50),
+NombreServicio varchar(25)
 );
 
 create table TipoServicios(

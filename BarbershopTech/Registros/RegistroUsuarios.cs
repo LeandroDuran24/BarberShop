@@ -16,9 +16,21 @@ namespace BarbershopTech.Registros
         {
             InitializeComponent();
         }
+        
+        private void RegistroUsuarios_Load(object sender, EventArgs e)
+        {
+            ContraseñamaskedTextBox.MaxLength = 14;
+            ConfirmarmaskedTextBox.MaxLength = 14;
+        }
 
         public bool Validar()
         {
+            if (string.IsNullOrEmpty(NombretextBox.Text))
+            {
+                errorProvider1.SetError(NombretextBox, "Favor de LLenar");
+                return false;
+            }
+
             if (string.IsNullOrEmpty(EmailtextBox.Text))
             {
                 errorProvider1.SetError(EmailtextBox, "Favor de LLenar");
@@ -158,9 +170,8 @@ namespace BarbershopTech.Registros
             }
         }
 
-        private void Buscarbutton1_Click(object sender, EventArgs e)
+        private void buttonBuscar_Click(object sender, EventArgs e)
         {
-
             int id = int.Parse(textBoxId.Text);
             Usuarios usuario = BLL.UsuarioBLL.Buscar(p => p.UsuarioId == id);
 
@@ -202,6 +213,11 @@ namespace BarbershopTech.Registros
         private void ConfirmarmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarNumero(e);
+        }
+
+        private void buttonNuevo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,6 +47,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonNuevo = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             // 
             this.FechadateTimePicker1.CustomFormat = "yyy/MM/dd";
             this.FechadateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker1.Location = new System.Drawing.Point(151, 198);
+            this.FechadateTimePicker1.Location = new System.Drawing.Point(222, 236);
             this.FechadateTimePicker1.Name = "FechadateTimePicker1";
             this.FechadateTimePicker1.Size = new System.Drawing.Size(231, 20);
             this.FechadateTimePicker1.TabIndex = 53;
@@ -66,7 +68,7 @@
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(66, 198);
+            this.label11.Location = new System.Drawing.Point(137, 236);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 18);
@@ -80,9 +82,9 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(270, 292);
+            this.Eliminarbutton.Location = new System.Drawing.Point(351, 278);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(112, 41);
+            this.Eliminarbutton.Size = new System.Drawing.Size(102, 41);
             this.Eliminarbutton.TabIndex = 55;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -96,9 +98,9 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(140, 292);
+            this.Guardarbutton.Location = new System.Drawing.Point(241, 278);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(109, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(104, 41);
             this.Guardarbutton.TabIndex = 54;
             this.Guardarbutton.Text = "Registrar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -107,7 +109,7 @@
             // 
             // cedmaskedTextBox
             // 
-            this.cedmaskedTextBox.Location = new System.Drawing.Point(151, 162);
+            this.cedmaskedTextBox.Location = new System.Drawing.Point(222, 200);
             this.cedmaskedTextBox.Mask = "999-9999999-9";
             this.cedmaskedTextBox.Name = "cedmaskedTextBox";
             this.cedmaskedTextBox.Size = new System.Drawing.Size(231, 20);
@@ -117,7 +119,7 @@
             // 
             this.IdtextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IdtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdtextBox.Location = new System.Drawing.Point(151, 3);
+            this.IdtextBox.Location = new System.Drawing.Point(222, 41);
             this.IdtextBox.Name = "IdtextBox";
             this.IdtextBox.Size = new System.Drawing.Size(90, 20);
             this.IdtextBox.TabIndex = 56;
@@ -127,7 +129,7 @@
             // 
             this.nombretextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nombretextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombretextBox.Location = new System.Drawing.Point(151, 33);
+            this.nombretextBox.Location = new System.Drawing.Point(222, 71);
             this.nombretextBox.Name = "nombretextBox";
             this.nombretextBox.Size = new System.Drawing.Size(231, 20);
             this.nombretextBox.TabIndex = 48;
@@ -137,7 +139,7 @@
             // 
             this.apellidotextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.apellidotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellidotextBox.Location = new System.Drawing.Point(151, 66);
+            this.apellidotextBox.Location = new System.Drawing.Point(222, 104);
             this.apellidotextBox.Name = "apellidotextBox";
             this.apellidotextBox.Size = new System.Drawing.Size(231, 20);
             this.apellidotextBox.TabIndex = 49;
@@ -147,7 +149,7 @@
             // 
             this.direcciontextBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.direcciontextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.direcciontextBox1.Location = new System.Drawing.Point(151, 97);
+            this.direcciontextBox1.Location = new System.Drawing.Point(222, 135);
             this.direcciontextBox1.Name = "direcciontextBox1";
             this.direcciontextBox1.Size = new System.Drawing.Size(231, 20);
             this.direcciontextBox1.TabIndex = 50;
@@ -157,7 +159,7 @@
             // 
             this.emailextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emailextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailextBox.Location = new System.Drawing.Point(151, 132);
+            this.emailextBox.Location = new System.Drawing.Point(222, 170);
             this.emailextBox.Name = "emailextBox";
             this.emailextBox.Size = new System.Drawing.Size(231, 20);
             this.emailextBox.TabIndex = 51;
@@ -169,7 +171,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(63, 169);
+            this.label6.Location = new System.Drawing.Point(134, 207);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 18);
@@ -183,7 +185,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(63, 5);
+            this.label1.Location = new System.Drawing.Point(134, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 18);
@@ -197,7 +199,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(63, 35);
+            this.label5.Location = new System.Drawing.Point(134, 73);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 18);
@@ -211,7 +213,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(66, 134);
+            this.label4.Location = new System.Drawing.Point(137, 172);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 18);
@@ -224,7 +226,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(63, 99);
+            this.label3.Location = new System.Drawing.Point(134, 137);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 18);
@@ -238,7 +240,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(63, 65);
+            this.label2.Location = new System.Drawing.Point(134, 103);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 18);
@@ -249,11 +251,45 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // buttonNuevo
+            // 
+            this.buttonNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
+            this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNuevo.Location = new System.Drawing.Point(137, 278);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(98, 41);
+            this.buttonNuevo.TabIndex = 64;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
+            this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBuscar.Location = new System.Drawing.Point(341, 31);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(112, 36);
+            this.buttonBuscar.TabIndex = 65;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonBuscar.UseVisualStyleBackColor = false;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 336);
+            this.ClientSize = new System.Drawing.Size(593, 378);
+            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.FechadateTimePicker1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Eliminarbutton);
@@ -270,6 +306,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegistroClientes";
             this.Text = "RegistroClientes";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -297,5 +336,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button buttonNuevo;
     }
 }

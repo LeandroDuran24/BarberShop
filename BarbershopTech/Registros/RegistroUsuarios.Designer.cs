@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuarios));
-            this.Buscarbutton1 = new System.Windows.Forms.Button();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.NombretextBox = new System.Windows.Forms.TextBox();
@@ -44,25 +43,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonNuevo = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Buscarbutton1
-            // 
-            this.Buscarbutton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscarbutton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Buscarbutton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscarbutton1.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton1.Image")));
-            this.Buscarbutton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton1.Location = new System.Drawing.Point(308, 17);
-            this.Buscarbutton1.Name = "Buscarbutton1";
-            this.Buscarbutton1.Size = new System.Drawing.Size(102, 35);
-            this.Buscarbutton1.TabIndex = 33;
-            this.Buscarbutton1.Text = "Buscar";
-            this.Buscarbutton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton1.UseVisualStyleBackColor = true;
-            this.Buscarbutton1.Click += new System.EventHandler(this.Buscarbutton1_Click);
             // 
             // textBoxId
             // 
@@ -240,12 +224,45 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // buttonNuevo
+            // 
+            this.buttonNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
+            this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNuevo.Location = new System.Drawing.Point(51, 271);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(112, 35);
+            this.buttonNuevo.TabIndex = 65;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
+            this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBuscar.Location = new System.Drawing.Point(308, 18);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(102, 32);
+            this.buttonBuscar.TabIndex = 66;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonBuscar.UseVisualStyleBackColor = false;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 378);
-            this.Controls.Add(this.Buscarbutton1);
+            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NombretextBox);
@@ -258,8 +275,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "RegistroUsuarios";
             this.Text = "RegistroUsuarios";
+            this.Load += new System.EventHandler(this.RegistroUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,8 +286,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Buscarbutton1;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NombretextBox;
@@ -282,5 +299,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button buttonNuevo;
+        private System.Windows.Forms.Button buttonBuscar;
     }
 }

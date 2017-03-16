@@ -146,6 +146,35 @@ namespace BarbershopTech.Registros
 
                 Limpiar();
             }
+        }   
+        
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(IdtextBox.Text);
+            Clientes conn = BLL.ClienteBLL.Buscar((p => p.ClienteId == id));
+
+            if (conn != null)
+            {
+                nombretextBox.Text = conn.Nombres;
+                direcciontextBox1.Text = conn.Direccion;
+                apellidotextBox.Text = conn.Apellidos;
+                emailextBox.Text = conn.Email;
+                cedmaskedTextBox.Text = conn.Cedula;
+                FechadateTimePicker1.Value = conn.Fecha;
+
+                MessageBox.Show("Se ha encontrado Correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se ha Eliminado");
+
+            }
+            Limpiar();
+        }
+        
+        private void buttonNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         private void IdtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -167,5 +196,7 @@ namespace BarbershopTech.Registros
         {
             ValidarLetras(e);
         }
+
+       
     }
 }

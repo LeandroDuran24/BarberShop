@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 using System.Runtime.Remoting.Contexts;
-using System.Text;
 using Entidades;
 
 namespace DAL
 {
-     public class BarberShopDb:DbContext
+    public class BarberShopDb:DbContext
     {
         public BarberShopDb() : base("ConStr")
         {

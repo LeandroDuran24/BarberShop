@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxServicio = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonBuscar = new System.Windows.Forms.Button();
             this.NombrecomboBox = new System.Windows.Forms.ComboBox();
             this.IdtextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,11 +51,14 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonNuevo = new System.Windows.Forms.Button();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -67,7 +71,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(520, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(333, 161);
+            this.groupBox2.Size = new System.Drawing.Size(333, 135);
             this.groupBox2.TabIndex = 59;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Horas";
@@ -80,7 +84,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(31, 76);
+            this.label6.Location = new System.Drawing.Point(31, 64);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 18);
@@ -107,7 +111,7 @@
             this.dateTimePicker2.CustomFormat = "yyy/MM/dd";
             this.dateTimePicker2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(118, 76);
+            this.dateTimePicker2.Location = new System.Drawing.Point(118, 57);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker2.TabIndex = 1;
@@ -131,7 +135,7 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.comboBoxServicio);
             this.groupBox3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(301, 209);
+            this.groupBox3.Location = new System.Drawing.Point(301, 183);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(421, 168);
             this.groupBox3.TabIndex = 58;
@@ -141,9 +145,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(81, 53);
+            this.dataGridView1.Location = new System.Drawing.Point(42, 63);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(334, 99);
+            this.dataGridView1.Size = new System.Drawing.Size(363, 99);
             this.dataGridView1.TabIndex = 55;
             // 
             // button1
@@ -151,11 +155,14 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(306, 21);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(296, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 26);
             this.button1.TabIndex = 54;
             this.button1.Text = "Agregar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // label3
@@ -165,24 +172,26 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(7, 23);
+            this.label3.Location = new System.Drawing.Point(10, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 18);
+            this.label3.Size = new System.Drawing.Size(58, 18);
             this.label3.TabIndex = 53;
-            this.label3.Text = "Servicios";
+            this.label3.Text = "Nombre";
             // 
             // comboBoxServicio
             // 
             this.comboBoxServicio.FormattingEnabled = true;
-            this.comboBoxServicio.Location = new System.Drawing.Point(81, 21);
+            this.comboBoxServicio.Location = new System.Drawing.Point(75, 25);
             this.comboBoxServicio.Name = "comboBoxServicio";
             this.comboBoxServicio.Size = new System.Drawing.Size(215, 26);
             this.comboBoxServicio.TabIndex = 53;
+            this.comboBoxServicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxServicio_KeyPress);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.buttonBuscar);
             this.groupBox1.Controls.Add(this.NombrecomboBox);
             this.groupBox1.Controls.Add(this.IdtextBox);
             this.groupBox1.Controls.Add(this.label5);
@@ -192,10 +201,26 @@
             this.groupBox1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(117, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 161);
+            this.groupBox1.Size = new System.Drawing.Size(366, 135);
             this.groupBox1.TabIndex = 57;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
+            this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBuscar.Location = new System.Drawing.Point(221, 26);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(90, 26);
+            this.buttonBuscar.TabIndex = 66;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonBuscar.UseVisualStyleBackColor = false;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // NombrecomboBox
             // 
@@ -204,12 +229,13 @@
             this.NombrecomboBox.Name = "NombrecomboBox";
             this.NombrecomboBox.Size = new System.Drawing.Size(182, 26);
             this.NombrecomboBox.TabIndex = 49;
+            this.NombrecomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrecomboBox_KeyPress);
             // 
             // IdtextBox
             // 
-            this.IdtextBox.Location = new System.Drawing.Point(129, 27);
+            this.IdtextBox.Location = new System.Drawing.Point(129, 28);
             this.IdtextBox.Name = "IdtextBox";
-            this.IdtextBox.Size = new System.Drawing.Size(100, 25);
+            this.IdtextBox.Size = new System.Drawing.Size(86, 25);
             this.IdtextBox.TabIndex = 52;
             // 
             // label5
@@ -229,10 +255,11 @@
             // PeluquerocomboBox
             // 
             this.PeluquerocomboBox.FormattingEnabled = true;
-            this.PeluquerocomboBox.Location = new System.Drawing.Point(129, 96);
+            this.PeluquerocomboBox.Location = new System.Drawing.Point(129, 88);
             this.PeluquerocomboBox.Name = "PeluquerocomboBox";
             this.PeluquerocomboBox.Size = new System.Drawing.Size(182, 26);
             this.PeluquerocomboBox.TabIndex = 51;
+            this.PeluquerocomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PeluquerocomboBox_KeyPress);
             // 
             // label1
             // 
@@ -255,7 +282,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(28, 99);
+            this.label2.Location = new System.Drawing.Point(28, 88);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 18);
@@ -269,7 +296,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(542, 383);
+            this.Eliminarbutton.Location = new System.Drawing.Point(584, 369);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(112, 41);
             this.Eliminarbutton.TabIndex = 57;
@@ -285,7 +312,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(382, 383);
+            this.Guardarbutton.Location = new System.Drawing.Point(469, 369);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(109, 41);
             this.Guardarbutton.TabIndex = 56;
@@ -298,16 +325,40 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // buttonNuevo
+            // 
+            this.buttonNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
+            this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNuevo.Location = new System.Drawing.Point(351, 369);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(112, 41);
+            this.buttonNuevo.TabIndex = 65;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNuevo.UseVisualStyleBackColor = false;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // RegistroTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 490);
+            this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegistroTurnos";
             this.Text = "RegistroTurnos";
             this.groupBox2.ResumeLayout(false);
@@ -318,6 +369,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,5 +396,8 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button buttonNuevo;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

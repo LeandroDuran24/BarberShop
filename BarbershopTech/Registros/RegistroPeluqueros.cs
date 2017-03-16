@@ -126,9 +126,35 @@ namespace BarbershopTech.Registros
             }
         }
 
+        private void buttonNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(PeluqueroidtextBox.Text);
+            Peluqueros conn = BLL.PeluqueroBLL.Buscar((p => p.PeluqueroId == id));
+
+            if (conn != null)
+            {
+                nombretextBox3.Text = conn.Nombre;
+                MessageBox.Show("Se ha encontrado Correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se ha Eliminado");
+
+            }
+            Limpiar();
+
+        }
+
         private void nombretextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarLetras(e);
         }
+
+
     }
 }

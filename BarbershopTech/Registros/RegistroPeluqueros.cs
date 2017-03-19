@@ -155,6 +155,9 @@ namespace BarbershopTech.Registros
             ValidarLetras(e);
         }
 
+        private void RegistroPeluqueros_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

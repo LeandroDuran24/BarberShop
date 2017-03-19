@@ -17,43 +17,136 @@ namespace BarbershopTech.Registros
             InitializeComponent();
         }
 
+        private RegistroClientes cliente = null;
+        private RegistroPeluqueros peluquero = null;
+        private RegistroServicios servicio = null;
+        private RegistroUsuarios usuario = null;
+        private RegistroTurnos turno = null;
+
+        private RegistroClientes FormInstanceCliente
+        {
+            get
+            {
+                if (cliente == null)
+                {
+                    cliente = new RegistroClientes();
+                    cliente.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return cliente;
+            }
+        }
+
+        private RegistroTurnos FormInstanceTurnos
+        {
+            get
+            {
+                if (turno == null)
+                {
+                    turno = new RegistroTurnos();
+                    turno.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return turno;
+            }
+        }
+
+        private RegistroUsuarios FormInstanceUsuarios
+        {
+            get
+            {
+                if (usuario == null)
+                {
+                    usuario = new RegistroUsuarios();
+                    usuario.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return usuario;
+            }
+        }
+
+        private RegistroServicios FormInstanceServicio
+        {
+            get
+            {
+                if (servicio == null)
+                {
+                    servicio = new RegistroServicios();
+                    servicio.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return servicio;
+            }
+        }
+
+        private RegistroPeluqueros FormInstancePeluquero
+        {
+            get
+            {
+                if (peluquero == null)
+                {
+                    peluquero = new RegistroPeluqueros();
+                    peluquero.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return peluquero;
+            }
+        }
+
+        void form_Disposed(object sender, EventArgs e)
+        {
+            cliente = null;
+            peluquero = null;
+            servicio = null;
+            usuario = null;
+            turno = null;
+        }
+
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-           /* Bitmap img = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\Img\menu.jpg");
-            this.BackgroundImage = img;
-            BackgroundImageLayout = ImageLayout.Stretch;*/
+
         }
 
         private void registrarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroUsuarios r = new RegistroUsuarios();
+            RegistroUsuarios r = this.FormInstanceUsuarios;
+            //r.MdiParent = this;
             r.Show();
+            r.BringToFront();
+
         }
 
         private void registroClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroClientes r = new RegistroClientes();
+            RegistroClientes r = this.FormInstanceCliente;
             r.Show();
+            r.BringToFront();
+
         }
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroPeluqueros r = new RegistroPeluqueros();
+            RegistroPeluqueros r = this.FormInstancePeluquero;
             r.Show();
+            r.BringToFront();
+
         }
 
         private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroServicios r = new RegistroServicios();
+            RegistroServicios r = this.FormInstanceServicio;
             r.Show();
+            r.BringToFront();
         }
 
-        private void buttonTurnos_Click(object sender, EventArgs e)
+        private void turnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroTurnos r = new RegistroTurnos();
+            RegistroTurnos r = this.FormInstanceTurnos;
             r.Show();
+            r.BringToFront();
         }
 
+        //falta esta parte por la instancia de la ventana
         private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaClientes c = new ConsultaClientes();
@@ -81,6 +174,17 @@ namespace BarbershopTech.Registros
         {
             ConsultaServicios c = new ConsultaServicios();
             c.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroFactura r = new RegistroFactura();
+            r.Show();
         }
     }
 }

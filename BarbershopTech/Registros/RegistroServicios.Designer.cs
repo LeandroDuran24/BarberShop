@@ -39,6 +39,8 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
+            this.CostoTexBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(282, 117);
+            this.Eliminarbutton.Location = new System.Drawing.Point(282, 146);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(104, 41);
             this.Eliminarbutton.TabIndex = 60;
@@ -65,7 +67,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(171, 117);
+            this.Guardarbutton.Location = new System.Drawing.Point(171, 146);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(105, 41);
             this.Guardarbutton.TabIndex = 59;
@@ -134,7 +136,7 @@
             this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(66, 117);
+            this.buttonNuevo.Location = new System.Drawing.Point(66, 146);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(98, 41);
             this.buttonNuevo.TabIndex = 65;
@@ -159,11 +161,37 @@
             this.buttonBuscar.UseVisualStyleBackColor = false;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
+            // CostoTexBox
+            // 
+            this.CostoTexBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CostoTexBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CostoTexBox.Location = new System.Drawing.Point(171, 117);
+            this.CostoTexBox.Name = "CostoTexBox";
+            this.CostoTexBox.Size = new System.Drawing.Size(208, 20);
+            this.CostoTexBox.TabIndex = 68;
+            this.CostoTexBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostoButton_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(72, 116);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 18);
+            this.label2.TabIndex = 67;
+            this.label2.Text = "Costo";
+            // 
             // RegistroServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 293);
+            this.Controls.Add(this.CostoTexBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.Eliminarbutton);
@@ -173,8 +201,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegistroServicios";
             this.Text = "RegistroServicios";
+            this.Load += new System.EventHandler(this.RegistroServicios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -192,5 +224,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.TextBox CostoTexBox;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -10,6 +10,14 @@ namespace Entidades
     {
         [Key]
         public int ServicioId { get; set; }
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } 
+        public int Costo { get; set; }
+
+        public virtual List<Facturas> FacturaList { get; set; }
+
+        public TipoServicios()
+        {
+            this.FacturaList = new List<Facturas>();
+        }
     }
 }

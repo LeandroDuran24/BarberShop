@@ -124,14 +124,14 @@ namespace BarbershopTech.Registros
             var guardado = new Clientes();
             int id = 0;
 
-            if (!Validar())
+            /*if (!Validar())
             {
 
                 MessageBox.Show("Ha Ocurrido Error...");
             }
             else
             {
-
+            */
                 guardado = LlenarCampos();
                 if (id != guardado.ClienteId)
                 {
@@ -145,7 +145,7 @@ namespace BarbershopTech.Registros
                 }
 
                 Limpiar();
-            }
+            //}
         }   
         
         private void buttonBuscar_Click(object sender, EventArgs e)

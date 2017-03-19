@@ -35,5 +35,26 @@ NombreServicio varchar(25)
 
 create table TipoServicios(
 ServicioId int identity(1,1) primary key,
-Nombre varchar(25)
+Nombre varchar(25),
+Costo varchar(12)
+);
+
+create table Facturas(
+FacturaId int identity(1,1) primary key,
+NombreCliente varchar(50),
+Descuento int,
+DescuentoPorciento float,
+Comentario varchar(255),
+Impuesto int,
+Fecha datetime,
+TipoPago varchar(50),
+ServicioId int,
+Total float,
+SubTotal float
+);
+
+create table FacturaServiciosDetalles(
+FacturaServicioId int identity(1,1) primary key,
+ServicioId int,
+FacturaId int
 );

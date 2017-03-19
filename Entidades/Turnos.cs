@@ -12,11 +12,10 @@ namespace Entidades
         public int TurnosId { get; set; }
         public string NombreCliente { get; set; }
         public string NombrePeluquero { get; set; }
-        public string NombreServicio { get; set; }
-        /*public DateTime FechaDesde{ get; set; }
-        public DateTime FechaHasta { get; set; }*/
+        public DateTime FechaDesde{ get; set; }
+        public DateTime FechaHasta { get; set; }
         public int ClienteId { get; set; }
         public int PeluqueroId { get; set; }
-        public int ServicioId { get; set; }
+     
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonTurnos = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,67 +41,51 @@
             this.consultaDeTurnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDePeluquerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.turnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Silver;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(41, 305);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Turnos";
-            // 
-            // buttonTurnos
-            // 
-            this.buttonTurnos.BackColor = System.Drawing.Color.Silver;
-            this.buttonTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTurnos.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonTurnos.Image = ((System.Drawing.Image)(resources.GetObject("buttonTurnos.Image")));
-            this.buttonTurnos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonTurnos.Location = new System.Drawing.Point(0, 171);
-            this.buttonTurnos.Name = "buttonTurnos";
-            this.buttonTurnos.Size = new System.Drawing.Size(139, 156);
-            this.buttonTurnos.TabIndex = 2;
-            this.buttonTurnos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonTurnos.UseVisualStyleBackColor = false;
-            this.buttonTurnos.Click += new System.EventHandler(this.buttonTurnos_Click);
-            // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.LightGray;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrosToolStripMenuItem,
             this.consultasToolStripMenuItem,
+            this.turnosToolStripMenuItem,
+            this.facturarToolStripMenuItem,
             this.reportesToolStripMenuItem,
+            this.cambiarCuentaToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(143, 478);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // registrosToolStripMenuItem
             // 
+            this.registrosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarUsuariosToolStripMenuItem,
             this.registroClientesToolStripMenuItem,
             this.empleadosToolStripMenuItem,
             this.serviciosToolStripMenuItem});
+            this.registrosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registrosToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.registrosToolStripMenuItem.Text = "Registros";
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.registrosToolStripMenuItem.Text = "Registros            ";
             // 
             // registrarUsuariosToolStripMenuItem
             // 
             this.registrarUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registrarUsuariosToolStripMenuItem.Image")));
             this.registrarUsuariosToolStripMenuItem.Name = "registrarUsuariosToolStripMenuItem";
-            this.registrarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.registrarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.registrarUsuariosToolStripMenuItem.Text = "Usuarios";
             this.registrarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.registrarUsuariosToolStripMenuItem_Click);
             // 
@@ -111,7 +93,7 @@
             // 
             this.registroClientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroClientesToolStripMenuItem.Image")));
             this.registroClientesToolStripMenuItem.Name = "registroClientesToolStripMenuItem";
-            this.registroClientesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.registroClientesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.registroClientesToolStripMenuItem.Text = "Clientes";
             this.registroClientesToolStripMenuItem.Click += new System.EventHandler(this.registroClientesToolStripMenuItem_Click);
             // 
@@ -119,14 +101,14 @@
             // 
             this.empleadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("empleadosToolStripMenuItem.Image")));
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.empleadosToolStripMenuItem.Text = "Peluqueros";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
             // serviciosToolStripMenuItem
             // 
             this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
-            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.serviciosToolStripMenuItem.Text = "Servicios";
             this.serviciosToolStripMenuItem.Click += new System.EventHandler(this.serviciosToolStripMenuItem_Click);
             // 
@@ -138,15 +120,17 @@
             this.consultaDeTurnosToolStripMenuItem,
             this.consultaDePeluquerosToolStripMenuItem,
             this.serviciosToolStripMenuItem1});
+            this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultasToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.consultasToolStripMenuItem.Text = "Consultas";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.consultasToolStripMenuItem.Text = "Consultas            ";
             // 
             // consultaDeUsuariosToolStripMenuItem
             // 
             this.consultaDeUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaDeUsuariosToolStripMenuItem.Image")));
             this.consultaDeUsuariosToolStripMenuItem.Name = "consultaDeUsuariosToolStripMenuItem";
-            this.consultaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.consultaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.consultaDeUsuariosToolStripMenuItem.Text = "Usuarios";
             this.consultaDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeUsuariosToolStripMenuItem_Click);
             // 
@@ -154,7 +138,7 @@
             // 
             this.consultaEmpleadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaEmpleadosToolStripMenuItem.Image")));
             this.consultaEmpleadosToolStripMenuItem.Name = "consultaEmpleadosToolStripMenuItem";
-            this.consultaEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.consultaEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.consultaEmpleadosToolStripMenuItem.Text = "Clientes";
             this.consultaEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.consultaEmpleadosToolStripMenuItem_Click);
             // 
@@ -162,7 +146,7 @@
             // 
             this.consultaDeTurnosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaDeTurnosToolStripMenuItem.Image")));
             this.consultaDeTurnosToolStripMenuItem.Name = "consultaDeTurnosToolStripMenuItem";
-            this.consultaDeTurnosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.consultaDeTurnosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.consultaDeTurnosToolStripMenuItem.Text = "Turnos";
             this.consultaDeTurnosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeTurnosToolStripMenuItem_Click);
             // 
@@ -170,40 +154,73 @@
             // 
             this.consultaDePeluquerosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaDePeluquerosToolStripMenuItem.Image")));
             this.consultaDePeluquerosToolStripMenuItem.Name = "consultaDePeluquerosToolStripMenuItem";
-            this.consultaDePeluquerosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.consultaDePeluquerosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.consultaDePeluquerosToolStripMenuItem.Text = "Peluqueros";
             this.consultaDePeluquerosToolStripMenuItem.Click += new System.EventHandler(this.consultaDePeluquerosToolStripMenuItem_Click);
             // 
             // serviciosToolStripMenuItem1
             // 
             this.serviciosToolStripMenuItem1.Name = "serviciosToolStripMenuItem1";
-            this.serviciosToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.serviciosToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
             this.serviciosToolStripMenuItem1.Text = "Servicios";
             this.serviciosToolStripMenuItem1.Click += new System.EventHandler(this.serviciosToolStripMenuItem1_Click);
             // 
+            // turnosToolStripMenuItem
+            // 
+            this.turnosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.turnosToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.turnosToolStripMenuItem.Name = "turnosToolStripMenuItem";
+            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.turnosToolStripMenuItem.Text = "Turnos                 ";
+            this.turnosToolStripMenuItem.Click += new System.EventHandler(this.turnosToolStripMenuItem_Click);
+            // 
+            // facturarToolStripMenuItem
+            // 
+            this.facturarToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.facturarToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
+            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.facturarToolStripMenuItem.Text = "Facturar             ";
+            this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportesToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes            ";
+            // 
+            // cambiarCuentaToolStripMenuItem
+            // 
+            this.cambiarCuentaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cambiarCuentaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.cambiarCuentaToolStripMenuItem.Name = "cambiarCuentaToolStripMenuItem";
+            this.cambiarCuentaToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.cambiarCuentaToolStripMenuItem.Text = "Cambiar Cuenta";
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.salirToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.salirToolStripMenuItem.Text = "Salir                     ";
             this.salirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 478);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonTurnos);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -216,9 +233,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonTurnos;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarUsuariosToolStripMenuItem;
@@ -233,5 +247,8 @@
         private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cambiarCuentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
     }
 }

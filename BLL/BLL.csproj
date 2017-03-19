@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteBLL.cs" />
+    <Compile Include="FacturaBLL.cs" />
     <Compile Include="PeluqueroBLL.cs" />
     <Compile Include="TipoServicioBLL.cs" />
     <Compile Include="TurnoBLL.cs" />
@@ -57,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{A7B2A0E4-405C-46C2-AF76-7B2FD4FA18BA}</Project>
+      <Project>{a7b2a0e4-405c-46c2-af76-7b2fd4fa18ba}</Project>
       <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

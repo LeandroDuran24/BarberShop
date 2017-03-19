@@ -17,7 +17,6 @@ namespace BarbershopTech.Registros
             InitializeComponent();
             LlenarComboNombre();
             LlenarComboPeluquero();
-            LlenarComboServicio();
             Limpiar();
         }
 
@@ -25,7 +24,9 @@ namespace BarbershopTech.Registros
         {
             NombrecomboBox.Text = null;
             PeluquerocomboBox.Text = null;
-            comboBoxServicio.Text = null;
+            dateTimePickerDesde.Value = DateTime.Today;
+            dateTimePickerHasta.Value = DateTime.Today;
+            IdtextBox.Clear();
 
 
         }
@@ -58,19 +59,6 @@ namespace BarbershopTech.Registros
             }
         }
 
-        public void LlenarComboServicio()
-        {
-            List<TipoServicios> lista = BLL.TipoServicioBLL.GetListTodo();
-            comboBoxServicio.DataSource = lista;
-            comboBoxServicio.DisplayMember = "Nombre";
-            comboBoxServicio.ValueMember = "ServicioId";
-
-            if (comboBoxServicio.Items.Count >= 1)
-            {
-                comboBoxServicio.SelectedIndex = -1;
-            }
-        }
-
         public bool Validar()
         {
             if(string.IsNullOrEmpty(NombrecomboBox.Text))
@@ -86,9 +74,9 @@ namespace BarbershopTech.Registros
                 return false;
             }
 
-            if (string.IsNullOrEmpty(dateTimePicker2.Text))
+            if (string.IsNullOrEmpty(dateTimePickerHasta.Text))
             {
-                errorProvider1.SetError(dateTimePicker2, "Favor Llenar");
+                errorProvider1.SetError(dateTimePickerHasta, "Favor Llenar");
                 return false;
             }
             return true;
@@ -99,10 +87,10 @@ namespace BarbershopTech.Registros
             Turnos turno = new Turnos();
             turno.ClienteId = Utilidades.TOINT(NombrecomboBox.SelectedValue.ToString());
             turno.PeluqueroId = Utilidades.TOINT(PeluquerocomboBox.SelectedValue.ToString());
-            turno.ServicioId = Utilidades.TOINT(comboBoxServicio.SelectedValue.ToString());
             turno.NombreCliente = NombrecomboBox.Text;
             turno.NombrePeluquero = PeluquerocomboBox.Text;
-            turno.NombreServicio = comboBoxServicio.Text;
+            turno.FechaDesde = dateTimePickerDesde.Value;
+            turno.FechaHasta = dateTimePickerHasta.Value;
             turno.PeluqueroId = Utilidades.TOINT(PeluquerocomboBox.SelectedValue.ToString());
             return turno;
         }
@@ -165,8 +153,7 @@ namespace BarbershopTech.Registros
                     MessageBox.Show("Se guardo");
             }
             Limpiar();
-            
-            
+
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -201,8 +188,7 @@ namespace BarbershopTech.Registros
             {
                 NombrecomboBox.Text = conn.NombreCliente;
                 PeluquerocomboBox.Text = conn.NombrePeluquero;
-                comboBoxServicio.Text = conn.NombreServicio;
-                MessageBox.Show("Se ha eliminado Correctamente");
+                MessageBox.Show("Se ha encontrado Correctamente");
             }
             else
             {
@@ -226,5 +212,7 @@ namespace BarbershopTech.Registros
         {
             e.Handled = true;
         }
+
+        
     }
 }

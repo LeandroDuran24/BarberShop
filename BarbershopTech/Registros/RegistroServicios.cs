@@ -25,6 +25,12 @@ namespace BarbershopTech.Registros
                 return false;
             }
 
+            if (string.IsNullOrEmpty(CostoTexBox.Text))
+            {
+                errorProvider1.SetError(CostoTexBox, "Favor de LLenar");
+                return false;
+            }
+
             return true;
         }
 
@@ -32,6 +38,7 @@ namespace BarbershopTech.Registros
         {
             nombretextBox3.Clear();
             idSeriviciotextBox.Clear();
+            CostoTexBox.Clear();
 
         }
 
@@ -92,6 +99,7 @@ namespace BarbershopTech.Registros
 
                 guardar.ServicioId = Utilidades.TOINT(idSeriviciotextBox.Text);
                 guardar.Nombre = nombretextBox3.Text;
+                guardar.Costo = Convert.ToInt32(CostoTexBox.Text);
                 if (id != guardar.ServicioId)
                 {
                     BLL.TipoServicioBLL.Mofidicar(guardar);
@@ -138,6 +146,8 @@ namespace BarbershopTech.Registros
             if (conn != null)
             {
                 nombretextBox3.Text = conn.Nombre;
+                CostoTexBox.Text = Convert.ToString(conn.Costo);
+
                 MessageBox.Show("Se ha encontrado Correctamente");
             }
             else
@@ -163,5 +173,14 @@ namespace BarbershopTech.Registros
 
         }
 
+        private void CostoButton_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
+        }
+
+        private void RegistroServicios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

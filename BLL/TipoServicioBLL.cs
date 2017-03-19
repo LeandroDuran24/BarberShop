@@ -95,5 +95,15 @@ namespace BLL
             }
 
         }
+
+        public static TipoServicios Busca(int id)
+        {
+            TipoServicios ser = new TipoServicios();
+            using (var db = new BarberShopDb())
+            {
+                ser = db.servicio.Find(id);
+            }
+            return ser;
+        }
     }
 }

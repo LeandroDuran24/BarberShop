@@ -22,9 +22,8 @@ namespace BarbershopTech.Consultas
             comboBox1.Items.Insert(0, "Todos");
             comboBox1.Items.Insert(1, "Cliente");
             comboBox1.Items.Insert(2, "Peluquero");
-            comboBox1.Items.Insert(3, "Servicio");
-            comboBox1.Items.Insert(4, "Id");
-            comboBox1.Items.Insert(5, "Fecha");
+            comboBox1.Items.Insert(3, "Id");
+            comboBox1.Items.Insert(4, "Fecha");
             comboBox1.DataSource = comboBox1.Items;
             comboBox1.DisplayMember = "Todos";
 
@@ -88,35 +87,19 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.NombreServicio == BuscartextBox.Text);
-                }
-
-            }
-
-            if (comboBox1.SelectedIndex == 4)
-            {
-                if (!ValidarTextBox())
-                {
-                    MessageBox.Show("Favor Llenar");
-                }
-                else
-                {
                     dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.TurnosId == Utilidades.TOINT(BuscartextBox.Text));
                 }
 
             }
-
-           
             
-
-           /* if (comboBox1.SelectedIndex == 5)
+            if (comboBox1.SelectedIndex == 4)
             {
                
                 if (desdedateTimePicker.Value.Date > hastadateTimePicker.Value.Date)
                 {
-                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.Fecha >= desdedateTimePicker.Value.Date && p.Fecha < hastadateTimePicker.Value.Date);
+                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.FechaDesde >= desdedateTimePicker.Value.Date && p.FechaHasta < hastadateTimePicker.Value.Date);
                 }
-            }*/
+            }
 
         }
 

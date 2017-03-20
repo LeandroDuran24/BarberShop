@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BarbershopTech.Consultas;
 using BarbershopTech.Reportes;
+using Entidades;
 
 namespace BarbershopTech.Registros
 {
@@ -105,13 +106,12 @@ namespace BarbershopTech.Registros
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void registrarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroUsuarios r = this.FormInstanceUsuarios;
-            //r.MdiParent = this;
             r.Show();
             r.BringToFront();
 

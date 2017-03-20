@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BarbershopTech.Registros;
 using DAL;
+using Entidades;
 
 namespace BarbershopTech
 {
@@ -90,40 +91,40 @@ namespace BarbershopTech
 
         private void entrar_Click(object sender, EventArgs e)
         {
-            /* if (!Validar())
-             {
-                 MessageBox.Show("Favor Llenar");
-             }
-             else
-             {
-                 string username = NombretextBox.Text;
-                 string clave = ContraseñamaskedTextBox.Text;
 
-                 using (BarberShopDb db = new BarberShopDb())
-                 {
-                     var user = (from u in db.usuario where u.Email == username select u.Nombres).FirstOrDefault();
-                     var passw = (from u in db.usuario where u.Contrasena == clave select u.Contrasena).FirstOrDefault();
+            Usuarios usuario = null;
+            usuario = BLL.UsuarioBLL.Buscar(p => p.Email == NombretextBox.Text);
 
-                     if (user == username || passw == clave)
-                     {*/
+            if (!Validar())
+            {
+                MessageBox.Show("Favor Llenar");
+            }
+            else
+            {
 
 
-
-
-            MenuPrincipal mp = new MenuPrincipal();
-            mp.Show();
-            this.Hide();
-
-            /*  }
-              else
-              {
-                  MessageBox.Show("Los datos no coinciden");
-
-              }*/
-
-            Limpiar();
-            // }
-            //}
+                if (usuario != null)
+                {
+                    if (usuario.Contrasena == ContraseñamaskedTextBox.Text)
+                    {
+                        MenuPrincipal menu = new MenuPrincipal();
+                        menu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La Clave no Coincide con el Email");
+                        Limpiar();
+                        NombretextBox.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No existe ese Usuario");
+                    Limpiar();
+                    NombretextBox.Focus();
+                }
+            }
         }
 
         private void salir_Click_1(object sender, EventArgs e)
@@ -133,7 +134,7 @@ namespace BarbershopTech
 
         private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void ContraseñamaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)

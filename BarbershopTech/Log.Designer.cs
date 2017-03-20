@@ -48,7 +48,7 @@
             this.ContraseñamaskedTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ContraseñamaskedTextBox.Location = new System.Drawing.Point(228, 165);
             this.ContraseñamaskedTextBox.Name = "ContraseñamaskedTextBox";
-            this.ContraseñamaskedTextBox.PasswordChar = '@';
+            this.ContraseñamaskedTextBox.PasswordChar = '☯';
             this.ContraseñamaskedTextBox.Size = new System.Drawing.Size(272, 20);
             this.ContraseñamaskedTextBox.TabIndex = 1426;
             this.ContraseñamaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContraseñamaskedTextBox_KeyPress);

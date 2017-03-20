@@ -32,7 +32,6 @@ namespace BLL
         }
 
 
-
         public static bool Mofidicar(TipoServicios criterio)
         {
             bool mod = false;

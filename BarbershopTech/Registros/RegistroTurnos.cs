@@ -208,10 +208,6 @@ namespace BarbershopTech.Registros
             e.Handled = true;
         }
 
-        private void comboBoxServicio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
 
         
     }

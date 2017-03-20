@@ -40,10 +40,8 @@
             this.textBoxComentario = new System.Windows.Forms.TextBox();
             this.textBoxPorcientoDescuento = new System.Windows.Forms.TextBox();
             this.textBoxImpuesto = new System.Windows.Forms.TextBox();
-            this.textBoxDescuento = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.comboBoxNombre = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
@@ -114,10 +112,8 @@
             this.panel1.Controls.Add(this.textBoxComentario);
             this.panel1.Controls.Add(this.textBoxPorcientoDescuento);
             this.panel1.Controls.Add(this.textBoxImpuesto);
-            this.panel1.Controls.Add(this.textBoxDescuento);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.comboBoxNombre);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 54);
@@ -184,13 +180,6 @@
             this.textBoxImpuesto.Size = new System.Drawing.Size(123, 20);
             this.textBoxImpuesto.TabIndex = 6;
             // 
-            // textBoxDescuento
-            // 
-            this.textBoxDescuento.Location = new System.Drawing.Point(626, 9);
-            this.textBoxDescuento.Name = "textBoxDescuento";
-            this.textBoxDescuento.Size = new System.Drawing.Size(123, 20);
-            this.textBoxDescuento.TabIndex = 4;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -219,20 +208,6 @@
             this.label4.TabIndex = 74;
             this.label4.Text = "% Descuento";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(497, 12);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 18);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "Descuento";
-            // 
             // comboBoxNombre
             // 
             this.comboBoxNombre.ForeColor = System.Drawing.Color.Black;
@@ -242,6 +217,7 @@
             this.comboBoxNombre.Size = new System.Drawing.Size(317, 21);
             this.comboBoxNombre.TabIndex = 1;
             this.comboBoxNombre.Text = "Nombre cliente";
+            this.comboBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNombre_KeyPress);
             // 
             // label2
             // 
@@ -332,6 +308,7 @@
             this.comboBoxServicios.Size = new System.Drawing.Size(176, 25);
             this.comboBoxServicios.TabIndex = 7;
             this.comboBoxServicios.Text = "Seleccione";
+            this.comboBoxServicios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxServicios_KeyPress);
             // 
             // label7
             // 
@@ -506,10 +483,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPorcientoDescuento;
         private System.Windows.Forms.TextBox textBoxImpuesto;
-        private System.Windows.Forms.TextBox textBoxDescuento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;

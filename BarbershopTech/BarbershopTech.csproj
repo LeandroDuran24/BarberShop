@@ -55,10 +55,13 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +77,12 @@
     </Compile>
     <Compile Include="Consultas\ConsultaClientes.Designer.cs">
       <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaFactura.Designer.cs">
+      <DependentUpon>ConsultaFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\ConsultaPeluqueros.cs">
       <SubType>Form</SubType>
@@ -149,9 +158,23 @@
     <Compile Include="Registros\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\BarberShopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BarberShopDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteFactura.Designer.cs">
+      <DependentUpon>ReporteFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Consultas\ConsultaClientes.resx">
       <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaFactura.resx">
+      <DependentUpon>ConsultaFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaPeluqueros.resx">
       <DependentUpon>ConsultaPeluqueros.cs</DependentUpon>
@@ -199,6 +222,10 @@
     <EmbeddedResource Include="Registros\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteFactura.resx">
+      <DependentUpon>ReporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportFactura.rdlc" />
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -210,6 +237,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\BarberShopDataSet.xsc">
+      <DependentUpon>BarberShopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\BarberShopDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BarberShopDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\BarberShopDataSet.xss">
+      <DependentUpon>BarberShopDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\BarberShopDb.mdf">

@@ -13,7 +13,6 @@ namespace Entidades
         public int ServicioId { get; set; }
 
         public string NombreCliente { get; set; }
-        public int Descuento { get; set; }
         public double DescuentoPorciento { get; set; }
         public string Comentario { get; set; }
         public int Impuesto { get; set; }

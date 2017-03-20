@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BarbershopTech.Consultas;
+using BarbershopTech.Reportes;
 
 namespace BarbershopTech.Registros
 {
@@ -185,6 +186,25 @@ namespace BarbershopTech.Registros
         {
             RegistroFactura r = new RegistroFactura();
             r.Show();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaFactura cf = new ConsultaFactura();
+            cf.Show();
+        }
+
+        private void cambiarCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Log l = new Log();
+            l.Show();
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteFactura rf = new ReporteFactura();
+            rf.Show();
         }
     }
 }

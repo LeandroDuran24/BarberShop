@@ -51,6 +51,7 @@
             this.ContraseñamaskedTextBox.PasswordChar = '@';
             this.ContraseñamaskedTextBox.Size = new System.Drawing.Size(272, 20);
             this.ContraseñamaskedTextBox.TabIndex = 1426;
+            this.ContraseñamaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContraseñamaskedTextBox_KeyPress);
             // 
             // NombretextBox
             // 
@@ -61,6 +62,7 @@
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(272, 20);
             this.NombretextBox.TabIndex = 1425;
+            this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretextBox_KeyPress);
             // 
             // contrasena
             // 

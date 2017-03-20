@@ -34,7 +34,7 @@ namespace BarbershopTech.Registros
 
         public bool Validar()
         {
-            if(string.IsNullOrEmpty(comboBoxNombre.Text))
+            if (string.IsNullOrEmpty(comboBoxNombre.Text))
             {
                 errorProvider1.SetError(comboBoxNombre, "Favor Llenar");
                 return false;
@@ -54,7 +54,6 @@ namespace BarbershopTech.Registros
             comboBoxServicios.Text = null;
             comboBoxNombre.Text = null;
             textBoxComentario.Clear();
-            textBoxDescuento.Clear();
             textBoxPorcientoDescuento.Clear();
             textBoxImpuesto.Clear();
             textBoxTotal.Clear();
@@ -63,6 +62,7 @@ namespace BarbershopTech.Registros
             textBoxForma.Clear();
             dateTimePickerDesde.Value = DateTime.Now;
             dataGridView1.DataSource = null;
+            errorProvider1.Clear();
         }
 
         public void LlenarComboNombre()
@@ -84,7 +84,7 @@ namespace BarbershopTech.Registros
             comboBoxServicios.ValueMember = "ServicioId";
             if (comboBoxServicios.Items.Count > 0)
                 comboBoxServicios.SelectedIndex = -1;
- 
+
         }
 
         public Facturas LlenarCampos()
@@ -93,10 +93,9 @@ namespace BarbershopTech.Registros
             fac.NombreCliente = comboBoxNombre.Text;
             fac.FacturaId = Utilidades.TOINT(textBoxfacturaId.Text);
             fac.Comentario = textBoxComentario.Text;
-            fac.ServicioId=Utilidades.TOINT(comboBoxServicios.SelectedValue.ToString());
+            fac.ServicioId = Utilidades.TOINT(comboBoxServicios.SelectedValue.ToString());
             fac.Fecha = dateTimePickerDesde.Value;
-            fac.Descuento = Utilidades.TOINT(textBoxDescuento.Text);
-            fac.DescuentoPorciento=Utilidades.TOINT(textBoxPorcientoDescuento.Text);
+            fac.DescuentoPorciento = Utilidades.TOINT(textBoxPorcientoDescuento.Text);
             fac.Impuesto = Utilidades.TOINT(textBoxImpuesto.Text);
             fac.SubTotal = Utilidades.TOINT(textBoxSub.Text);
             fac.Total = Utilidades.TOINT(textBoxTotal.Text);
@@ -107,33 +106,33 @@ namespace BarbershopTech.Registros
 
         public void LlenarDataGrid(Facturas nueva)
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = nueva.ServicioList.ToList();
+            //dataGridView1.DataSource = null;
+            dataGridView1.DataSource = nueva.ServicioList;//.ToList();
         }
 
         public void SacarCuenta()
         {
             decimal Subtotal = 0;
             decimal Total = 0;
-            BarberShopDb barbershop = new BarberShopDb();
             const int COLUMNAPRECIO = 2;
-          
 
-            if (dataGridView1.Rows.Count>0)
+
+            if (dataGridView1.Rows.Count > 0)
             {
-                foreach(DataGridViewRow precio in dataGridView1.Rows)
+                foreach (DataGridViewRow precio in dataGridView1.Rows)
                 {
-                   
+
                     Subtotal += (int)precio.Cells[COLUMNAPRECIO].Value;
                     textBoxSub.Text = Subtotal.ToString();
 
                 }
 
-                if(textBoxPorcientoDescuento.Text != null)
-             {
+                if (textBoxPorcientoDescuento.Text != null)
+                {
                     decimal TotalDesc = Convert.ToDecimal((Utilidades.TOINT(textBoxPorcientoDescuento.Text) * Convert.ToDecimal(Subtotal) / 100));
                     Total = Subtotal - TotalDesc;
-                    textBoxSub.Text = (Subtotal-TotalDesc).ToString();
+                    Subtotal = Subtotal - TotalDesc;
+                    textBoxSub.Text = Subtotal.ToString();
                     textBoxTotal.Text = Total.ToString();
 
                 }
@@ -146,6 +145,7 @@ namespace BarbershopTech.Registros
                     textBoxTotal.Text = Total.ToString();
 
                 }
+               
             }
             else
             {
@@ -153,22 +153,22 @@ namespace BarbershopTech.Registros
                 Limpiar();
             }
 
-             
+
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             int id = 0;
             Facturas f = new Facturas();
-            if(!Validar())
+            if (!Validar())
             {
                 MessageBox.Show("Favor Llenar");
             }
-            else 
+            else
             {
                 f = LlenarCampos();
 
-                if(id!=f.FacturaId)
+                if (id != f.FacturaId)
                 {
                     BLL.FacturaBLL.Mofidicar(f);
                     MessageBox.Show("Se ha Modificado");
@@ -178,7 +178,7 @@ namespace BarbershopTech.Registros
                     BLL.FacturaBLL.Guardar(f);
                     MessageBox.Show("Se ha Guardado Correctamente");
                 }
-                
+
             }
             Limpiar();
         }
@@ -192,18 +192,21 @@ namespace BarbershopTech.Registros
         {
             int id = int.Parse(textBoxfacturaId.Text);
             Facturas factura = BLL.FacturaBLL.Buscar(p => p.FacturaId == id);
-            if(factura!=null)
+            if (factura != null)
             {
                 comboBoxNombre.Text = factura.NombreCliente;
                 textBoxComentario.Text = factura.Comentario;
-                textBoxDescuento.Text = Convert.ToString(factura.Descuento.ToString());
                 textBoxPorcientoDescuento.Text = Convert.ToString(factura.DescuentoPorciento.ToString());
                 textBoxImpuesto.Text = Convert.ToString(factura.Impuesto.ToString());
                 textBoxForma.Text = factura.TipoPago;
                 textBoxSub.Text = Convert.ToString(factura.SubTotal.ToString());
                 textBoxTotal.Text = Convert.ToString(factura.Total.ToString());
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = factura.ServicioList;
+                LlenarDataGrid(factura);
+                MessageBox.Show("Correcto");
+            }
+            else
+            {
+                MessageBox.Show("No existe");
             }
         }
 
@@ -216,6 +219,16 @@ namespace BarbershopTech.Registros
 
             LlenarDataGrid(factura);
             SacarCuenta();
+        }
+
+        private void comboBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void comboBoxServicios_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

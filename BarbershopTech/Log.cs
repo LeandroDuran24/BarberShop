@@ -131,6 +131,14 @@ namespace BarbershopTech
             this.Close();
         }
 
+        private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
 
+        private void ContraseñamaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
+        }
     }
 }

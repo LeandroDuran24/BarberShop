@@ -155,7 +155,6 @@ namespace BarbershopTech.Registros
                 MessageBox.Show("No se ha Eliminado");
 
             }
-            Limpiar();
         }
 
         private void idSeriviciotextBox_KeyPress(object sender, KeyPressEventArgs e)

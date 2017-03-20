@@ -45,6 +45,8 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             this.textBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxId.Location = new System.Drawing.Point(179, 23);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(119, 20);
+            this.textBoxId.Size = new System.Drawing.Size(123, 20);
             this.textBoxId.TabIndex = 32;
             this.textBoxId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxId_KeyPress);
             // 
@@ -83,7 +85,7 @@
             this.NombretextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NombretextBox.Location = new System.Drawing.Point(179, 62);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(231, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(235, 20);
             this.NombretextBox.TabIndex = 26;
             this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretextBox_KeyPress);
             // 
@@ -111,7 +113,7 @@
             this.Eliminarbutton1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton1.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton1.Image")));
             this.Eliminarbutton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton1.Location = new System.Drawing.Point(308, 271);
+            this.Eliminarbutton1.Location = new System.Drawing.Point(308, 306);
             this.Eliminarbutton1.Name = "Eliminarbutton1";
             this.Eliminarbutton1.Size = new System.Drawing.Size(102, 35);
             this.Eliminarbutton1.TabIndex = 31;
@@ -126,10 +128,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConfirmarmaskedTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConfirmarmaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmarmaskedTextBox.Location = new System.Drawing.Point(179, 197);
+            this.ConfirmarmaskedTextBox.Location = new System.Drawing.Point(179, 230);
             this.ConfirmarmaskedTextBox.Name = "ConfirmarmaskedTextBox";
             this.ConfirmarmaskedTextBox.PasswordChar = '*';
-            this.ConfirmarmaskedTextBox.Size = new System.Drawing.Size(231, 20);
+            this.ConfirmarmaskedTextBox.Size = new System.Drawing.Size(235, 20);
             this.ConfirmarmaskedTextBox.TabIndex = 29;
             this.ConfirmarmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ConfirmarmaskedTextBox_KeyPress);
             // 
@@ -139,10 +141,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ContraseñamaskedTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ContraseñamaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContraseñamaskedTextBox.Location = new System.Drawing.Point(179, 153);
+            this.ContraseñamaskedTextBox.Location = new System.Drawing.Point(179, 186);
             this.ContraseñamaskedTextBox.Name = "ContraseñamaskedTextBox";
             this.ContraseñamaskedTextBox.PasswordChar = '*';
-            this.ContraseñamaskedTextBox.Size = new System.Drawing.Size(231, 20);
+            this.ContraseñamaskedTextBox.Size = new System.Drawing.Size(235, 20);
             this.ContraseñamaskedTextBox.TabIndex = 28;
             this.ContraseñamaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContraseñamaskedTextBox_KeyPress);
             // 
@@ -155,7 +157,7 @@
             this.Registrarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Registrarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Registrarbutton.Image")));
             this.Registrarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Registrarbutton.Location = new System.Drawing.Point(179, 271);
+            this.Registrarbutton.Location = new System.Drawing.Point(179, 306);
             this.Registrarbutton.Name = "Registrarbutton";
             this.Registrarbutton.Size = new System.Drawing.Size(102, 35);
             this.Registrarbutton.TabIndex = 30;
@@ -172,7 +174,7 @@
             this.EmailtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailtextBox.Location = new System.Drawing.Point(179, 104);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(231, 20);
+            this.EmailtextBox.Size = new System.Drawing.Size(235, 20);
             this.EmailtextBox.TabIndex = 27;
             this.EmailtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailtextBox_KeyPress);
             // 
@@ -184,7 +186,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(27, 199);
+            this.label4.Location = new System.Drawing.Point(23, 232);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 18);
@@ -198,7 +200,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(28, 155);
+            this.label3.Location = new System.Drawing.Point(24, 188);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 18);
@@ -231,7 +233,7 @@
             this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(51, 271);
+            this.buttonNuevo.Location = new System.Drawing.Point(47, 306);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(112, 35);
             this.buttonNuevo.TabIndex = 65;
@@ -256,11 +258,36 @@
             this.buttonBuscar.UseVisualStyleBackColor = false;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(24, 149);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 18);
+            this.label6.TabIndex = 68;
+            this.label6.Text = "Tipo";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(179, 149);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(235, 21);
+            this.comboBox1.TabIndex = 69;
+            // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 378);
+            this.ClientSize = new System.Drawing.Size(479, 378);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.textBoxId);
@@ -304,5 +331,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

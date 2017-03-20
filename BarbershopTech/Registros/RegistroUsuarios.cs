@@ -15,6 +15,7 @@ namespace BarbershopTech.Registros
         public RegistroUsuarios()
         {
             InitializeComponent();
+            LlenarCombo();
         }
         
         private void RegistroUsuarios_Load(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace BarbershopTech.Registros
             ContraseñamaskedTextBox.Clear();
             ConfirmarmaskedTextBox.Clear();
             textBoxId.Clear();
+            comboBox1.Text = null;
 
         }
 
@@ -68,7 +70,27 @@ namespace BarbershopTech.Registros
             guardar.Email = EmailtextBox.Text;
             guardar.Contrasena = Convert.ToString(ContraseñamaskedTextBox.Text);
             guardar.Confirmar = Convert.ToString(ConfirmarmaskedTextBox.Text);
+            if(comboBox1.SelectedIndex==0)
+            {
+                guardar.Tipo = "Admin";
+            }
+            else
+            {
+                guardar.Tipo = "Empleado";
+            }
             return guardar;
+
+
+        }
+
+        public void LlenarCombo()
+        {
+            comboBox1.Items.Insert(0, "Admin");
+            comboBox1.Items.Insert(1, "Empleado");
+            comboBox1.DataSource = comboBox1.Items;
+            comboBox1.DisplayMember = "Admin";
+            if (comboBox1.Items.Count > 0)
+                comboBox1.SelectedIndex = -1;
 
         }
 
@@ -181,6 +203,7 @@ namespace BarbershopTech.Registros
                 NombretextBox.Text = usuario.Nombres;
                 ContraseñamaskedTextBox.Text = Convert.ToString(usuario.Contrasena);
                 ConfirmarmaskedTextBox.Text = Convert.ToString(usuario.Confirmar);
+                comboBox1.Text = usuario.Tipo;
                 MessageBox.Show("Se ha encontrado correctamente");
             }
             else

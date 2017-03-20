@@ -150,7 +150,7 @@ namespace BarbershopTech.Registros
         //falta esta parte por la instancia de la ventana
         private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultaClientes c = new ConsultaClientes();
+            ConsultaUsuarios c = new ConsultaUsuarios();
             c.Show();
         }
 

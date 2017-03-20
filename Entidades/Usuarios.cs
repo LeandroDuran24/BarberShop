@@ -12,6 +12,7 @@ namespace Entidades
         public int UsuarioId { get; set; }
         public string Nombres { get; set; }
         public string Email { get; set; }
+        public string Tipo { get; set; }
         public string Contrasena { get; set; }
         public string Confirmar { get; set; }
     }

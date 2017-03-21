@@ -72,40 +72,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consultas\ConsultaClientes.cs">
+    <Compile Include="UI\Consultas\ConsultaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultaClientes.Designer.cs">
+    <Compile Include="UI\Consultas\ConsultaClientes.Designer.cs">
       <DependentUpon>ConsultaClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ConsultaFactura.cs">
+    <Compile Include="UI\Consultas\ConsultaFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultaFactura.Designer.cs">
+    <Compile Include="UI\Consultas\ConsultaFactura.Designer.cs">
       <DependentUpon>ConsultaFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ConsultaPeluqueros.cs">
+    <Compile Include="UI\Consultas\ConsultaPeluqueros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultaPeluqueros.Designer.cs">
+    <Compile Include="UI\Consultas\ConsultaPeluqueros.Designer.cs">
       <DependentUpon>ConsultaPeluqueros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ConsultaServicios.cs">
+    <Compile Include="UI\Consultas\ConsultaServicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultaServicios.Designer.cs">
+    <Compile Include="UI\Consultas\ConsultaServicios.Designer.cs">
       <DependentUpon>ConsultaServicios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ConsultaTurnos.cs">
+    <Compile Include="UI\Consultas\ConsultaTurnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultaTurnos.Designer.cs">
+    <Compile Include="UI\Consultas\ConsultaTurnos.Designer.cs">
       <DependentUpon>ConsultaTurnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ConsultaUsuarios.cs">
+    <Compile Include="UI\Consultas\ConsultaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultaUsuarios.Designer.cs">
+    <Compile Include="UI\Consultas\ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Log.cs">
@@ -116,76 +116,76 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registros\MenuPrincipal.cs">
+    <Compile Include="UI\Registros\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\MenuPrincipal.Designer.cs">
+    <Compile Include="UI\Registros\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroClientes.cs">
+    <Compile Include="UI\Registros\RegistroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroClientes.Designer.cs">
+    <Compile Include="UI\Registros\RegistroClientes.Designer.cs">
       <DependentUpon>RegistroClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroFactura.cs">
+    <Compile Include="UI\Registros\RegistroFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroFactura.Designer.cs">
+    <Compile Include="UI\Registros\RegistroFactura.Designer.cs">
       <DependentUpon>RegistroFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroPeluqueros.cs">
+    <Compile Include="UI\Registros\RegistroPeluqueros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroPeluqueros.Designer.cs">
+    <Compile Include="UI\Registros\RegistroPeluqueros.Designer.cs">
       <DependentUpon>RegistroPeluqueros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroServicios.cs">
+    <Compile Include="UI\Registros\RegistroServicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroServicios.Designer.cs">
+    <Compile Include="UI\Registros\RegistroServicios.Designer.cs">
       <DependentUpon>RegistroServicios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroTurnos.cs">
+    <Compile Include="UI\Registros\RegistroTurnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroTurnos.Designer.cs">
+    <Compile Include="UI\Registros\RegistroTurnos.Designer.cs">
       <DependentUpon>RegistroTurnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroUsuarios.cs">
+    <Compile Include="UI\Registros\RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroUsuarios.Designer.cs">
+    <Compile Include="UI\Registros\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\BarberShopDataSet.Designer.cs">
+    <Compile Include="UI\Reportes\DataSetBarberShop.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BarberShopDataSet.xsd</DependentUpon>
+      <DependentUpon>DataSetBarberShop.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\ReporteFactura.cs">
+    <Compile Include="UI\Reportes\ReporteFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteFactura.Designer.cs">
+    <Compile Include="UI\Reportes\ReporteFactura.Designer.cs">
       <DependentUpon>ReporteFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
-    <EmbeddedResource Include="Consultas\ConsultaClientes.resx">
+    <EmbeddedResource Include="UI\Consultas\ConsultaClientes.resx">
       <DependentUpon>ConsultaClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ConsultaFactura.resx">
+    <EmbeddedResource Include="UI\Consultas\ConsultaFactura.resx">
       <DependentUpon>ConsultaFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ConsultaPeluqueros.resx">
+    <EmbeddedResource Include="UI\Consultas\ConsultaPeluqueros.resx">
       <DependentUpon>ConsultaPeluqueros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ConsultaServicios.resx">
+    <EmbeddedResource Include="UI\Consultas\ConsultaServicios.resx">
       <DependentUpon>ConsultaServicios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ConsultaTurnos.resx">
+    <EmbeddedResource Include="UI\Consultas\ConsultaTurnos.resx">
       <DependentUpon>ConsultaTurnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ConsultaUsuarios.resx">
+    <EmbeddedResource Include="UI\Consultas\ConsultaUsuarios.resx">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Log.resx">
@@ -201,31 +201,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registros\MenuPrincipal.resx">
+    <EmbeddedResource Include="UI\Registros\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroClientes.resx">
+    <EmbeddedResource Include="UI\Registros\RegistroClientes.resx">
       <DependentUpon>RegistroClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroFactura.resx">
+    <EmbeddedResource Include="UI\Registros\RegistroFactura.resx">
       <DependentUpon>RegistroFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroPeluqueros.resx">
+    <EmbeddedResource Include="UI\Registros\RegistroPeluqueros.resx">
       <DependentUpon>RegistroPeluqueros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroServicios.resx">
+    <EmbeddedResource Include="UI\Registros\RegistroServicios.resx">
       <DependentUpon>RegistroServicios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroTurnos.resx">
+    <EmbeddedResource Include="UI\Registros\RegistroTurnos.resx">
       <DependentUpon>RegistroTurnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroUsuarios.resx">
+    <EmbeddedResource Include="UI\Registros\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteFactura.resx">
+    <EmbeddedResource Include="UI\Reportes\Factura.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\ReporteFactura.resx">
       <DependentUpon>ReporteFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportFactura.rdlc" />
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -237,16 +237,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Reportes\BarberShopDataSet.xsc">
-      <DependentUpon>BarberShopDataSet.xsd</DependentUpon>
+    <None Include="UI\Reportes\DataSetBarberShop.xsc">
+      <DependentUpon>DataSetBarberShop.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\BarberShopDataSet.xsd">
+    <None Include="UI\Reportes\DataSetBarberShop.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BarberShopDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetBarberShop.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reportes\BarberShopDataSet.xss">
-      <DependentUpon>BarberShopDataSet.xsd</DependentUpon>
+    <None Include="UI\Reportes\DataSetBarberShop.xss">
+      <DependentUpon>DataSetBarberShop.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

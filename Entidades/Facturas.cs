@@ -11,14 +11,13 @@ namespace Entidades
         [Key]
         public int FacturaId { get; set; }
         public int ServicioId { get; set; }
-
         public string NombreCliente { get; set; }
         public double DescuentoPorciento { get; set; }
         public string Comentario { get; set; }
         public int Impuesto { get; set; }
         public DateTime Fecha { get; set; }
         public string TipoPago { get; set; }
-        public Double Total { get; set; }
+        public double Total { get; set; }
         public double SubTotal { get; set; }
 
 

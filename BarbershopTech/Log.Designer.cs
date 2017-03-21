@@ -82,9 +82,9 @@
             this.nombre.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre.Location = new System.Drawing.Point(336, 63);
             this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(58, 18);
+            this.nombre.Size = new System.Drawing.Size(48, 18);
             this.nombre.TabIndex = 1430;
-            this.nombre.Text = "Nombre";
+            this.nombre.Text = "Email";
             // 
             // label1
             // 

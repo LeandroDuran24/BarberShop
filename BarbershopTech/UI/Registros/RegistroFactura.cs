@@ -30,7 +30,7 @@ namespace BarbershopTech.Registros
 
         private void RegistroFactura_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         public bool Validar()
@@ -61,6 +61,11 @@ namespace BarbershopTech.Registros
             textBoxSub.Clear();
             textBoxfacturaId.Clear();
             textBoxForma.Clear();
+            ProductoIdtextBox.Clear();
+            NombreProductotextBox.Clear();
+            PrecioProductotextBox.Clear();
+            ImportetextBox.Clear();
+            CantidadnumericUpDown.Value = 0;
             dateTimePickerDesde.Value = DateTime.Now;
             dataGridView1.DataSource = null;
             errorProvider1.Clear();
@@ -111,6 +116,12 @@ namespace BarbershopTech.Registros
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = nueva.ServicioList.ToList();
+        }
+
+        public void LlenarDataGridProductos(Facturas nueva)
+        {
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = nueva.ProductoList.ToList();
         }
 
         public void SacarCuenta()
@@ -231,6 +242,52 @@ namespace BarbershopTech.Registros
         private void comboBoxServicios_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void buttonAgregarProducto_Click(object sender, EventArgs e)
+        {
+            int id = Utilidades.TOINT(ProductoIdtextBox.Text);
+            Productos producto = new Productos();
+            factura.ProductoList.Add(BLL.ProductoBLL.Buscar(p=> p.ProductoId == id));
+
+            LlenarDataGridProductos(factura);
+        }
+
+        private void ProductoIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int id = Utilidades.TOINT(ProductoIdtextBox.Text);
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+               Productos producto=  BLL.ProductoBLL.Buscar(p => p.ProductoId == id);
+
+                if (producto != null)
+                {
+                    NombreProductotextBox.Text =producto.Descripcion;
+                    PrecioProductotextBox.Text = producto.PrecioVenta.ToString();
+                    CantidadnumericUpDown.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No existe");
+            }
+        }
+
+        private void CantidadnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            Productos producto = new Productos();
+            if (CantidadnumericUpDown.Value > 0)
+            {
+                decimal importe = Utilidades.TOINT(PrecioProductotextBox.Text) * CantidadnumericUpDown.Value;
+                ImportetextBox.Text = importe.ToString();
+            }
+            else
+            {
+                ImportetextBox.Text =0.00.ToString();
+            }
+
+            buttonAgregarProducto.Focus();
         }
     }
 }

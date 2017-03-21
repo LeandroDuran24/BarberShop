@@ -159,5 +159,10 @@ namespace BarbershopTech.Registros
         {
 
         }
+
+        private void PeluqueroidtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
+        }
     }
 }

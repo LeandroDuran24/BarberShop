@@ -35,6 +35,7 @@
             this.registroClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +49,7 @@
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelUsuarios = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(143, 478);
+            this.menuStrip1.Size = new System.Drawing.Size(143, 489);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,7 +78,8 @@
             this.registrarUsuariosToolStripMenuItem,
             this.registroClientesToolStripMenuItem,
             this.empleadosToolStripMenuItem,
-            this.serviciosToolStripMenuItem});
+            this.serviciosToolStripMenuItem,
+            this.productosToolStripMenuItem});
             this.registrosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrosToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
@@ -113,6 +116,13 @@
             this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.serviciosToolStripMenuItem.Text = "Servicios";
             this.serviciosToolStripMenuItem.Click += new System.EventHandler(this.serviciosToolStripMenuItem_Click);
+            // 
+            // productosToolStripMenuItem
+            // 
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -231,11 +241,24 @@
             this.salirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // labelUsuarios
+            // 
+            this.labelUsuarios.AutoSize = true;
+            this.labelUsuarios.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsuarios.Font = new System.Drawing.Font("Colonna MT", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuarios.ForeColor = System.Drawing.Color.Red;
+            this.labelUsuarios.Location = new System.Drawing.Point(-4, 467);
+            this.labelUsuarios.Name = "labelUsuarios";
+            this.labelUsuarios.Size = new System.Drawing.Size(78, 22);
+            this.labelUsuarios.TabIndex = 6;
+            this.labelUsuarios.Text = "Usuario";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 478);
+            this.ClientSize = new System.Drawing.Size(1006, 489);
+            this.Controls.Add(this.labelUsuarios);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -243,6 +266,7 @@
             this.Text = "MenuPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
+            this.VisibleChanged += new System.EventHandler(this.MenuPrincipal_VisibleChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -270,5 +294,7 @@
         private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+        private System.Windows.Forms.Label labelUsuarios;
     }
 }

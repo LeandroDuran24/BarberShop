@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using BarbershopTech.Consultas;
+using BarbershopTech.UI.Registros;
 using BarbershopTech.UI.Reportes;
+using Entidades;
 
 namespace BarbershopTech.Registros
 {
@@ -10,6 +12,7 @@ namespace BarbershopTech.Registros
         public MenuPrincipal()
         {
             InitializeComponent();
+            LlenarLabel();
         }
 
         private RegistroClientes cliente = null;
@@ -17,6 +20,14 @@ namespace BarbershopTech.Registros
         private RegistroServicios servicio = null;
         private RegistroUsuarios usuario = null;
         private RegistroTurnos turno = null;
+        private RegistroProductos producto = null;
+        private RegistroFactura factura = null;
+        private ConsultaClientes cCliente = null;
+        private ConsultaFactura cFactura = null;
+        private ConsultaPeluqueros cPeluqueros = null;
+        private ConsultaServicios cServicios = null;
+        private ConsultaTurnos cTurnos = null;
+        private ConsultaUsuarios cUsuario = null;
 
         private RegistroClientes FormInstanceCliente
         {
@@ -88,6 +99,120 @@ namespace BarbershopTech.Registros
             }
         }
 
+        private RegistroFactura FormInstanceFactura
+        {
+            get
+            {
+                if (factura == null)
+                {
+                    factura = new RegistroFactura();
+                    factura.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return factura;
+            }
+        }
+
+        private RegistroProductos FormInstanceProductos
+        {
+            get
+            {
+                if (producto == null)
+                {
+                    producto = new RegistroProductos();
+                    producto.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return producto;
+            }
+        }
+
+        private ConsultaClientes InstanceConsultaClientes
+        {
+            get
+            {
+                if (cCliente == null)
+                {
+                    cCliente = new ConsultaClientes();
+                    cCliente.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return cCliente;
+            }
+        }
+
+        private ConsultaUsuarios InstanceConsultaUsuarios
+        {
+            get
+            {
+                if (cUsuario == null)
+                {
+                    cUsuario = new ConsultaUsuarios();
+                    cUsuario.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return cUsuario;
+            }
+        }
+
+        private ConsultaServicios InstanceConsultaServicio
+        {
+            get
+            {
+                if (cServicios == null)
+                {
+                    cServicios = new ConsultaServicios();
+                    cServicios.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return cServicios;
+            }
+        }
+
+        private ConsultaTurnos InstanceConsultaTurnos
+        {
+            get
+            {
+                if (cTurnos == null)
+                {
+                    cTurnos = new ConsultaTurnos();
+                    cTurnos.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return cTurnos;
+            }
+        }
+
+        private ConsultaPeluqueros InstanceConsultaPeluqueros
+
+        {
+            get
+            {
+                if (cPeluqueros == null)
+                {
+                    cPeluqueros = new ConsultaPeluqueros();
+                    cPeluqueros.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return cPeluqueros;
+            }
+        }
+
+        private ConsultaFactura InstanceConsultaFactura
+
+        {
+            get
+            {
+                if (cFactura == null)
+                {
+                    cFactura = new ConsultaFactura();
+                    cFactura.Disposed += new EventHandler(form_Disposed);
+                }
+
+                return cFactura;
+            }
+        }
+
         void form_Disposed(object sender, EventArgs e)
         {
             cliente = null;
@@ -95,11 +220,35 @@ namespace BarbershopTech.Registros
             servicio = null;
             usuario = null;
             turno = null;
+            factura = null;
+            producto = null;
+
+            cCliente = null;
+            cFactura = null;
+            cUsuario = null;
+            cPeluqueros = null;
+            cServicios = null;
+            cTurnos = null;
+
+
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-           
+
+        }
+
+        public void LlenarLabel()
+        {
+            labelUsuarios.Text = Log.Label().Tipo;
+        }
+
+        public void Permisos()
+        {
+            if (Log.Label().Tipo != "Admin")
+                registrarUsuariosToolStripMenuItem.Enabled = false;
+            else
+                registrarUsuariosToolStripMenuItem.Enabled = true;
         }
 
         private void registrarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,34 +289,61 @@ namespace BarbershopTech.Registros
             r.BringToFront();
         }
 
-        //falta esta parte por la instancia de la ventana
+        private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroFactura r =this.FormInstanceFactura;
+            r.Show();
+            r.BringToFront();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroProductos r =this.FormInstanceProductos;
+            r.Show();
+            r.BringToFront();
+        }
+        //consultas
+
         private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultaUsuarios c = new ConsultaUsuarios();
+            ConsultaUsuarios c = this.InstanceConsultaUsuarios;
             c.Show();
+            c.BringToFront();
         }
 
         private void consultaEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultaClientes c = new ConsultaClientes();
+            ConsultaClientes c = this.InstanceConsultaClientes;
             c.Show();
+            c.BringToFront();
         }
 
         private void consultaDeTurnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultaTurnos c = new ConsultaTurnos();
+            ConsultaTurnos c = this.InstanceConsultaTurnos;
             c.Show();
+            c.BringToFront();
         }
 
         private void consultaDePeluquerosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultaPeluqueros c = new ConsultaPeluqueros();
+            ConsultaPeluqueros c = this.InstanceConsultaPeluqueros;
+            c.Show();
+            c.BringToFront();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaFactura cf = this.InstanceConsultaFactura;
+            cf.Show();
+            cf.BringToFront();
         }
 
         private void serviciosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ConsultaServicios c = new ConsultaServicios();
+            ConsultaServicios c = this.InstanceConsultaServicio;
             c.Show();
+            c.BringToFront();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -175,17 +351,9 @@ namespace BarbershopTech.Registros
             this.Close();
         }
 
-        private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RegistroFactura r = new RegistroFactura();
-            r.Show();
-        }
+        //falta la consulta de productos.
 
-        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaFactura cf = new ConsultaFactura();
-            cf.Show();
-        }
+
 
         private void cambiarCuentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -198,6 +366,18 @@ namespace BarbershopTech.Registros
         {
             ReporteFactura r = new ReporteFactura();
             r.Show();
+        }
+
+
+
+        private void labelUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuPrincipal_VisibleChanged(object sender, EventArgs e)
+        {
+            Permisos();
         }
     }
 }

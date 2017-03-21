@@ -240,7 +240,12 @@ namespace BarbershopTech.Registros
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
+            Limpiar();
+        }
 
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

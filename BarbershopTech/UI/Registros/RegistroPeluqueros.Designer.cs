@@ -82,6 +82,7 @@
             this.PeluqueroidtextBox.Name = "PeluqueroidtextBox";
             this.PeluqueroidtextBox.Size = new System.Drawing.Size(90, 20);
             this.PeluqueroidtextBox.TabIndex = 52;
+            this.PeluqueroidtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PeluqueroidtextBox_KeyPress);
             // 
             // nombretextBox3
             // 

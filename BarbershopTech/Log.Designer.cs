@@ -163,6 +163,7 @@
             this.MinimizeBox = false;
             this.Name = "Log";
             this.Text = "Log";
+            this.Load += new System.EventHandler(this.Log_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

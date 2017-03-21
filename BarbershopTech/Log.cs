@@ -14,6 +14,8 @@ namespace BarbershopTech
 {
     public partial class Log : Form
     {
+        private static Usuarios usuarioLabel = null;
+
         public Log()
         {
             InitializeComponent();
@@ -39,6 +41,17 @@ namespace BarbershopTech
         {
             NombretextBox.Clear();
             ContraseñamaskedTextBox.Clear();
+
+        }
+
+        public static Usuarios Label()
+        {
+            return usuarioLabel;
+        }
+
+        private void Log_Load(object sender, EventArgs e)
+        {
+           
         }
 
         public static void ValidarNumero(KeyPressEventArgs pE)
@@ -88,12 +101,12 @@ namespace BarbershopTech
             this.Close();
         }
 
-
         private void entrar_Click(object sender, EventArgs e)
         {
 
             Usuarios usuario = null;
             usuario = BLL.UsuarioBLL.Buscar(p => p.Email == NombretextBox.Text);
+            usuarioLabel = usuario;
 
             if (!Validar())
             {
@@ -101,15 +114,15 @@ namespace BarbershopTech
             }
             else
             {
-
-
                 if (usuario != null)
                 {
                     if (usuario.Contrasena == ContraseñamaskedTextBox.Text)
                     {
                         MenuPrincipal menu = new MenuPrincipal();
+                    
                         menu.Show();
                         this.Hide();
+                        
                     }
                     else
                     {
@@ -134,12 +147,46 @@ namespace BarbershopTech
 
         private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            ValidarLetras(e);
         }
 
         private void ContraseñamaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarNumero(e);
+
+           Usuarios usuario = null;
+           /* usuario = BLL.UsuarioBLL.Buscar(p => p.Email == NombretextBox.Text);
+
+            if (!Validar())
+            {
+                MessageBox.Show("Favor Llenar");
+            }
+            else
+            {
+                if (usuario != null)
+                {
+                    if (usuario.Contrasena == ContraseñamaskedTextBox.Text)
+                    {
+                        MenuPrincipal menu = new MenuPrincipal();
+                        menu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La Clave no Coincide con el Email");
+                        Limpiar();
+                        NombretextBox.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No existe ese Usuario");
+                    Limpiar();
+                    NombretextBox.Focus();
+                }
+            }*/
         }
+
+        
     }
 }

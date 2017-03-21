@@ -51,6 +51,7 @@
     <Compile Include="ClienteBLL.cs" />
     <Compile Include="FacturaBLL.cs" />
     <Compile Include="PeluqueroBLL.cs" />
+    <Compile Include="ProductoBLL.cs" />
     <Compile Include="TipoServicioBLL.cs" />
     <Compile Include="TurnoBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />

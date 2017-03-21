@@ -60,11 +60,27 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.buttonAgregarProducto = new System.Windows.Forms.Button();
+            this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ProductoIdtextBox = new System.Windows.Forms.TextBox();
+            this.NombreProductotextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ImportetextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.PrecioProductotextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -74,7 +90,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(9, 25);
+            this.label5.Location = new System.Drawing.Point(1, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 18);
@@ -83,7 +99,7 @@
             // 
             // textBoxfacturaId
             // 
-            this.textBoxfacturaId.Location = new System.Drawing.Point(94, 26);
+            this.textBoxfacturaId.Location = new System.Drawing.Point(86, 1);
             this.textBoxfacturaId.Name = "textBoxfacturaId";
             this.textBoxfacturaId.Size = new System.Drawing.Size(100, 20);
             this.textBoxfacturaId.TabIndex = 51;
@@ -95,7 +111,7 @@
             this.buttonBuscar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
             this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscar.Location = new System.Drawing.Point(200, 26);
+            this.buttonBuscar.Location = new System.Drawing.Point(192, 1);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(60, 20);
             this.buttonBuscar.TabIndex = 9;
@@ -116,9 +132,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBoxNombre);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 54);
+            this.panel1.Location = new System.Drawing.Point(4, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(768, 204);
+            this.panel1.Size = new System.Drawing.Size(749, 204);
             this.panel1.TabIndex = 68;
             // 
             // textBoxForma
@@ -168,14 +184,14 @@
             // 
             this.textBoxPorcientoDescuento.BackColor = System.Drawing.Color.White;
             this.textBoxPorcientoDescuento.ForeColor = System.Drawing.Color.Black;
-            this.textBoxPorcientoDescuento.Location = new System.Drawing.Point(626, 50);
+            this.textBoxPorcientoDescuento.Location = new System.Drawing.Point(615, 53);
             this.textBoxPorcientoDescuento.Name = "textBoxPorcientoDescuento";
             this.textBoxPorcientoDescuento.Size = new System.Drawing.Size(123, 20);
             this.textBoxPorcientoDescuento.TabIndex = 5;
             // 
             // textBoxImpuesto
             // 
-            this.textBoxImpuesto.Location = new System.Drawing.Point(626, 92);
+            this.textBoxImpuesto.Location = new System.Drawing.Point(615, 93);
             this.textBoxImpuesto.Name = "textBoxImpuesto";
             this.textBoxImpuesto.Size = new System.Drawing.Size(123, 20);
             this.textBoxImpuesto.TabIndex = 6;
@@ -239,7 +255,7 @@
             this.dateTimePickerDesde.CustomFormat = "yyy/MM/dd";
             this.dateTimePickerDesde.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(647, 23);
+            this.dateTimePickerDesde.Location = new System.Drawing.Point(639, 2);
             this.dateTimePickerDesde.Name = "dateTimePickerDesde";
             this.dateTimePickerDesde.Size = new System.Drawing.Size(114, 25);
             this.dateTimePickerDesde.TabIndex = 69;
@@ -251,7 +267,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(599, 30);
+            this.label1.Location = new System.Drawing.Point(591, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 18);
@@ -267,9 +283,9 @@
             this.groupBox1.Controls.Add(this.comboBoxServicios);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 297);
+            this.groupBox1.Location = new System.Drawing.Point(4, 253);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 184);
+            this.groupBox1.Size = new System.Drawing.Size(360, 244);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle de Servicios ";
@@ -278,9 +294,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(137, 53);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 49);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(298, 125);
+            this.dataGridView1.Size = new System.Drawing.Size(325, 189);
             this.dataGridView1.TabIndex = 81;
             // 
             // buttonAgregar
@@ -290,7 +306,7 @@
             this.buttonAgregar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAgregar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAgregar.Image")));
             this.buttonAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAgregar.Location = new System.Drawing.Point(334, 22);
+            this.buttonAgregar.Location = new System.Drawing.Point(230, 25);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(101, 25);
             this.buttonAgregar.TabIndex = 8;
@@ -303,9 +319,9 @@
             // 
             this.comboBoxServicios.ForeColor = System.Drawing.Color.Black;
             this.comboBoxServicios.FormattingEnabled = true;
-            this.comboBoxServicios.Location = new System.Drawing.Point(137, 23);
+            this.comboBoxServicios.Location = new System.Drawing.Point(58, 25);
             this.comboBoxServicios.Name = "comboBoxServicios";
-            this.comboBoxServicios.Size = new System.Drawing.Size(176, 25);
+            this.comboBoxServicios.Size = new System.Drawing.Size(166, 25);
             this.comboBoxServicios.TabIndex = 7;
             this.comboBoxServicios.Text = "Seleccione";
             this.comboBoxServicios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxServicios_KeyPress);
@@ -317,7 +333,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(72, 21);
+            this.label7.Location = new System.Drawing.Point(4, 28);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 18);
@@ -331,7 +347,7 @@
             this.buttonNew.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNew.Image = ((System.Drawing.Image)(resources.GetObject("buttonNew.Image")));
             this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNew.Location = new System.Drawing.Point(180, 496);
+            this.buttonNew.Location = new System.Drawing.Point(149, 674);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(112, 41);
             this.buttonNew.TabIndex = 10;
@@ -347,7 +363,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(413, 496);
+            this.Eliminarbutton.Location = new System.Drawing.Point(382, 674);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(112, 41);
             this.Eliminarbutton.TabIndex = 11;
@@ -362,7 +378,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(298, 496);
+            this.Guardarbutton.Location = new System.Drawing.Point(267, 674);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(109, 41);
             this.Guardarbutton.TabIndex = 9;
@@ -378,9 +394,9 @@
             this.panel2.Controls.Add(this.textBoxSub);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(602, 297);
+            this.panel2.Location = new System.Drawing.Point(544, 632);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 178);
+            this.panel2.Size = new System.Drawing.Size(198, 105);
             this.panel2.TabIndex = 75;
             // 
             // textBoxTotal
@@ -390,7 +406,7 @@
             this.textBoxTotal.Location = new System.Drawing.Point(80, 65);
             this.textBoxTotal.Multiline = true;
             this.textBoxTotal.Name = "textBoxTotal";
-            this.textBoxTotal.Size = new System.Drawing.Size(95, 25);
+            this.textBoxTotal.Size = new System.Drawing.Size(107, 25);
             this.textBoxTotal.TabIndex = 83;
             this.textBoxTotal.Text = "$$$";
             // 
@@ -401,7 +417,7 @@
             this.textBoxSub.Location = new System.Drawing.Point(83, 30);
             this.textBoxSub.Multiline = true;
             this.textBoxSub.Name = "textBoxSub";
-            this.textBoxSub.Size = new System.Drawing.Size(95, 25);
+            this.textBoxSub.Size = new System.Drawing.Size(104, 25);
             this.textBoxSub.TabIndex = 82;
             this.textBoxSub.Text = "$$$";
             // 
@@ -437,11 +453,158 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.CantidadnumericUpDown);
+            this.groupBox2.Controls.Add(this.ProductoIdtextBox);
+            this.groupBox2.Controls.Add(this.NombreProductotextBox);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.ImportetextBox);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.PrecioProductotextBox);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.buttonAgregarProducto);
+            this.groupBox2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(370, 253);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(587, 244);
+            this.groupBox2.TabIndex = 82;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detalle de Productos";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(17, 61);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(564, 177);
+            this.dataGridView2.TabIndex = 81;
+            // 
+            // buttonAgregarProducto
+            // 
+            this.buttonAgregarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregarProducto.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("buttonAgregarProducto.Image")));
+            this.buttonAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAgregarProducto.Location = new System.Drawing.Point(492, 31);
+            this.buttonAgregarProducto.Name = "buttonAgregarProducto";
+            this.buttonAgregarProducto.Size = new System.Drawing.Size(95, 25);
+            this.buttonAgregarProducto.TabIndex = 8;
+            this.buttonAgregarProducto.Text = "Agregar";
+            this.buttonAgregarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAgregarProducto.UseVisualStyleBackColor = false;
+            this.buttonAgregarProducto.Click += new System.EventHandler(this.buttonAgregarProducto_Click);
+            // 
+            // CantidadnumericUpDown
+            // 
+            this.CantidadnumericUpDown.BackColor = System.Drawing.Color.White;
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(322, 32);
+            this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
+            this.CantidadnumericUpDown.Size = new System.Drawing.Size(71, 24);
+            this.CantidadnumericUpDown.TabIndex = 90;
+            this.CantidadnumericUpDown.ValueChanged += new System.EventHandler(this.CantidadnumericUpDown_ValueChanged);
+            // 
+            // ProductoIdtextBox
+            // 
+            this.ProductoIdtextBox.BackColor = System.Drawing.Color.White;
+            this.ProductoIdtextBox.Location = new System.Drawing.Point(17, 32);
+            this.ProductoIdtextBox.Name = "ProductoIdtextBox";
+            this.ProductoIdtextBox.Size = new System.Drawing.Size(52, 24);
+            this.ProductoIdtextBox.TabIndex = 89;
+            this.ProductoIdtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductoIdtextBox_KeyPress);
+            // 
+            // NombreProductotextBox
+            // 
+            this.NombreProductotextBox.BackColor = System.Drawing.Color.White;
+            this.NombreProductotextBox.Enabled = false;
+            this.NombreProductotextBox.Location = new System.Drawing.Point(75, 32);
+            this.NombreProductotextBox.Name = "NombreProductotextBox";
+            this.NombreProductotextBox.ReadOnly = true;
+            this.NombreProductotextBox.Size = new System.Drawing.Size(145, 24);
+            this.NombreProductotextBox.TabIndex = 88;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(419, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.TabIndex = 87;
+            this.label3.Text = "Importe";
+            // 
+            // ImportetextBox
+            // 
+            this.ImportetextBox.BackColor = System.Drawing.Color.White;
+            this.ImportetextBox.Enabled = false;
+            this.ImportetextBox.Location = new System.Drawing.Point(399, 31);
+            this.ImportetextBox.Name = "ImportetextBox";
+            this.ImportetextBox.ReadOnly = true;
+            this.ImportetextBox.Size = new System.Drawing.Size(81, 24);
+            this.ImportetextBox.TabIndex = 86;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(334, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.TabIndex = 85;
+            this.label12.Text = "Cantidad";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(246, 12);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(48, 17);
+            this.label13.TabIndex = 84;
+            this.label13.Text = "Precio";
+            // 
+            // PrecioProductotextBox
+            // 
+            this.PrecioProductotextBox.BackColor = System.Drawing.Color.White;
+            this.PrecioProductotextBox.Enabled = false;
+            this.PrecioProductotextBox.Location = new System.Drawing.Point(226, 32);
+            this.PrecioProductotextBox.Name = "PrecioProductotextBox";
+            this.PrecioProductotextBox.ReadOnly = true;
+            this.PrecioProductotextBox.Size = new System.Drawing.Size(81, 24);
+            this.PrecioProductotextBox.TabIndex = 83;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Location = new System.Drawing.Point(140, 12);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(64, 17);
+            this.label14.TabIndex = 82;
+            this.label14.Text = "Producto";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Location = new System.Drawing.Point(20, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 17);
+            this.label15.TabIndex = 83;
+            this.label15.Text = "Codigo";
+            // 
             // RegistroFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 549);
+            this.ClientSize = new System.Drawing.Size(994, 727);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.Eliminarbutton);
@@ -459,6 +622,7 @@
             this.MinimizeBox = false;
             this.Name = "RegistroFactura";
             this.Text = "RegistroFactura";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RegistroFactura_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -468,6 +632,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,5 +673,18 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button buttonAgregarProducto;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
+        private System.Windows.Forms.TextBox ProductoIdtextBox;
+        private System.Windows.Forms.TextBox NombreProductotextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox ImportetextBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox PrecioProductotextBox;
+        private System.Windows.Forms.Label label14;
     }
 }

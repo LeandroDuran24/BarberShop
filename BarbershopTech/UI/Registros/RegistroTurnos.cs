@@ -208,7 +208,9 @@ namespace BarbershopTech.Registros
             e.Handled = true;
         }
 
-
-        
+        private void IdtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
+        }
     }
 }

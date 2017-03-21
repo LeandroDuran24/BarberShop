@@ -136,5 +136,10 @@ namespace BarbershopTech.Consultas
         {
             SeleccionarCombo();
         }
+
+        private void ConsultaClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

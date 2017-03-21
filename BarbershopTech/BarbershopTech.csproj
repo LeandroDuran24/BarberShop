@@ -140,6 +140,12 @@
     <Compile Include="UI\Registros\RegistroPeluqueros.Designer.cs">
       <DependentUpon>RegistroPeluqueros.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\RegistroProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistroProductos.Designer.cs">
+      <DependentUpon>RegistroProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RegistroServicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroPeluqueros.resx">
       <DependentUpon>RegistroPeluqueros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistroProductos.resx">
+      <DependentUpon>RegistroProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroServicios.resx">
       <DependentUpon>RegistroServicios.cs</DependentUpon>

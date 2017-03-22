@@ -19,6 +19,7 @@ namespace BarbershopTech
         public Log()
         {
             InitializeComponent();
+           
         }
 
         public bool Validar()

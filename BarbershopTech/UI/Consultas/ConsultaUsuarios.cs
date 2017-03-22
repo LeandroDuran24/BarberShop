@@ -55,7 +55,7 @@ namespace BarbershopTech.Consultas
                 dataGridView1.DataSource = BLL.UsuarioBLL.GetListTodo();
             }
 
-            if (comboBox1.SelectedIndex == 1)
+            else if (comboBox1.SelectedIndex == 1)
             {
                 if (!ValidarTextBox())
                 {
@@ -68,7 +68,7 @@ namespace BarbershopTech.Consultas
 
             }
 
-            if (comboBox1.SelectedIndex == 2)
+            else if (comboBox1.SelectedIndex == 2)
             {
                 if (!ValidarTextBox())
                 {
@@ -86,6 +86,34 @@ namespace BarbershopTech.Consultas
         private void Filtrar_Click(object sender, EventArgs e)
         {
             SeleccionarCombo();
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                dataGridView1.DataSource = BLL.UsuarioBLL.GetListTodo();
+                BuscartextBox.Enabled = false;
+            }
+
+            else if (comboBox1.SelectedIndex == 1)
+            {
+
+                dataGridView1.DataSource = BLL.UsuarioBLL.GetList(p => p.Nombres == BuscartextBox.Text);
+                BuscartextBox.Enabled = true;
+            }
+
+            else if (comboBox1.SelectedIndex == 2)
+            {
+
+                dataGridView1.DataSource = BLL.UsuarioBLL.GetList(p => p.UsuarioId == Utilidades.TOINT(BuscartextBox.Text));
+                BuscartextBox.Enabled = true;
+            }
         }
     }
 }

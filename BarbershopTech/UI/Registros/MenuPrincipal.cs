@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using BarbershopTech.Consultas;
-using BarbershopTech.UI.Registros;
 using BarbershopTech.UI.Reportes;
-using Entidades;
 
 namespace BarbershopTech.Registros
 {
@@ -20,7 +18,7 @@ namespace BarbershopTech.Registros
         private RegistroServicios servicio = null;
         private RegistroUsuarios usuario = null;
         private RegistroTurnos turno = null;
-        private RegistroProductos producto = null;
+      
         private RegistroFactura factura = null;
         private ConsultaClientes cCliente = null;
         private ConsultaFactura cFactura = null;
@@ -110,20 +108,6 @@ namespace BarbershopTech.Registros
                 }
 
                 return factura;
-            }
-        }
-
-        private RegistroProductos FormInstanceProductos
-        {
-            get
-            {
-                if (producto == null)
-                {
-                    producto = new RegistroProductos();
-                    producto.Disposed += new EventHandler(form_Disposed);
-                }
-
-                return producto;
             }
         }
 
@@ -221,8 +205,6 @@ namespace BarbershopTech.Registros
             usuario = null;
             turno = null;
             factura = null;
-            producto = null;
-
             cCliente = null;
             cFactura = null;
             cUsuario = null;
@@ -241,6 +223,7 @@ namespace BarbershopTech.Registros
         public void LlenarLabel()
         {
             labelUsuarios.Text = Log.Label().Tipo;
+            
         }
 
         public void Permisos()
@@ -298,9 +281,7 @@ namespace BarbershopTech.Registros
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroProductos r =this.FormInstanceProductos;
-            r.Show();
-            r.BringToFront();
+           
         }
         //consultas
 

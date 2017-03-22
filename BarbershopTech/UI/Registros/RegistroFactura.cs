@@ -19,7 +19,8 @@ namespace BarbershopTech.Registros
             InitializeComponent();
             Limpiar();
             LlenarComboNombre();
-            LlenarComboServicio();
+            LlenarLabel();
+            LlenarComboPago();
 
         }
 
@@ -30,7 +31,13 @@ namespace BarbershopTech.Registros
 
         private void RegistroFactura_Load(object sender, EventArgs e)
         {
-          
+
+        }
+
+        public void LlenarLabel()
+        {
+            labelAtendido.Text = Log.Label().Nombres;
+
         }
 
         public bool Validar()
@@ -40,12 +47,12 @@ namespace BarbershopTech.Registros
                 errorProvider1.SetError(comboBoxNombre, "Favor Llenar");
                 return false;
             }
-
-            if (string.IsNullOrEmpty(comboBoxServicios.Text))
+            if (string.IsNullOrEmpty(ProductoIdtextBox.Text))
             {
-                errorProvider1.SetError(comboBoxServicios, "Favor Llenar");
+                errorProvider1.SetError(ProductoIdtextBox, "Favor Llenar");
                 return false;
             }
+
 
             return true;
         }
@@ -94,7 +101,7 @@ namespace BarbershopTech.Registros
 
         public void Limpiar()
         {
-            comboBoxServicios.Text = null;
+
             comboBoxNombre.Text = null;
             textBoxComentario.Clear();
             textBoxPorcientoDescuento.Clear();
@@ -102,15 +109,14 @@ namespace BarbershopTech.Registros
             textBoxTotal.Clear();
             textBoxSub.Clear();
             textBoxfacturaId.Clear();
-            textBoxForma.Clear();
+            comboBoxPago.Text = null;
             ProductoIdtextBox.Clear();
             NombreProductotextBox.Clear();
             PrecioProductotextBox.Clear();
-            ImportetextBox.Clear();
-            CantidadnumericUpDown.Value = 0;
             dateTimePickerDesde.Value = DateTime.Now;
             dataGridView1.DataSource = null;
             errorProvider1.Clear();
+            ProductoIdtextBox.Clear();
 
             factura = new Facturas();
         }
@@ -126,30 +132,35 @@ namespace BarbershopTech.Registros
                 comboBoxNombre.SelectedIndex = -1;
         }
 
-        public void LlenarComboServicio()
+        public void LlenarComboPago()
         {
-            List<TipoServicios> lista = BLL.TipoServicioBLL.GetListTodo();
-            comboBoxServicios.DataSource = lista;
-            comboBoxServicios.DisplayMember = "Nombre";
-            comboBoxServicios.ValueMember = "ServicioId";
-            if (comboBoxServicios.Items.Count > 0)
-                comboBoxServicios.SelectedIndex = -1;
+            comboBoxPago.Items.Insert(0, "Credito");
+            comboBoxPago.Items.Insert(1, "Contado");
+            comboBoxPago.DataSource = comboBoxPago.Items;
+            comboBoxPago.DisplayMember = "Credito";
 
+            if (comboBoxPago.Items.Count > 0)
+                comboBoxPago.SelectedIndex = -1;
         }
 
         public Facturas LlenarCampos()
         {
-            
+
             factura.NombreCliente = comboBoxNombre.Text;
             factura.FacturaId = Utilidades.TOINT(textBoxfacturaId.Text);
             factura.Comentario = textBoxComentario.Text;
-            factura.ServicioId = Utilidades.TOINT(comboBoxServicios.SelectedValue.ToString());
+            factura.ServicioId = Utilidades.TOINT(ProductoIdtextBox.Text);
             factura.Fecha = dateTimePickerDesde.Value;
             factura.DescuentoPorciento = Utilidades.TOINT(textBoxPorcientoDescuento.Text);
             factura.Impuesto = Utilidades.TOINT(textBoxImpuesto.Text);
             factura.SubTotal = Utilidades.TOINT(textBoxSub.Text);
             factura.Total = Utilidades.TOINT(textBoxTotal.Text);
-            factura.TipoPago = textBoxForma.Text;
+            factura.TipoPago = comboBoxPago.Text;
+
+            if (comboBoxPago.SelectedIndex == 0)
+                factura.TipoPago = "Credito";
+            else
+                factura.TipoPago = "Contado";
 
             return factura;
         }
@@ -158,12 +169,6 @@ namespace BarbershopTech.Registros
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = nueva.ServicioList.ToList();
-        }
-
-        public void LlenarDataGridProductos(Facturas nueva)
-        {
-            dataGridView2.DataSource = null;
-            dataGridView2.DataSource = nueva.ProductoList.ToList();
         }
 
         public void SacarCuenta()
@@ -201,7 +206,7 @@ namespace BarbershopTech.Registros
                     textBoxTotal.Text = Total.ToString();
 
                 }
-               
+
             }
             else
             {
@@ -209,13 +214,12 @@ namespace BarbershopTech.Registros
                 Limpiar();
             }
 
-
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             int id = 0;
-           
+
             if (!Validar())
             {
                 MessageBox.Show("Favor Llenar");
@@ -254,7 +258,7 @@ namespace BarbershopTech.Registros
                 textBoxComentario.Text = factura.Comentario;
                 textBoxPorcientoDescuento.Text = Convert.ToString(factura.DescuentoPorciento.ToString());
                 textBoxImpuesto.Text = Convert.ToString(factura.Impuesto.ToString());
-                textBoxForma.Text = factura.TipoPago;
+                comboBoxPago.Text = factura.TipoPago;
                 textBoxSub.Text = Convert.ToString(factura.SubTotal.ToString());
                 textBoxTotal.Text = Convert.ToString(factura.Total.ToString());
                 LlenarDataGrid(factura);
@@ -268,9 +272,9 @@ namespace BarbershopTech.Registros
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
-            TipoServicios servicio = new TipoServicios();
-            servicio = (TipoServicios)comboBoxServicios.SelectedItem;
-            factura.ServicioList.Add(servicio);
+            int id = Utilidades.TOINT(ProductoIdtextBox.Text);
+            TipoServicios producto = new TipoServicios();
+            factura.ServicioList.Add(BLL.TipoServicioBLL.Buscar(p => p.ServicioId == id));
 
             LlenarDataGrid(factura);
             SacarCuenta();
@@ -281,20 +285,6 @@ namespace BarbershopTech.Registros
             e.Handled = true;
         }
 
-        private void comboBoxServicios_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
-        private void buttonAgregarProducto_Click(object sender, EventArgs e)
-        {
-            int id = Utilidades.TOINT(ProductoIdtextBox.Text);
-            Productos producto = new Productos();
-            factura.ProductoList.Add(BLL.ProductoBLL.Buscar(p=> p.ProductoId == id));
-
-            LlenarDataGridProductos(factura);
-        }
-
         private void ProductoIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             int id = Utilidades.TOINT(ProductoIdtextBox.Text);
@@ -302,41 +292,26 @@ namespace BarbershopTech.Registros
 
             if (e.KeyChar == (char)Keys.Enter)
             {
-               Productos producto=  BLL.ProductoBLL.Buscar(p => p.ProductoId == id);
+                TipoServicios producto = BLL.TipoServicioBLL.Buscar(p => p.ServicioId == id);
 
                 if (producto != null)
                 {
-                    NombreProductotextBox.Text =producto.Descripcion;
-                    PrecioProductotextBox.Text = producto.PrecioVenta.ToString();
-                    CantidadnumericUpDown.Focus();
+                    NombreProductotextBox.Text = producto.Nombre;
+                    PrecioProductotextBox.Text = producto.Costo.ToString();
+
+                }
+                else
+                {
+                    MessageBox.Show("No existe");
                 }
             }
-            else
-            {
-                MessageBox.Show("No existe");
-            }
-        }
 
-        private void CantidadnumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            Productos producto = new Productos();
-            if (CantidadnumericUpDown.Value > 0)
-            {
-                decimal importe = Utilidades.TOINT(PrecioProductotextBox.Text) * CantidadnumericUpDown.Value;
-                ImportetextBox.Text = importe.ToString();
-            }
-            else
-            {
-                ImportetextBox.Text =0.00.ToString();
-            }
-
-            buttonAgregarProducto.Focus();
         }
 
         private void textBoxForma_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarLetras(e);
-       }
+        }
 
         private void textBoxComentario_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -351,6 +326,45 @@ namespace BarbershopTech.Registros
         private void textBoxImpuesto_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarNumero(e);
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxComentario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxfacturaId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
+        }
+
+        private void textBoxPorcientoDescuento_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textBoxImpuesto_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textBoxMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                decimal devuelta = Convert.ToDecimal(Utilidades.TOINT(textBoxMonto.Text) - Utilidades.TOINT(textBoxTotal.Text));
+                textBoxDevuelta.Text = devuelta.ToString();
+            }
         }
     }
 }

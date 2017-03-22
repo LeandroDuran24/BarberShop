@@ -34,7 +34,6 @@ namespace BLL
         }
 
 
-
         public static bool Mofidicar(Productos criterio)
         {
             bool mod = false;

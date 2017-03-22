@@ -81,5 +81,35 @@ namespace BarbershopTech.Consultas
         {
             SeleccionarCombo();
         }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                dataGridView1.DataSource = BLL.PeluqueroBLL.GetListTodo();
+                BuscartextBox.Enabled = false;
+            }
+
+            else if (comboBox1.SelectedIndex == 1)
+            {
+
+                dataGridView1.DataSource = BLL.PeluqueroBLL.GetList(p => p.Nombre == BuscartextBox.Text);
+                BuscartextBox.Enabled = true;
+
+            }
+
+            else if (comboBox1.SelectedIndex == 2)
+            {
+
+                dataGridView1.DataSource = BLL.PeluqueroBLL.GetList(p => p.PeluqueroId == Utilidades.TOINT(BuscartextBox.Text));
+                BuscartextBox.Enabled = true;
+            }
+        }
     }
 }
+

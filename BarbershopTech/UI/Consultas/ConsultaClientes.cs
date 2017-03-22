@@ -17,6 +17,11 @@ namespace BarbershopTech.Consultas
             LLenarCombo();
         }
 
+        private void ConsultaClientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public void LLenarCombo()
         {
             comboBox1.Items.Insert(0, "Todos");
@@ -53,9 +58,10 @@ namespace BarbershopTech.Consultas
             if (comboBox1.SelectedIndex == 0)
             {
                 dataGridView1.DataSource = BLL.ClienteBLL.GetListTodo();
+                BuscartextBox.Enabled = false;
             }
 
-            if (comboBox1.SelectedIndex == 1)
+            else if (comboBox1.SelectedIndex == 1)
             {
                 if (!ValidarTextBox())
                 {
@@ -68,7 +74,7 @@ namespace BarbershopTech.Consultas
 
             }
 
-            if (comboBox1.SelectedIndex == 2)
+            else if (comboBox1.SelectedIndex == 2)
             {
                 if (!ValidarTextBox())
                 {
@@ -81,7 +87,7 @@ namespace BarbershopTech.Consultas
 
             }
 
-            if (comboBox1.SelectedIndex == 3)
+            else if (comboBox1.SelectedIndex == 3)
             {
                 if (!ValidarTextBox())
                 {
@@ -94,7 +100,7 @@ namespace BarbershopTech.Consultas
 
             }
 
-            if (comboBox1.SelectedIndex == 4)
+            else if (comboBox1.SelectedIndex == 4)
             {
                 if (!ValidarTextBox())
                 {
@@ -107,7 +113,7 @@ namespace BarbershopTech.Consultas
 
             }
 
-            if (comboBox1.SelectedIndex == 5)
+            else if (comboBox1.SelectedIndex == 5)
             {
                 if (!ValidarTextBox())
                 {
@@ -120,7 +126,7 @@ namespace BarbershopTech.Consultas
 
             }
 
-            if (comboBox1.SelectedIndex == 6)
+            else if (comboBox1.SelectedIndex == 6)
             {
                 desdedateTimePicker.Enabled = true;
                 hastadateTimePicker.Enabled = true;
@@ -137,9 +143,87 @@ namespace BarbershopTech.Consultas
             SeleccionarCombo();
         }
 
-        private void ConsultaClientes_Load(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int criterio = Utilidades.TOINT(BuscartextBox.Text);
+            if (comboBox1.SelectedIndex == 0)
+            {
+                dataGridView1.DataSource = BLL.ClienteBLL.GetListTodo();
+                BuscartextBox.Enabled = false;
+                desdedateTimePicker.Enabled = false;
+                hastadateTimePicker.Enabled = false;
+            }
 
+            else if (comboBox1.SelectedIndex == 1)
+            {
+
+                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.ClienteId == criterio);
+                BuscartextBox.Enabled = true;
+                desdedateTimePicker.Enabled = false;
+                hastadateTimePicker.Enabled = false;
+
+
+            }
+
+            else if (comboBox1.SelectedIndex == 2)
+            {
+
+                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Nombres == BuscartextBox.Text);
+                BuscartextBox.Enabled = true;
+                desdedateTimePicker.Enabled = false;
+                hastadateTimePicker.Enabled = false;
+
+
+            }
+
+            else if (comboBox1.SelectedIndex == 3)
+            {
+
+                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Apellidos == BuscartextBox.Text);
+                BuscartextBox.Enabled = true;
+                desdedateTimePicker.Enabled = false;
+                hastadateTimePicker.Enabled = false;
+
+
+            }
+
+            else if (comboBox1.SelectedIndex == 4)
+            {
+
+                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Direccion == BuscartextBox.Text);
+                BuscartextBox.Enabled = true;
+                desdedateTimePicker.Enabled = false;
+                hastadateTimePicker.Enabled = false;
+
+
+            }
+
+            else if (comboBox1.SelectedIndex == 5)
+            {
+                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Cedula == (BuscartextBox.Text));
+                BuscartextBox.Enabled = true;
+                desdedateTimePicker.Enabled = false;
+                hastadateTimePicker.Enabled = false;
+
+            }
+
+            else if (comboBox1.SelectedIndex == 6)
+            {
+                desdedateTimePicker.Enabled = true;
+                hastadateTimePicker.Enabled = true;
+                BuscartextBox.Enabled = false;
+                if (desdedateTimePicker.Value.Date > hastadateTimePicker.Value.Date)
+                {
+                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Fecha >= desdedateTimePicker.Value.Date && p.Fecha < hastadateTimePicker.Value.Date);
+
+                }
+            }
+
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

@@ -235,7 +235,7 @@
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(319, 385);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(112, 41);
+            this.Eliminarbutton.Size = new System.Drawing.Size(105, 26);
             this.Eliminarbutton.TabIndex = 57;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -251,7 +251,7 @@
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.Location = new System.Drawing.Point(204, 385);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(109, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(109, 26);
             this.Guardarbutton.TabIndex = 56;
             this.Guardarbutton.Text = "Registrar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -269,9 +269,9 @@
             this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(86, 385);
+            this.buttonNuevo.Location = new System.Drawing.Point(103, 385);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(112, 41);
+            this.buttonNuevo.Size = new System.Drawing.Size(95, 26);
             this.buttonNuevo.TabIndex = 65;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

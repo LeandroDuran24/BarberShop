@@ -50,6 +50,48 @@ namespace BarbershopTech.Registros
             return true;
         }
 
+        public static void ValidarNumero(KeyPressEventArgs pE)
+
+        {
+            if (char.IsDigit(pE.KeyChar))
+            {
+                pE.Handled = false;
+            }
+            else
+                if (char.IsControl(pE.KeyChar))
+            {
+                pE.Handled = false;
+
+            }
+            else
+            {
+                pE.Handled = true;
+            }
+        }
+
+        public static void ValidarLetras(KeyPressEventArgs pE)
+        {
+            if (char.IsLetter(pE.KeyChar))
+            {
+                pE.Handled = false;
+            }
+            else
+               if (char.IsControl(pE.KeyChar))
+            {
+                pE.Handled = false;
+
+            }
+            else
+                if (char.IsSeparator(pE.KeyChar))
+            {
+                pE.Handled = false;
+            }
+            else
+            {
+                pE.Handled = true;
+            }
+        }
+
         public void Limpiar()
         {
             comboBoxServicios.Text = null;
@@ -256,6 +298,7 @@ namespace BarbershopTech.Registros
         private void ProductoIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             int id = Utilidades.TOINT(ProductoIdtextBox.Text);
+            ValidarNumero(e);
 
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -288,6 +331,26 @@ namespace BarbershopTech.Registros
             }
 
             buttonAgregarProducto.Focus();
+        }
+
+        private void textBoxForma_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetras(e);
+       }
+
+        private void textBoxComentario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarLetras(e);
+        }
+
+        private void textBoxPorcientoDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
+        }
+
+        private void textBoxImpuesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
         }
     }
 }

@@ -53,7 +53,7 @@
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(282, 146);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(104, 41);
+            this.Eliminarbutton.Size = new System.Drawing.Size(104, 29);
             this.Eliminarbutton.TabIndex = 60;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -69,7 +69,7 @@
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.Location = new System.Drawing.Point(171, 146);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(105, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(105, 29);
             this.Guardarbutton.TabIndex = 59;
             this.Guardarbutton.Text = "Registrar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -138,7 +138,7 @@
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonNuevo.Location = new System.Drawing.Point(66, 146);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(98, 41);
+            this.buttonNuevo.Size = new System.Drawing.Size(98, 29);
             this.buttonNuevo.TabIndex = 65;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

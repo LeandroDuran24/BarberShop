@@ -105,7 +105,7 @@
             this.salir.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salir.Image = ((System.Drawing.Image)(resources.GetObject("salir.Image")));
             this.salir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.salir.Location = new System.Drawing.Point(394, 233);
+            this.salir.Location = new System.Drawing.Point(397, 233);
             this.salir.Name = "salir";
             this.salir.Size = new System.Drawing.Size(75, 29);
             this.salir.TabIndex = 1428;
@@ -124,7 +124,7 @@
             this.entrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.entrar.Location = new System.Drawing.Point(277, 233);
             this.entrar.Name = "entrar";
-            this.entrar.Size = new System.Drawing.Size(80, 29);
+            this.entrar.Size = new System.Drawing.Size(87, 29);
             this.entrar.TabIndex = 1427;
             this.entrar.Text = "Entrar";
             this.entrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

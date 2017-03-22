@@ -84,7 +84,7 @@
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(351, 278);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(102, 41);
+            this.Eliminarbutton.Size = new System.Drawing.Size(102, 32);
             this.Eliminarbutton.TabIndex = 55;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -100,7 +100,7 @@
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.Location = new System.Drawing.Point(241, 278);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(104, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(104, 32);
             this.Guardarbutton.TabIndex = 54;
             this.Guardarbutton.Text = "Registrar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -121,7 +121,7 @@
             this.IdtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IdtextBox.Location = new System.Drawing.Point(222, 41);
             this.IdtextBox.Name = "IdtextBox";
-            this.IdtextBox.Size = new System.Drawing.Size(90, 20);
+            this.IdtextBox.Size = new System.Drawing.Size(113, 20);
             this.IdtextBox.TabIndex = 56;
             this.IdtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdtextBox_KeyPress);
             // 
@@ -258,9 +258,9 @@
             this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(137, 278);
+            this.buttonNuevo.Location = new System.Drawing.Point(140, 278);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(98, 41);
+            this.buttonNuevo.Size = new System.Drawing.Size(98, 32);
             this.buttonNuevo.TabIndex = 64;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -274,9 +274,9 @@
             this.buttonBuscar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
             this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscar.Location = new System.Drawing.Point(341, 31);
+            this.buttonBuscar.Location = new System.Drawing.Point(341, 39);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(112, 36);
+            this.buttonBuscar.Size = new System.Drawing.Size(112, 26);
             this.buttonBuscar.TabIndex = 65;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

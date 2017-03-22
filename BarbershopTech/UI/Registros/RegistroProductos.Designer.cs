@@ -191,7 +191,7 @@
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonNuevo.Location = new System.Drawing.Point(61, 276);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(98, 41);
+            this.buttonNuevo.Size = new System.Drawing.Size(98, 29);
             this.buttonNuevo.TabIndex = 73;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -207,7 +207,7 @@
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(275, 276);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(102, 41);
+            this.Eliminarbutton.Size = new System.Drawing.Size(102, 29);
             this.Eliminarbutton.TabIndex = 72;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -223,7 +223,7 @@
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.Location = new System.Drawing.Point(165, 276);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(104, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(104, 29);
             this.Guardarbutton.TabIndex = 71;
             this.Guardarbutton.Text = "Registrar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -237,9 +237,9 @@
             this.buttonBuscar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
             this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscar.Location = new System.Drawing.Point(261, 17);
+            this.buttonBuscar.Location = new System.Drawing.Point(261, 22);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(101, 36);
+            this.buttonBuscar.Size = new System.Drawing.Size(101, 27);
             this.buttonBuscar.TabIndex = 74;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -272,6 +272,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistroProductos";

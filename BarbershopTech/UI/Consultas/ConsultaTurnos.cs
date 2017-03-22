@@ -107,5 +107,10 @@ namespace BarbershopTech.Consultas
         {
             SeleccionarCombo();
         }
+
+        private void ConsultaTurnos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

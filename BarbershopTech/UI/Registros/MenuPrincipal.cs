@@ -368,8 +368,6 @@ namespace BarbershopTech.Registros
             r.Show();
         }
 
-
-
         private void labelUsuarios_Click(object sender, EventArgs e)
         {
 

@@ -61,8 +61,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.buttonAgregarProducto = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ProductoIdtextBox = new System.Windows.Forms.TextBox();
             this.NombreProductotextBox = new System.Windows.Forms.TextBox();
@@ -72,15 +71,16 @@
             this.label13 = new System.Windows.Forms.Label();
             this.PrecioProductotextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.buttonAgregarProducto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -143,6 +143,7 @@
             this.textBoxForma.Name = "textBoxForma";
             this.textBoxForma.Size = new System.Drawing.Size(317, 20);
             this.textBoxForma.TabIndex = 2;
+            this.textBoxForma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxForma_KeyPress);
             // 
             // label11
             // 
@@ -179,6 +180,7 @@
             this.textBoxComentario.Name = "textBoxComentario";
             this.textBoxComentario.Size = new System.Drawing.Size(320, 91);
             this.textBoxComentario.TabIndex = 3;
+            this.textBoxComentario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxComentario_KeyPress);
             // 
             // textBoxPorcientoDescuento
             // 
@@ -188,6 +190,7 @@
             this.textBoxPorcientoDescuento.Name = "textBoxPorcientoDescuento";
             this.textBoxPorcientoDescuento.Size = new System.Drawing.Size(123, 20);
             this.textBoxPorcientoDescuento.TabIndex = 5;
+            this.textBoxPorcientoDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPorcientoDescuento_KeyPress);
             // 
             // textBoxImpuesto
             // 
@@ -195,6 +198,7 @@
             this.textBoxImpuesto.Name = "textBoxImpuesto";
             this.textBoxImpuesto.Size = new System.Drawing.Size(123, 20);
             this.textBoxImpuesto.TabIndex = 6;
+            this.textBoxImpuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxImpuesto_KeyPress);
             // 
             // label6
             // 
@@ -349,7 +353,7 @@
             this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonNew.Location = new System.Drawing.Point(149, 674);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(112, 41);
+            this.buttonNew.Size = new System.Drawing.Size(112, 27);
             this.buttonNew.TabIndex = 10;
             this.buttonNew.Text = "Nuevo";
             this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -365,7 +369,7 @@
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eliminarbutton.Location = new System.Drawing.Point(382, 674);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(112, 41);
+            this.Eliminarbutton.Size = new System.Drawing.Size(112, 27);
             this.Eliminarbutton.TabIndex = 11;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -380,7 +384,7 @@
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Guardarbutton.Location = new System.Drawing.Point(267, 674);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(109, 41);
+            this.Guardarbutton.Size = new System.Drawing.Size(109, 27);
             this.Guardarbutton.TabIndex = 9;
             this.Guardarbutton.Text = "Registrar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -476,30 +480,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle de Productos";
             // 
-            // dataGridView2
+            // label15
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(17, 61);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(564, 177);
-            this.dataGridView2.TabIndex = 81;
-            // 
-            // buttonAgregarProducto
-            // 
-            this.buttonAgregarProducto.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregarProducto.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("buttonAgregarProducto.Image")));
-            this.buttonAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAgregarProducto.Location = new System.Drawing.Point(492, 31);
-            this.buttonAgregarProducto.Name = "buttonAgregarProducto";
-            this.buttonAgregarProducto.Size = new System.Drawing.Size(95, 25);
-            this.buttonAgregarProducto.TabIndex = 8;
-            this.buttonAgregarProducto.Text = "Agregar";
-            this.buttonAgregarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAgregarProducto.UseVisualStyleBackColor = false;
-            this.buttonAgregarProducto.Click += new System.EventHandler(this.buttonAgregarProducto_Click);
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Location = new System.Drawing.Point(20, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 17);
+            this.label15.TabIndex = 83;
+            this.label15.Text = "Codigo";
             // 
             // CantidadnumericUpDown
             // 
@@ -589,15 +578,30 @@
             this.label14.TabIndex = 82;
             this.label14.Text = "Producto";
             // 
-            // label15
+            // dataGridView2
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Location = new System.Drawing.Point(20, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 17);
-            this.label15.TabIndex = 83;
-            this.label15.Text = "Codigo";
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(17, 61);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(564, 177);
+            this.dataGridView2.TabIndex = 81;
+            // 
+            // buttonAgregarProducto
+            // 
+            this.buttonAgregarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregarProducto.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("buttonAgregarProducto.Image")));
+            this.buttonAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAgregarProducto.Location = new System.Drawing.Point(486, 30);
+            this.buttonAgregarProducto.Name = "buttonAgregarProducto";
+            this.buttonAgregarProducto.Size = new System.Drawing.Size(95, 25);
+            this.buttonAgregarProducto.TabIndex = 8;
+            this.buttonAgregarProducto.Text = "Agregar";
+            this.buttonAgregarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAgregarProducto.UseVisualStyleBackColor = false;
+            this.buttonAgregarProducto.Click += new System.EventHandler(this.buttonAgregarProducto_Click);
             // 
             // RegistroFactura
             // 
@@ -634,8 +638,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

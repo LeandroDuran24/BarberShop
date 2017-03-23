@@ -12,6 +12,7 @@ namespace BarbershopTech.Registros
 {
     public partial class RegistroTurnos : Form
     {
+        Turnos turno;
         public RegistroTurnos()
         {
             InitializeComponent();
@@ -32,11 +33,11 @@ namespace BarbershopTech.Registros
         {
             Peluqueros peluquero = new Peluqueros();
             NombrecomboBox.Text = null;
-            //PeluquerocomboBox.Text = null;
-            // dateTimePickerDesde.Value = DateTime.Now;
             dateTimePickerHasta.Value = DateTime.Now;
             IdtextBox.Clear();
             ActualizarHoraturno();
+            errorProvider1.Clear();
+            turno = new Turnos();
 
         }
 
@@ -94,7 +95,7 @@ namespace BarbershopTech.Registros
         public Turnos LlenarCampos()
         {
             ActualizarHoraturno();
-            Turnos turno = new Turnos();
+
             turno.ClienteId = Utilidades.TOINT(NombrecomboBox.SelectedValue.ToString());
             turno.PeluqueroId = Utilidades.TOINT(PeluquerocomboBox.SelectedValue.ToString());
             turno.NombreCliente = NombrecomboBox.Text;
@@ -173,7 +174,7 @@ namespace BarbershopTech.Registros
             }
             else
             {
-                Turnos turno = new Turnos();
+
                 turno = LlenarCampos();
                 BLL.TurnoBLL.Guardar(turno);
                 MessageBox.Show("Se guardo correctamente");
@@ -200,11 +201,11 @@ namespace BarbershopTech.Registros
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             int id = int.Parse(IdtextBox.Text);
-            Turnos conn = BLL.TurnoBLL.Buscar((p => p.TurnosId == id));
+            turno = BLL.TurnoBLL.Buscar((p => p.TurnosId == id));
 
-            if (conn != null)
+            if (turno != null)
             {
-                BLL.TurnoBLL.Eliminar(conn);
+                BLL.TurnoBLL.Eliminar(turno);
                 MessageBox.Show("Se ha eliminado Correctamente");
             }
             else
@@ -223,13 +224,13 @@ namespace BarbershopTech.Registros
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(IdtextBox.Text);
-            Turnos conn = BLL.TurnoBLL.Buscar((p => p.TurnosId == id));
+            turno = BLL.TurnoBLL.Buscar((p => p.TurnosId == id));
 
-            if (conn != null)
+            if (turno != null)
             {
-                NombrecomboBox.Text = conn.NombreCliente;
-                PeluquerocomboBox.Text = conn.NombrePeluquero;
-                dateTimePickerHasta.Text = Convert.ToString(conn.FechaHasta);
+                NombrecomboBox.Text = turno.NombreCliente;
+                PeluquerocomboBox.Text = turno.NombrePeluquero;
+                dateTimePickerHasta.Text = Convert.ToString(turno.FechaHasta);
                 MessageBox.Show("Se ha encontrado Correctamente");
             }
             else
@@ -237,7 +238,6 @@ namespace BarbershopTech.Registros
                 MessageBox.Show("No se ha Eliminado");
 
             }
-            Limpiar();
         }
 
         private void NombrecomboBox_KeyPress(object sender, KeyPressEventArgs e)

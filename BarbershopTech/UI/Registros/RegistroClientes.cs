@@ -12,6 +12,7 @@ namespace BarbershopTech.Registros
 {
     public partial class RegistroClientes : Form
     {
+        Clientes cliente;
         public RegistroClientes()
         {
             InitializeComponent();
@@ -43,20 +44,22 @@ namespace BarbershopTech.Registros
             cedmaskedTextBox.Clear();
             FechadateTimePicker1.Value = DateTime.Today;
             emailextBox.Clear();
+            errorProvider1.Clear();
 
+            cliente = new Clientes();
         }
 
         public Clientes LlenarCampos()
         {
-            Clientes guardado = new Clientes();
-            guardado.ClienteId = Utilidades.TOINT(IdtextBox.Text);
-            guardado.Nombres = nombretextBox.Text;
-            guardado.Apellidos = apellidotextBox.Text;
-            guardado.Direccion = direcciontextBox1.Text;
-            guardado.Email = emailextBox.Text;
-            guardado.Cedula = cedmaskedTextBox.Text;
-            guardado.Fecha = FechadateTimePicker1.Value;
-            return guardado;
+
+            cliente.ClienteId = Utilidades.TOINT(IdtextBox.Text);
+            cliente.Nombres = nombretextBox.Text;
+            cliente.Apellidos = apellidotextBox.Text;
+            cliente.Direccion = direcciontextBox1.Text;
+            cliente.Email = emailextBox.Text;
+            cliente.Cedula = cedmaskedTextBox.Text;
+            cliente.Fecha = FechadateTimePicker1.Value;
+            return cliente;
         }
 
         public static void ValidarNumero(KeyPressEventArgs pE)
@@ -121,8 +124,7 @@ namespace BarbershopTech.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            var guardado = new Clientes();
-            int id = 0;
+
 
             if (!Validar())
             {
@@ -131,36 +133,36 @@ namespace BarbershopTech.Registros
             }
             else
             {
-            
-                guardado = LlenarCampos();
-                if (id != guardado.ClienteId)
+
+                cliente = LlenarCampos();
+                if (cliente.ClienteId != 0)
                 {
-                    BLL.ClienteBLL.Mofidicar(guardado);
+                    BLL.ClienteBLL.Mofidicar(cliente);
                     MessageBox.Show("Se ha modificado");
                 }
                 else
                 {
-                    BLL.ClienteBLL.Guardar(guardado);
+                    BLL.ClienteBLL.Guardar(cliente);
                     MessageBox.Show("Se ha Guardado Correctamente...");
                 }
 
                 Limpiar();
             }
-        }   
-        
+        }
+
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(IdtextBox.Text);
-            Clientes conn = BLL.ClienteBLL.Buscar((p => p.ClienteId == id));
+            cliente = BLL.ClienteBLL.Buscar((p => p.ClienteId == id));
 
-            if (conn != null)
+            if (cliente != null)
             {
-                nombretextBox.Text = conn.Nombres;
-                direcciontextBox1.Text = conn.Direccion;
-                apellidotextBox.Text = conn.Apellidos;
-                emailextBox.Text = conn.Email;
-                cedmaskedTextBox.Text = conn.Cedula;
-                FechadateTimePicker1.Value = conn.Fecha;
+                nombretextBox.Text = cliente.Nombres;
+                direcciontextBox1.Text = cliente.Direccion;
+                apellidotextBox.Text = cliente.Apellidos;
+                emailextBox.Text = cliente.Email;
+                cedmaskedTextBox.Text = cliente.Cedula;
+                FechadateTimePicker1.Value = cliente.Fecha;
 
                 MessageBox.Show("Se ha encontrado Correctamente");
             }
@@ -169,9 +171,9 @@ namespace BarbershopTech.Registros
                 MessageBox.Show("No existe");
 
             }
-            Limpiar();
+   
         }
-        
+
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -197,6 +199,9 @@ namespace BarbershopTech.Registros
             ValidarLetras(e);
         }
 
-       
+        private void RegistroClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

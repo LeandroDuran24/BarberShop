@@ -12,6 +12,7 @@ namespace BarbershopTech.Registros
 {
     public partial class RegistroUsuarios : Form
     {
+        Usuarios usuario;
         public RegistroUsuarios()
         {
             InitializeComponent();
@@ -59,26 +60,29 @@ namespace BarbershopTech.Registros
             ConfirmarmaskedTextBox.Clear();
             textBoxId.Clear();
             comboBox1.Text = null;
+            errorProvider1.Clear();
+
+            usuario = new Usuarios();
 
         }
 
         public Usuarios LlenarCampos()
         {
-            Usuarios guardar = new Usuarios();
-            guardar.UsuarioId = Utilidades.TOINT(textBoxId.Text);
-            guardar.Nombres = NombretextBox.Text;
-            guardar.Email = EmailtextBox.Text;
-            guardar.Contrasena = Convert.ToString(ContraseñamaskedTextBox.Text);
-            guardar.Confirmar = Convert.ToString(ConfirmarmaskedTextBox.Text);
+           
+            usuario.UsuarioId = Utilidades.TOINT(textBoxId.Text);
+            usuario.Nombres = NombretextBox.Text;
+            usuario.Email = EmailtextBox.Text;
+            usuario.Contrasena = Convert.ToString(ContraseñamaskedTextBox.Text);
+            usuario.Confirmar = Convert.ToString(ConfirmarmaskedTextBox.Text);
             if(comboBox1.SelectedIndex==0)
             {
-                guardar.Tipo = "Admin";
+                usuario.Tipo = "Admin";
             }
             else
             {
-                guardar.Tipo = "Empleado";
+                usuario.Tipo = "Empleado";
             }
-            return guardar;
+            return usuario;
 
 
         }
@@ -140,25 +144,26 @@ namespace BarbershopTech.Registros
         {
             int id = int.Parse(textBoxId.Text);
 
-            Usuarios eliminar = BLL.UsuarioBLL.Buscar(p => p.UsuarioId == id);
+            usuario = BLL.UsuarioBLL.Buscar(p => p.UsuarioId == id);
 
-            if (eliminar != null)
+            if (usuario != null)
             {
-                BLL.UsuarioBLL.Eliminar(eliminar);
+                BLL.UsuarioBLL.Eliminar(usuario);
                 MessageBox.Show("Correcto");
 
             }
             else
+            {
+                MessageBox.Show("No existe");
+            }
 
-                MessageBox.Show("Error");
+               
             Limpiar();
         }
 
         private void Registrarbutton_Click(object sender, EventArgs e)
         {
-            Usuarios guardar = new Usuarios();
-            int id = 0;
-
+          
             if (!Validar())
             {
 
@@ -167,10 +172,10 @@ namespace BarbershopTech.Registros
             else
             {
 
-                guardar = LlenarCampos();
-                if (id != guardar.UsuarioId)
+                usuario = LlenarCampos();
+                if (usuario.UsuarioId!=0)
                 {
-                    BLL.UsuarioBLL.Mofidicar(guardar);
+                    BLL.UsuarioBLL.Mofidicar(usuario);
                     MessageBox.Show("Se ha Modificado");
                 }
                 else
@@ -183,7 +188,7 @@ namespace BarbershopTech.Registros
                     }
                     else
                     {
-                        BLL.UsuarioBLL.Guardar(guardar);
+                        BLL.UsuarioBLL.Guardar(usuario);
                         MessageBox.Show("Se ha Guardado Correctamente..."); ;
                     }
                 }
@@ -195,7 +200,7 @@ namespace BarbershopTech.Registros
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(textBoxId.Text);
-            Usuarios usuario = BLL.UsuarioBLL.Buscar(p => p.UsuarioId == id);
+            usuario = BLL.UsuarioBLL.Buscar(p => p.UsuarioId == id);
 
             if (usuario != null)
             {

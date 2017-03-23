@@ -312,6 +312,7 @@
             this.MinimizeBox = false;
             this.Name = "RegistroClientes";
             this.Text = "RegistroClientes";
+            this.Load += new System.EventHandler(this.RegistroClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

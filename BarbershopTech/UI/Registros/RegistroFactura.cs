@@ -218,8 +218,7 @@ namespace BarbershopTech.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            int id = 0;
-
+      
             if (!Validar())
             {
                 MessageBox.Show("Favor Llenar");
@@ -228,7 +227,7 @@ namespace BarbershopTech.Registros
             {
                 factura = LlenarCampos();
 
-                if (id != factura.FacturaId)
+                if ( factura.FacturaId!=0)
                 {
                     BLL.FacturaBLL.Mofidicar(factura);
                     MessageBox.Show("Se ha Modificado");

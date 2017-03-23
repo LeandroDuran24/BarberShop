@@ -339,12 +339,6 @@ namespace BarbershopTech.Registros
             l.Show();
         }
 
-        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ReporteFactura r = new ReporteFactura();
-            r.Show();
-        }
-
         private void labelUsuarios_Click(object sender, EventArgs e)
         {
 

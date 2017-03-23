@@ -12,6 +12,8 @@ namespace BarbershopTech.Registros
 {
     public partial class RegistroServicios : Form
     {
+        TipoServicios servicio;
+
         public RegistroServicios()
         {
             InitializeComponent();
@@ -39,6 +41,9 @@ namespace BarbershopTech.Registros
             nombretextBox3.Clear();
             idSeriviciotextBox.Clear();
             CostoTexBox.Clear();
+            errorProvider1.Clear();
+
+            servicio = new TipoServicios();
 
         }
 
@@ -86,8 +91,6 @@ namespace BarbershopTech.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            var guardar = new TipoServicios();
-            int id = 0;
 
             if (!Validar())
             {
@@ -97,16 +100,17 @@ namespace BarbershopTech.Registros
             else
             {
 
-                guardar.ServicioId = Utilidades.TOINT(idSeriviciotextBox.Text);
-                guardar.Nombre = nombretextBox3.Text;
-                guardar.Costo = Convert.ToInt32(CostoTexBox.Text);
-                if (id != guardar.ServicioId)
+                servicio.ServicioId = Utilidades.TOINT(idSeriviciotextBox.Text);
+                servicio.Nombre = nombretextBox3.Text;
+                servicio.Costo = Convert.ToInt32(CostoTexBox.Text);
+                if (servicio.ServicioId != 0)
                 {
-                    BLL.TipoServicioBLL.Mofidicar(guardar);
+                    BLL.TipoServicioBLL.Mofidicar(servicio);
+                    MessageBox.Show("Se ha modificado");
                 }
                 else
                 {
-                    BLL.TipoServicioBLL.Guardar(guardar);
+                    BLL.TipoServicioBLL.Guardar(servicio);
                     MessageBox.Show("Se ha Guardado Correctamente...");
                 }
 
@@ -118,11 +122,11 @@ namespace BarbershopTech.Registros
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             int id = int.Parse(idSeriviciotextBox.Text);
-            TipoServicios conn = BLL.TipoServicioBLL.Buscar((p => p.ServicioId == id));
+           servicio = BLL.TipoServicioBLL.Buscar((p => p.ServicioId == id));
 
-            if (conn != null)
+            if (servicio != null)
             {
-                BLL.TipoServicioBLL.Eliminar(conn);
+                BLL.TipoServicioBLL.Eliminar(servicio);
                 MessageBox.Show("Se ha eliminado Correctamente");
             }
             else
@@ -141,12 +145,12 @@ namespace BarbershopTech.Registros
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(idSeriviciotextBox.Text);
-            TipoServicios conn = BLL.TipoServicioBLL.Buscar((p => p.ServicioId == id));
+            servicio = BLL.TipoServicioBLL.Buscar((p => p.ServicioId == id));
 
-            if (conn != null)
+            if (servicio != null)
             {
-                nombretextBox3.Text = conn.Nombre;
-                CostoTexBox.Text = Convert.ToString(conn.Costo);
+                nombretextBox3.Text = servicio.Nombre;
+                CostoTexBox.Text = Convert.ToString(servicio.Costo);
 
                 MessageBox.Show("Se ha encontrado Correctamente");
             }

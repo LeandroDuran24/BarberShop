@@ -11,5 +11,6 @@ namespace Entidades
         [Key]
         public int PeluqueroId { get; set; }
         public string Nombre { get; set; }
+        public DateTime HoraOcupadoHasta { get; set; }
     }
 }

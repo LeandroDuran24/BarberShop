@@ -156,13 +156,13 @@
             // 
             // NombrecomboBox
             // 
+            this.NombrecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.NombrecomboBox.ForeColor = System.Drawing.Color.Silver;
             this.NombrecomboBox.FormattingEnabled = true;
             this.NombrecomboBox.Location = new System.Drawing.Point(129, 56);
             this.NombrecomboBox.Name = "NombrecomboBox";
             this.NombrecomboBox.Size = new System.Drawing.Size(182, 26);
             this.NombrecomboBox.TabIndex = 49;
-            this.NombrecomboBox.Text = "Cliente";
             this.NombrecomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrecomboBox_KeyPress);
             // 
             // IdtextBox
@@ -189,13 +189,14 @@
             // 
             // PeluquerocomboBox
             // 
+            this.PeluquerocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PeluquerocomboBox.ForeColor = System.Drawing.Color.Silver;
             this.PeluquerocomboBox.FormattingEnabled = true;
             this.PeluquerocomboBox.Location = new System.Drawing.Point(129, 88);
             this.PeluquerocomboBox.Name = "PeluquerocomboBox";
             this.PeluquerocomboBox.Size = new System.Drawing.Size(182, 26);
             this.PeluquerocomboBox.TabIndex = 51;
-            this.PeluquerocomboBox.Text = "Peluquero";
+            this.PeluquerocomboBox.SelectedIndexChanged += new System.EventHandler(this.PeluquerocomboBox_SelectedIndexChanged);
             this.PeluquerocomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PeluquerocomboBox_KeyPress);
             // 
             // label1
@@ -233,7 +234,7 @@
             this.Eliminarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(319, 385);
+            this.Eliminarbutton.Location = new System.Drawing.Point(307, 383);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(105, 26);
             this.Eliminarbutton.TabIndex = 57;
@@ -249,7 +250,7 @@
             this.Guardarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(204, 385);
+            this.Guardarbutton.Location = new System.Drawing.Point(192, 383);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(109, 26);
             this.Guardarbutton.TabIndex = 56;
@@ -269,7 +270,7 @@
             this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(103, 385);
+            this.buttonNuevo.Location = new System.Drawing.Point(91, 383);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(95, 26);
             this.buttonNuevo.TabIndex = 65;
@@ -297,7 +298,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistroTurnos";
-            this.Text = "RegistroTurnos";
+            this.Text = "Turnos";
+            this.Load += new System.EventHandler(this.RegistroTurnos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

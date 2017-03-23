@@ -21,6 +21,7 @@ Celular varchar(12),
 create table Peluqueros(
 PeluqueroId int identity(1,1)primary key,
 Nombre varchar(25),
+HoraOcupadoHasta datetime,
 );
 
 create table Turnos(

@@ -332,10 +332,6 @@ namespace BarbershopTech.Registros
             this.Close();
         }
 
-        //falta la consulta de productos.
-
-
-
         private void cambiarCuentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

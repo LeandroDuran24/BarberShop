@@ -15,19 +15,28 @@ namespace BarbershopTech.Registros
         public RegistroTurnos()
         {
             InitializeComponent();
+
+        }
+
+        private void RegistroTurnos_Load(object sender, EventArgs e)
+        {
             LlenarComboNombre();
             LlenarComboPeluquero();
             Limpiar();
+            dateTimePickerDesde.Enabled = false;
+            ActualizarHoraturno();
+
         }
 
         public void Limpiar()
         {
+            Peluqueros peluquero = new Peluqueros();
             NombrecomboBox.Text = null;
-            PeluquerocomboBox.Text = null;
-            dateTimePickerDesde.Value = DateTime.Today;
-            dateTimePickerHasta.Value = DateTime.Today;
+            //PeluquerocomboBox.Text = null;
+            // dateTimePickerDesde.Value = DateTime.Now;
+            dateTimePickerHasta.Value = DateTime.Now;
             IdtextBox.Clear();
-
+            ActualizarHoraturno();
 
         }
 
@@ -53,15 +62,15 @@ namespace BarbershopTech.Registros
             PeluquerocomboBox.DisplayMember = "Nombre";
             PeluquerocomboBox.ValueMember = "PeluqueroId";
 
-            if (PeluquerocomboBox.Items.Count >= 1)
+            /*if (PeluquerocomboBox.Items.Count >= 1)
             {
                 PeluquerocomboBox.SelectedIndex = -1;
-            }
+            }*/
         }
 
         public bool Validar()
         {
-            if(string.IsNullOrEmpty(NombrecomboBox.Text))
+            if (string.IsNullOrEmpty(NombrecomboBox.Text))
             {
                 errorProvider1.SetError(NombrecomboBox, "Favor Llenar");
                 return false;
@@ -84,6 +93,7 @@ namespace BarbershopTech.Registros
 
         public Turnos LlenarCampos()
         {
+            ActualizarHoraturno();
             Turnos turno = new Turnos();
             turno.ClienteId = Utilidades.TOINT(NombrecomboBox.SelectedValue.ToString());
             turno.PeluqueroId = Utilidades.TOINT(PeluquerocomboBox.SelectedValue.ToString());
@@ -91,8 +101,24 @@ namespace BarbershopTech.Registros
             turno.NombrePeluquero = PeluquerocomboBox.Text;
             turno.FechaDesde = dateTimePickerDesde.Value;
             turno.FechaHasta = dateTimePickerHasta.Value;
-            turno.PeluqueroId = Utilidades.TOINT(PeluquerocomboBox.SelectedValue.ToString());
+
             return turno;
+        }
+
+        public void ActualizarHoraturno()
+        {
+
+            Peluqueros peluquero = (Peluqueros)PeluquerocomboBox.SelectedItem;
+
+            if (peluquero != null)
+            {
+                dateTimePickerDesde.Value = peluquero.HoraOcupadoHasta;
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+
         }
 
         public static void ValidarNumero(KeyPressEventArgs pE)
@@ -140,7 +166,7 @@ namespace BarbershopTech.Registros
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
 
-            if(!Validar())
+            if (!Validar())
             {
                 MessageBox.Show("Favor Llenar");
 
@@ -150,7 +176,22 @@ namespace BarbershopTech.Registros
                 Turnos turno = new Turnos();
                 turno = LlenarCampos();
                 BLL.TurnoBLL.Guardar(turno);
-                    MessageBox.Show("Se guardo");
+                MessageBox.Show("Se guardo correctamente");
+
+                Peluqueros peluquero = (Peluqueros)PeluquerocomboBox.SelectedItem;
+
+                if (peluquero != null)
+                {
+                    peluquero.HoraOcupadoHasta = dateTimePickerHasta.Value;
+                    dateTimePickerDesde.Value = peluquero.HoraOcupadoHasta;
+                    BLL.PeluqueroBLL.Mofidicar(peluquero);
+
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+
             }
             Limpiar();
 
@@ -188,6 +229,7 @@ namespace BarbershopTech.Registros
             {
                 NombrecomboBox.Text = conn.NombreCliente;
                 PeluquerocomboBox.Text = conn.NombrePeluquero;
+                dateTimePickerHasta.Text = Convert.ToString(conn.FechaHasta);
                 MessageBox.Show("Se ha encontrado Correctamente");
             }
             else
@@ -211,6 +253,11 @@ namespace BarbershopTech.Registros
         private void IdtextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarNumero(e);
+        }
+
+        private void PeluquerocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ActualizarHoraturno();
         }
     }
 }

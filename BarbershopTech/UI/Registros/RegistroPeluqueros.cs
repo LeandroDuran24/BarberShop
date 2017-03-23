@@ -98,7 +98,6 @@ namespace BarbershopTech.Registros
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Peluqueros guardar = new Peluqueros();
-            int id = 0;
 
             if (!Validar())
             {
@@ -110,8 +109,9 @@ namespace BarbershopTech.Registros
 
                 guardar.PeluqueroId = Utilidades.TOINT(PeluqueroidtextBox.Text);
                 guardar.Nombre = nombretextBox3.Text;
+                guardar.HoraOcupadoHasta = DateTime.Now;
 
-                if (id != guardar.PeluqueroId)
+                if (guardar.PeluqueroId != 0)
                 {
                     BLL.PeluqueroBLL.Mofidicar(guardar);
                     MessageBox.Show("Se ha modificado");

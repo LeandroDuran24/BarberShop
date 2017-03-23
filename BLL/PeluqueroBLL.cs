@@ -28,12 +28,9 @@ namespace BLL
             {
                 Result = repositorio.Buscar(tipo);
 
-
-
             }
             return Result;
         }
-
 
 
         public static bool Mofidicar(Peluqueros criterio)

@@ -123,9 +123,9 @@
             this.dateTimePickerDesde.CalendarMonthBackground = System.Drawing.Color.White;
             this.dateTimePickerDesde.CustomFormat = "yyy/MM/dd";
             this.dateTimePickerDesde.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(92, 11);
+            this.dateTimePickerDesde.Location = new System.Drawing.Point(34, 11);
             this.dateTimePickerDesde.Name = "dateTimePickerDesde";
-            this.dateTimePickerDesde.Size = new System.Drawing.Size(249, 25);
+            this.dateTimePickerDesde.Size = new System.Drawing.Size(285, 25);
             this.dateTimePickerDesde.TabIndex = 69;
             // 
             // dataGridView1
@@ -295,7 +295,7 @@
             // 
             this.NombreProductotextBox.BackColor = System.Drawing.Color.White;
             this.NombreProductotextBox.Enabled = false;
-            this.NombreProductotextBox.Location = new System.Drawing.Point(258, 32);
+            this.NombreProductotextBox.Location = new System.Drawing.Point(250, 32);
             this.NombreProductotextBox.Name = "NombreProductotextBox";
             this.NombreProductotextBox.ReadOnly = true;
             this.NombreProductotextBox.Size = new System.Drawing.Size(210, 24);
@@ -305,7 +305,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Location = new System.Drawing.Point(545, 12);
+            this.label13.Location = new System.Drawing.Point(531, 12);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 17);
             this.label13.TabIndex = 84;
@@ -315,7 +315,7 @@
             // 
             this.PrecioProductotextBox.BackColor = System.Drawing.Color.White;
             this.PrecioProductotextBox.Enabled = false;
-            this.PrecioProductotextBox.Location = new System.Drawing.Point(526, 32);
+            this.PrecioProductotextBox.Location = new System.Drawing.Point(506, 32);
             this.PrecioProductotextBox.Name = "PrecioProductotextBox";
             this.PrecioProductotextBox.ReadOnly = true;
             this.PrecioProductotextBox.Size = new System.Drawing.Size(81, 24);
@@ -336,7 +336,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Colonna MT", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Colonna MT", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
             this.label16.Location = new System.Drawing.Point(312, -1);
             this.label16.Name = "label16";
@@ -347,6 +347,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.comboBoxPago);
             this.groupBox3.Controls.Add(this.labelAtendido);
             this.groupBox3.Controls.Add(this.label7);
@@ -379,7 +380,7 @@
             // labelAtendido
             // 
             this.labelAtendido.AutoSize = true;
-            this.labelAtendido.Location = new System.Drawing.Point(616, 52);
+            this.labelAtendido.Location = new System.Drawing.Point(616, 49);
             this.labelAtendido.Name = "labelAtendido";
             this.labelAtendido.Size = new System.Drawing.Size(127, 18);
             this.labelAtendido.TabIndex = 93;
@@ -503,6 +504,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.textBoxDevuelta);
             this.groupBox1.Controls.Add(this.textBoxMonto);
             this.groupBox1.Controls.Add(this.label1);
@@ -570,6 +572,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.dateTimePickerDesde);
             this.groupBox4.Location = new System.Drawing.Point(425, 81);
             this.groupBox4.Name = "groupBox4";
@@ -579,6 +582,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.textBoxfacturaId);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.buttonBuscar);

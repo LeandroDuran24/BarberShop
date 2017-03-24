@@ -19,7 +19,7 @@ namespace BarbershopTech.Consultas
 
         private void ConsultaClientes_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = null;
         }
 
         public void LLenarCombo()
@@ -145,6 +145,7 @@ namespace BarbershopTech.Consultas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
             int criterio = Utilidades.TOINT(BuscartextBox.Text);
             if (comboBox1.SelectedIndex == 0)
             {

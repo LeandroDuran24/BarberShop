@@ -183,7 +183,7 @@ namespace BarbershopTech.Registros
 
         private void RegistroServicios_Load(object sender, EventArgs e)
         {
-
+            Limpiar();
         }
     }
 }

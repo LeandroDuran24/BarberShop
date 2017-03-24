@@ -54,7 +54,6 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrosToolStripMenuItem,
@@ -65,7 +64,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(140, 689);
+            this.menuStrip1.Size = new System.Drawing.Size(1343, 26);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -81,8 +80,8 @@
             this.registrosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrosToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.registrosToolStripMenuItem.Text = "Registros            ";
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.registrosToolStripMenuItem.Text = "Registros    ";
             // 
             // registrarUsuariosToolStripMenuItem
             // 
@@ -138,8 +137,8 @@
             this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.consultasToolStripMenuItem.Text = "Consultas            ";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.consultasToolStripMenuItem.Text = "Consultas    ";
             // 
             // consultaDeUsuariosToolStripMenuItem
             // 
@@ -192,8 +191,8 @@
             this.turnosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.turnosToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.turnosToolStripMenuItem.Name = "turnosToolStripMenuItem";
-            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.turnosToolStripMenuItem.Text = "Turnos                 ";
+            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
+            this.turnosToolStripMenuItem.Text = "Turnos      ";
             this.turnosToolStripMenuItem.Click += new System.EventHandler(this.turnosToolStripMenuItem_Click);
             // 
             // facturarToolStripMenuItem
@@ -201,8 +200,8 @@
             this.facturarToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.facturarToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
-            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.facturarToolStripMenuItem.Text = "Facturar             ";
+            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
+            this.facturarToolStripMenuItem.Text = "Facturar   ";
             this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
             // 
             // cambiarCuentaToolStripMenuItem
@@ -210,7 +209,7 @@
             this.cambiarCuentaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cambiarCuentaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.cambiarCuentaToolStripMenuItem.Name = "cambiarCuentaToolStripMenuItem";
-            this.cambiarCuentaToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.cambiarCuentaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.cambiarCuentaToolStripMenuItem.Text = "Cambiar Cuenta";
             this.cambiarCuentaToolStripMenuItem.Click += new System.EventHandler(this.cambiarCuentaToolStripMenuItem_Click);
             // 
@@ -221,7 +220,7 @@
             this.salirToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.salirToolStripMenuItem.Text = "Salir                     ";
             this.salirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
@@ -230,7 +229,7 @@
             // 
             this.labelUsuarios.AutoSize = true;
             this.labelUsuarios.BackColor = System.Drawing.Color.Transparent;
-            this.labelUsuarios.Font = new System.Drawing.Font("Colonna MT", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuarios.Font = new System.Drawing.Font("Colonna MT", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuarios.ForeColor = System.Drawing.Color.Red;
             this.labelUsuarios.Location = new System.Drawing.Point(1265, 671);
             this.labelUsuarios.MinimumSize = new System.Drawing.Size(500, 500);
@@ -243,6 +242,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1343, 689);
             this.Controls.Add(this.labelUsuarios);
             this.Controls.Add(this.menuStrip1);

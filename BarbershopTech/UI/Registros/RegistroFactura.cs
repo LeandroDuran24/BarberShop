@@ -31,7 +31,7 @@ namespace BarbershopTech.Registros
 
         private void RegistroFactura_Load(object sender, EventArgs e)
         {
-
+            Limpiar();
         }
 
         public void LlenarLabel()
@@ -271,12 +271,19 @@ namespace BarbershopTech.Registros
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
-            int id = Utilidades.TOINT(ProductoIdtextBox.Text);
-            TipoServicios producto = new TipoServicios();
-            factura.ServicioList.Add(BLL.TipoServicioBLL.Buscar(p => p.ServicioId == id));
+            if(string.IsNullOrEmpty(ProductoIdtextBox.Text))
+            {
+                errorProvider1.SetError(ProductoIdtextBox, "Favor Llenar");
+            }
+            else
+            {
+                int id = Utilidades.TOINT(ProductoIdtextBox.Text);
+                TipoServicios producto = new TipoServicios();
+                factura.ServicioList.Add(BLL.TipoServicioBLL.Buscar(p => p.ServicioId == id));
 
-            LlenarDataGrid(factura);
-            SacarCuenta();
+                LlenarDataGrid(factura);
+                SacarCuenta();
+            }
         }
 
         private void comboBoxNombre_KeyPress(object sender, KeyPressEventArgs e)

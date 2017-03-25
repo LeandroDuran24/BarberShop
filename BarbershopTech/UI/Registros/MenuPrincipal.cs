@@ -222,13 +222,13 @@ namespace BarbershopTech.Registros
 
         public void LlenarLabel()
         {
-            labelUsuarios.Text = Log.Label().Tipo;
+            labelUsuarios.Text = InicioSesion.Label().Tipo;
             
         }
 
         public void Permisos()
         {
-            if (Log.Label().Tipo != "Admin")
+            if (InicioSesion.Label().Tipo != "Admin")
                 registrarUsuariosToolStripMenuItem.Enabled = false;
             else
                 registrarUsuariosToolStripMenuItem.Enabled = true;
@@ -335,7 +335,7 @@ namespace BarbershopTech.Registros
         private void cambiarCuentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Log l = new Log();
+            InicioSesion l = new InicioSesion();
             l.Show();
         }
 

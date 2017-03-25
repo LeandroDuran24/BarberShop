@@ -37,6 +37,7 @@
             this.Filtrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +87,7 @@
             this.Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Filtrar.Image = ((System.Drawing.Image)(resources.GetObject("Filtrar.Image")));
             this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Filtrar.Location = new System.Drawing.Point(478, 23);
+            this.Filtrar.Location = new System.Drawing.Point(463, 23);
             this.Filtrar.Name = "Filtrar";
             this.Filtrar.Size = new System.Drawing.Size(84, 31);
             this.Filtrar.TabIndex = 33;
@@ -101,18 +102,34 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 59);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(550, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(625, 225);
             this.dataGridView1.TabIndex = 32;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.BackColor = System.Drawing.Color.Transparent;
+            this.buttonImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimir.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimir.Image")));
+            this.buttonImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonImprimir.Location = new System.Drawing.Point(553, 22);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(84, 31);
+            this.buttonImprimir.TabIndex = 47;
+            this.buttonImprimir.Text = "Imprimir";
+            this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonImprimir.UseVisualStyleBackColor = false;
+            // 
             // ConsultaServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 308);
+            this.ClientSize = new System.Drawing.Size(663, 308);
+            this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BuscartextBox);
@@ -141,5 +158,6 @@
         private System.Windows.Forms.Button Filtrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button buttonImprimir;
     }
 }

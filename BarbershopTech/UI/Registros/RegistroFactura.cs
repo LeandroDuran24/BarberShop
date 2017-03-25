@@ -36,7 +36,7 @@ namespace BarbershopTech.Registros
 
         public void LlenarLabel()
         {
-            labelAtendido.Text = Log.Label().Nombres;
+            labelAtendido.Text = InicioSesion.Label().Nombres;
 
         }
 

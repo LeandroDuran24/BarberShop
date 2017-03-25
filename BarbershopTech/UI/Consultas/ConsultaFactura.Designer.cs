@@ -37,6 +37,7 @@
             this.Filtrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +46,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(428, 57);
+            this.label2.Location = new System.Drawing.Point(279, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 43;
@@ -55,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(201, 57);
+            this.label1.Location = new System.Drawing.Point(52, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 42;
@@ -63,7 +64,7 @@
             // 
             // BuscartextBox
             // 
-            this.BuscartextBox.Location = new System.Drawing.Point(487, 50);
+            this.BuscartextBox.Location = new System.Drawing.Point(340, 49);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(157, 20);
             this.BuscartextBox.TabIndex = 41;
@@ -72,7 +73,7 @@
             // 
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(267, 50);
+            this.comboBox1.Location = new System.Drawing.Point(120, 49);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(156, 21);
             this.comboBox1.TabIndex = 40;
@@ -86,7 +87,7 @@
             this.Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Filtrar.Image = ((System.Drawing.Image)(resources.GetObject("Filtrar.Image")));
             this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Filtrar.Location = new System.Drawing.Point(662, 40);
+            this.Filtrar.Location = new System.Drawing.Point(515, 39);
             this.Filtrar.Name = "Filtrar";
             this.Filtrar.Size = new System.Drawing.Size(87, 31);
             this.Filtrar.TabIndex = 39;
@@ -101,18 +102,34 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(40, 76);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(894, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(652, 266);
             this.dataGridView1.TabIndex = 38;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.BackColor = System.Drawing.Color.Transparent;
+            this.buttonImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimir.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimir.Image")));
+            this.buttonImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonImprimir.Location = new System.Drawing.Point(608, 38);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(84, 31);
+            this.buttonImprimir.TabIndex = 47;
+            this.buttonImprimir.Text = "Imprimir";
+            this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonImprimir.UseVisualStyleBackColor = false;
+            // 
             // ConsultaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 355);
+            this.ClientSize = new System.Drawing.Size(734, 355);
+            this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BuscartextBox);
@@ -141,5 +158,6 @@
         private System.Windows.Forms.Button Filtrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button buttonImprimir;
     }
 }

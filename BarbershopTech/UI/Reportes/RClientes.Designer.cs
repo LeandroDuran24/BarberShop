@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSet = new BarbershopTech.UI.Reportes.DataSet();
             this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet = new BarbershopTech.UI.Reportes.DataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ClientesTableAdapter = new BarbershopTech.UI.Reportes.DataSetTableAdapters.ClientesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ClientesBindingSource
+            // 
+            this.ClientesBindingSource.DataMember = "Clientes";
+            this.ClientesBindingSource.DataSource = this.DataSet;
+            // 
+            // DataSet
+            // 
+            this.DataSet.DataSetName = "DataSet";
+            this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "BarbershopTech.UI.Reportes.Clientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(793, 261);
+            this.reportViewer1.Size = new System.Drawing.Size(754, 261);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // DataSet
-            // 
-            this.DataSet.DataSetName = "DataSet";
-            this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ClientesBindingSource
-            // 
-            this.ClientesBindingSource.DataMember = "Clientes";
-            this.ClientesBindingSource.DataSource = this.DataSet;
             // 
             // ClientesTableAdapter
             // 
@@ -68,13 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 261);
+            this.ClientSize = new System.Drawing.Size(754, 261);
             this.Controls.Add(this.reportViewer1);
             this.Name = "RClientes";
             this.Text = "RClientes";
             this.Load += new System.EventHandler(this.RClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

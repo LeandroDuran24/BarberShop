@@ -13,6 +13,8 @@ namespace BarbershopTech.Consultas
 {
     public partial class ConsultaClientes : Form
     {
+        public List<Clientes> lista { get; set; }//para el reporte
+
         public ConsultaClientes()
         {
             InitializeComponent();
@@ -57,7 +59,7 @@ namespace BarbershopTech.Consultas
         public void SeleccionarCombo()
         {
 
-            RClientes lista = new RClientes();
+
             int criterio = Utilidades.TOINT(BuscartextBox.Text);
             if (comboBox1.SelectedIndex == 0)
             {
@@ -73,9 +75,9 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    lista.cliente.Add(BLL.ClienteBLL.Buscar(p => p.ClienteId == criterio));
-                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.ClienteId == criterio);
-                   
+
+                    lista = BLL.ClienteBLL.GetList(p => p.ClienteId == criterio);
+
                 }
 
             }
@@ -89,7 +91,7 @@ namespace BarbershopTech.Consultas
                 else
                 {
 
-                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Nombres == BuscartextBox.Text);
+                    lista = BLL.ClienteBLL.GetList(p => p.Nombres == BuscartextBox.Text);
                 }
 
             }
@@ -102,7 +104,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Apellidos == BuscartextBox.Text);
+                    lista = BLL.ClienteBLL.GetList(p => p.Apellidos == BuscartextBox.Text);
                 }
 
             }
@@ -115,7 +117,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Direccion == BuscartextBox.Text);
+                    lista = BLL.ClienteBLL.GetList(p => p.Direccion == BuscartextBox.Text);
                 }
 
             }
@@ -128,7 +130,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Cedula == (BuscartextBox.Text));
+                    lista = BLL.ClienteBLL.GetList(p => p.Cedula == (BuscartextBox.Text));
                 }
 
             }
@@ -139,10 +141,10 @@ namespace BarbershopTech.Consultas
                 hastadateTimePicker.Enabled = true;
                 if (desdedateTimePicker.Value.Date > hastadateTimePicker.Value.Date)
                 {
-                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Fecha >= desdedateTimePicker.Value.Date && p.Fecha < hastadateTimePicker.Value.Date);
+                    lista = BLL.ClienteBLL.GetList(p => p.Fecha >= desdedateTimePicker.Value.Date && p.Fecha < hastadateTimePicker.Value.Date);
                 }
             }
-
+            dataGridView1.DataSource = lista;
         }
 
         private void Filtrar_Click(object sender, EventArgs e)
@@ -236,7 +238,7 @@ namespace BarbershopTech.Consultas
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-            RClientes cliente = new RClientes();
+            RClientes cliente = new RClientes(lista);
             cliente.Show();
         }
     }

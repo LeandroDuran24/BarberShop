@@ -7,32 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BarbershopTech.Registros;
-using DAL;
 using Entidades;
 
 namespace BarbershopTech
 {
-    public partial class Log : Form
+    public partial class InicioSesion : Form
     {
-        private static Usuarios usuarioLabel = null;
-
-        public Log()
+        public InicioSesion()
         {
             InitializeComponent();
+        }
+
+        private static Usuarios usuarioLabel = null;
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InicioSesion_Load(object sender, EventArgs e)
+        {
 
         }
 
         public bool Validar()
         {
-            if (string.IsNullOrEmpty(NombretextBox.Text))
+            if (string.IsNullOrEmpty(textBoxEmail.Text))
             {
-                errorProvider1.SetError(NombretextBox, "Favor llenar");
+                errorProvider1.SetError(textBoxEmail, "Favor llenar");
                 return false;
             }
 
-            if (string.IsNullOrEmpty(ContraseñamaskedTextBox.Text))
+            if (string.IsNullOrEmpty(maskedTextBox1.Text))
             {
-                errorProvider1.SetError(ContraseñamaskedTextBox, "Favor llenar");
+                errorProvider1.SetError(maskedTextBox1, "Favor llenar");
                 return false;
             }
             return true;
@@ -40,8 +48,8 @@ namespace BarbershopTech
 
         public void Limpiar()
         {
-            NombretextBox.Clear();
-            ContraseñamaskedTextBox.Clear();
+            textBoxEmail.Clear();
+            maskedTextBox1.Clear();
             errorProvider1.Clear();
 
         }
@@ -51,10 +59,6 @@ namespace BarbershopTech
             return usuarioLabel;
         }
 
-        private void Log_Load(object sender, EventArgs e)
-        {
-
-        }
 
         public static void ValidarNumero(KeyPressEventArgs pE)
 
@@ -98,69 +102,19 @@ namespace BarbershopTech
             }
         }
 
-        private void salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void entrar_Click(object sender, EventArgs e)
-        {
-
-            Usuarios usuario = null;
-            usuario = BLL.UsuarioBLL.Buscar(p => p.Email == NombretextBox.Text);
-            usuarioLabel = usuario;
-
-            if (!Validar())
-            {
-                MessageBox.Show("Favor Llenar");
-            }
-            else
-            {
-                if (usuario != null)
-                {
-                    if (usuario.Contrasena == ContraseñamaskedTextBox.Text)
-                    {
-                        MenuPrincipal menu = new MenuPrincipal();
-
-                        menu.Show();
-                        this.Hide();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("La Clave no Coincide con el Email");
-                        Limpiar();
-                        NombretextBox.Focus();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No existe ese Usuario");
-                    Limpiar();
-                    NombretextBox.Focus();
-                }
-            }
-        }
-
-        private void salir_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarLetras(e);
         }
 
-        private void ContraseñamaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarNumero(e);
 
-           
             if (e.KeyChar == (char)Keys.Enter)
             {
                 Usuarios usuario = null;
-                usuario = BLL.UsuarioBLL.Buscar(p => p.Email == NombretextBox.Text);
+                usuario = BLL.UsuarioBLL.Buscar(p => p.Email == textBoxEmail.Text);
                 usuarioLabel = usuario;
 
                 if (!Validar())
@@ -171,7 +125,7 @@ namespace BarbershopTech
                 {
                     if (usuario != null)
                     {
-                        if (usuario.Contrasena == ContraseñamaskedTextBox.Text)
+                        if (usuario.Contrasena == maskedTextBox1.Text)
                         {
                             MenuPrincipal menu = new MenuPrincipal();
 
@@ -183,19 +137,60 @@ namespace BarbershopTech
                         {
                             MessageBox.Show("La Clave no Coincide con el Email");
                             Limpiar();
-                            NombretextBox.Focus();
+                            textBoxEmail.Focus();
                         }
                     }
                     else
                     {
                         MessageBox.Show("No existe ese Usuario");
                         Limpiar();
-                        NombretextBox.Focus();
+                        textBoxEmail.Focus();
                     }
                 }
             }
         }
 
+        private void Entrarbutton_Click(object sender, EventArgs e)
+        {
+            Usuarios usuario = null;
+            usuario = BLL.UsuarioBLL.Buscar(p => p.Email == textBoxEmail.Text);
+            usuarioLabel = usuario;
 
+            if (!Validar())
+            {
+                MessageBox.Show("Favor Llenar");
+            }
+            else
+            {
+                if (usuario != null)
+                {
+                    if (usuario.Contrasena == maskedTextBox1.Text)
+                    {
+                        MenuPrincipal menu = new MenuPrincipal();
+
+                        menu.Show();
+                        this.Hide();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("La Clave no Coincide con el Email");
+                        Limpiar();
+                        textBoxEmail.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No existe ese Usuario");
+                    Limpiar();
+                    textBoxEmail.Focus();
+                }
+            }
+        }
+
+        private void Salirbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

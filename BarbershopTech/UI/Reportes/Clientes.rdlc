@@ -610,8 +610,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCliente</DataSetName>
-        <Top>1.58433cm</Top>
-        <Left>2.80141cm</Left>
+        <Top>1.95475cm</Top>
+        <Left>1.12479cm</Left>
         <Height>1.78208cm</Height>
         <Width>22.5cm</Width>
         <Style>
@@ -620,6 +620,48 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Reportes Clientes</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.81703cm</Top>
+        <Left>10.73891cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.69062cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>3.18576in</Height>
     <Style>
@@ -628,10 +670,10 @@
       </Border>
     </Style>
   </Body>
-  <Width>10.03434in</Width>
+  <Width>9.96119in</Width>
   <Page>
     <PageHeader>
-      <Height>4.84188cm</Height>
+      <Height>3.20146cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -639,8 +681,7 @@
           <Source>Embedded</Source>
           <Value>report</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>1.61396cm</Top>
-          <Left>7.80141cm</Left>
+          <Left>7.5cm</Left>
           <Height>2.71708cm</Height>
           <Width>11.12479cm</Width>
           <Style>
@@ -656,6 +697,16 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>

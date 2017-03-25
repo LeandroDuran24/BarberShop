@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BarbershopTech.UI.Reportes;
+using Entidades;
 
 namespace BarbershopTech.Consultas
 {
@@ -55,6 +57,8 @@ namespace BarbershopTech.Consultas
         public void SeleccionarCombo()
         {
 
+            RClientes lista = new RClientes();
+            int criterio = Utilidades.TOINT(BuscartextBox.Text);
             if (comboBox1.SelectedIndex == 0)
             {
                 dataGridView1.DataSource = BLL.ClienteBLL.GetListTodo();
@@ -69,7 +73,9 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.ClienteId == Utilidades.TOINT(BuscartextBox.Text));
+                    lista.cliente.Add(BLL.ClienteBLL.Buscar(p => p.ClienteId == criterio));
+                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.ClienteId == criterio);
+                   
                 }
 
             }
@@ -82,6 +88,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
+
                     dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Nombres == BuscartextBox.Text);
                 }
 
@@ -145,7 +152,7 @@ namespace BarbershopTech.Consultas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
+
             int criterio = Utilidades.TOINT(BuscartextBox.Text);
             if (comboBox1.SelectedIndex == 0)
             {
@@ -225,6 +232,12 @@ namespace BarbershopTech.Consultas
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            RClientes cliente = new RClientes();
+            cliente.Show();
         }
     }
 }

@@ -612,7 +612,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistroFactura";
-            this.Text = "RegistroFactura";
+            this.Text = "Facturas";
             this.Load += new System.EventHandler(this.RegistroFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -308,7 +308,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistroUsuarios";
-            this.Text = "RegistroUsuarios";
+            this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.RegistroUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

@@ -34,13 +34,11 @@
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.contrasena = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.salir = new System.Windows.Forms.Button();
             this.entrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.clientesTableAdapter1 = new BarbershopTech.UI.Reportes.DataSetBarberShopTableAdapters.ClientesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -92,18 +90,6 @@
             this.nombre.Size = new System.Drawing.Size(48, 18);
             this.nombre.TabIndex = 1430;
             this.nombre.Text = "Email";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Algerian", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Cyan;
-            this.label1.Location = new System.Drawing.Point(160, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 21);
-            this.label1.TabIndex = 1432;
-            this.label1.Text = "Inicio de Sesion";
             // 
             // salir
             // 
@@ -163,15 +149,11 @@
             this.pictureBox2.TabIndex = 1433;
             this.pictureBox2.TabStop = false;
             // 
-            // clientesTableAdapter1
-            // 
-            this.clientesTableAdapter1.ClearBeforeFill = true;
-            // 
             // Log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::BarbershopTech.Properties.Resources.login;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(461, 352);
             this.Controls.Add(this.pictureBox2);
@@ -182,13 +164,13 @@
             this.Controls.Add(this.contrasena);
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Log";
-            this.Text = "Log";
+            this.Text = "Inicio de Sesion";
             this.Load += new System.EventHandler(this.Log_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -206,10 +188,9 @@
         private System.Windows.Forms.Label contrasena;
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.TextBox NombretextBox;
-        private UI.Reportes.DataSetBarberShopTableAdapters.ClientesTableAdapter clientesTableAdapter1;
+      //  private UI.Reportes.DataSetBarberShopTableAdapters.ClientesTableAdapter clientesTableAdapter1;
     }
 }

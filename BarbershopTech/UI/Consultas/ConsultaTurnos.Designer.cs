@@ -170,7 +170,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConsultaTurnos";
-            this.Text = "ConsultaTurnos";
+            this.Text = "Turnos";
             this.Load += new System.EventHandler(this.ConsultaTurnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -87,7 +87,8 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.TurnosId == Utilidades.TOINT(BuscartextBox.Text));
+                    int id = Utilidades.TOINT(BuscartextBox.Text);
+                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.TurnosId == id);
                 }
 
             }
@@ -148,7 +149,8 @@ namespace BarbershopTech.Consultas
 
             else if (comboBox1.SelectedIndex == 3)
             {
-                dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.TurnosId == Utilidades.TOINT(BuscartextBox.Text));
+                int id = Utilidades.TOINT(BuscartextBox.Text);
+                dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.TurnosId == id);
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;

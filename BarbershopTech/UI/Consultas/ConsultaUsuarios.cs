@@ -76,7 +76,8 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.UsuarioBLL.GetList(p => p.UsuarioId == Utilidades.TOINT(BuscartextBox.Text));
+                    int id = Utilidades.TOINT(BuscartextBox.Text);
+                    dataGridView1.DataSource = BLL.UsuarioBLL.GetList(p => p.UsuarioId == id);
                 }
             }
 

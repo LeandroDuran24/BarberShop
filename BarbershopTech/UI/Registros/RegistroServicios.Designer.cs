@@ -205,7 +205,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistroServicios";
-            this.Text = "RegistroServicios";
+            this.Text = "Servicios";
             this.Load += new System.EventHandler(this.RegistroServicios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

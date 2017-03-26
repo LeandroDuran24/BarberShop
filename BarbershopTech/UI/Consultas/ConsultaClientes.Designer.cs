@@ -50,9 +50,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(257, 45);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(293, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(49, 16);
             this.label4.TabIndex = 45;
             this.label4.Text = "Hasta";
             // 
@@ -60,9 +61,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(22, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 44;
             this.label3.Text = "Desde";
             // 
@@ -70,7 +72,7 @@
             // 
             this.hastadateTimePicker.CustomFormat = "yyy/MM/dd";
             this.hastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.hastadateTimePicker.Location = new System.Drawing.Point(309, 39);
+            this.hastadateTimePicker.Location = new System.Drawing.Point(368, 45);
             this.hastadateTimePicker.Name = "hastadateTimePicker";
             this.hastadateTimePicker.Size = new System.Drawing.Size(153, 20);
             this.hastadateTimePicker.TabIndex = 43;
@@ -79,7 +81,7 @@
             // 
             this.desdedateTimePicker.CustomFormat = "yyy/MM/dd";
             this.desdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.desdedateTimePicker.Location = new System.Drawing.Point(88, 39);
+            this.desdedateTimePicker.Location = new System.Drawing.Point(124, 46);
             this.desdedateTimePicker.Name = "desdedateTimePicker";
             this.desdedateTimePicker.Size = new System.Drawing.Size(153, 20);
             this.desdedateTimePicker.TabIndex = 42;
@@ -88,9 +90,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(247, 19);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(283, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 41;
             this.label2.Text = "Busqueda";
             // 
@@ -98,24 +101,26 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(86, 16);
             this.label1.TabIndex = 40;
             this.label1.Text = "Seleccione";
             // 
             // BuscartextBox
             // 
-            this.BuscartextBox.Location = new System.Drawing.Point(308, 12);
+            this.BuscartextBox.Location = new System.Drawing.Point(367, 18);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(154, 20);
             this.BuscartextBox.TabIndex = 39;
+            this.BuscartextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BuscartextBox_KeyPress);
             // 
             // comboBox1
             // 
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(88, 12);
+            this.comboBox1.Location = new System.Drawing.Point(124, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 38;
@@ -129,7 +134,7 @@
             this.Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Filtrar.Image = ((System.Drawing.Image)(resources.GetObject("Filtrar.Image")));
             this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Filtrar.Location = new System.Drawing.Point(483, 19);
+            this.Filtrar.Location = new System.Drawing.Point(542, 25);
             this.Filtrar.Name = "Filtrar";
             this.Filtrar.Size = new System.Drawing.Size(84, 31);
             this.Filtrar.TabIndex = 37;
@@ -144,7 +149,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(23, 78);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 197);
+            this.dataGridView1.Size = new System.Drawing.Size(703, 197);
             this.dataGridView1.TabIndex = 36;
             // 
             // errorProvider1
@@ -158,7 +163,7 @@
             this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonImprimir.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimir.Image")));
             this.buttonImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImprimir.Location = new System.Drawing.Point(583, 19);
+            this.buttonImprimir.Location = new System.Drawing.Point(642, 25);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(84, 31);
             this.buttonImprimir.TabIndex = 46;
@@ -171,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 361);
+            this.ClientSize = new System.Drawing.Size(753, 361);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

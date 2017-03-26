@@ -60,6 +60,7 @@
             this.FechadateTimePicker1.Name = "FechadateTimePicker1";
             this.FechadateTimePicker1.Size = new System.Drawing.Size(231, 20);
             this.FechadateTimePicker1.TabIndex = 53;
+            this.FechadateTimePicker1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FechadateTimePicker1_KeyPress);
             // 
             // label11
             // 

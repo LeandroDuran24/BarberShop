@@ -54,7 +54,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(282, 146);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(104, 29);
-            this.Eliminarbutton.TabIndex = 60;
+            this.Eliminarbutton.TabIndex = 7;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = false;
@@ -70,7 +70,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(171, 146);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(105, 29);
-            this.Guardarbutton.TabIndex = 59;
+            this.Guardarbutton.TabIndex = 3;
             this.Guardarbutton.Text = "Registrar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = false;
@@ -83,7 +83,7 @@
             this.idSeriviciotextBox.Location = new System.Drawing.Point(171, 44);
             this.idSeriviciotextBox.Name = "idSeriviciotextBox";
             this.idSeriviciotextBox.Size = new System.Drawing.Size(90, 20);
-            this.idSeriviciotextBox.TabIndex = 58;
+            this.idSeriviciotextBox.TabIndex = 4;
             this.idSeriviciotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idSeriviciotextBox_KeyPress);
             // 
             // nombretextBox3
@@ -93,7 +93,7 @@
             this.nombretextBox3.Location = new System.Drawing.Point(171, 77);
             this.nombretextBox3.Name = "nombretextBox3";
             this.nombretextBox3.Size = new System.Drawing.Size(208, 20);
-            this.nombretextBox3.TabIndex = 57;
+            this.nombretextBox3.TabIndex = 1;
             this.nombretextBox3.TextChanged += new System.EventHandler(this.nombretextBox3_TextChanged);
             this.nombretextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombretextBox3_KeyPress);
             // 
@@ -139,7 +139,7 @@
             this.buttonNuevo.Location = new System.Drawing.Point(66, 146);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(98, 29);
-            this.buttonNuevo.TabIndex = 65;
+            this.buttonNuevo.TabIndex = 6;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNuevo.UseVisualStyleBackColor = false;
@@ -155,7 +155,7 @@
             this.buttonBuscar.Location = new System.Drawing.Point(267, 42);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(112, 27);
-            this.buttonBuscar.TabIndex = 66;
+            this.buttonBuscar.TabIndex = 5;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBuscar.UseVisualStyleBackColor = false;
@@ -168,7 +168,7 @@
             this.CostoTexBox.Location = new System.Drawing.Point(171, 117);
             this.CostoTexBox.Name = "CostoTexBox";
             this.CostoTexBox.Size = new System.Drawing.Size(208, 20);
-            this.CostoTexBox.TabIndex = 68;
+            this.CostoTexBox.TabIndex = 2;
             this.CostoTexBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostoButton_KeyPress);
             // 
             // label2

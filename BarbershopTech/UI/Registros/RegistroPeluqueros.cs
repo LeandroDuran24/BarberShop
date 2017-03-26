@@ -82,7 +82,7 @@ namespace BarbershopTech.Registros
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             int id = int.Parse(PeluqueroidtextBox.Text);
-            peluquero= BLL.PeluqueroBLL.Buscar((p => p.PeluqueroId == id));
+            peluquero = BLL.PeluqueroBLL.Buscar((p => p.PeluqueroId == id));
 
             if (peluquero != null)
             {
@@ -100,7 +100,7 @@ namespace BarbershopTech.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            
+
 
             if (!Validar())
             {
@@ -155,6 +155,34 @@ namespace BarbershopTech.Registros
         private void nombretextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarLetras(e);
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (!Validar())
+                {
+
+                    MessageBox.Show("Favor Llenar");
+                }
+                else
+                {
+
+                    peluquero.PeluqueroId = Utilidades.TOINT(PeluqueroidtextBox.Text);
+                    peluquero.Nombre = nombretextBox3.Text;
+                    peluquero.HoraOcupadoHasta = DateTime.Now;
+
+                    if (peluquero.PeluqueroId != 0)
+                    {
+                        BLL.PeluqueroBLL.Mofidicar(peluquero);
+                        MessageBox.Show("Se ha modificado");
+                    }
+                    else
+                    {
+                        BLL.PeluqueroBLL.Guardar(peluquero);
+                        MessageBox.Show("Se ha Guardado Correctamente...");
+                    }
+
+                    Limpiar();
+                }
+            }
         }
 
         private void RegistroPeluqueros_Load(object sender, EventArgs e)

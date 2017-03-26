@@ -259,5 +259,41 @@ namespace BarbershopTech.Registros
         {
             ActualizarHoraturno();
         }
+
+        private void dateTimePickerHasta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (!Validar())
+                {
+                    MessageBox.Show("Favor Llenar");
+
+                }
+                else
+                {
+
+                    turno = LlenarCampos();
+                    BLL.TurnoBLL.Guardar(turno);
+                    MessageBox.Show("Se guardo correctamente");
+
+                    Peluqueros peluquero = (Peluqueros)PeluquerocomboBox.SelectedItem;
+
+                    if (peluquero != null)
+                    {
+                        peluquero.HoraOcupadoHasta = dateTimePickerHasta.Value;
+                        dateTimePickerDesde.Value = peluquero.HoraOcupadoHasta;
+                        BLL.PeluqueroBLL.Mofidicar(peluquero);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
+
+                }
+                Limpiar();
+            }
+        }
     }
 }

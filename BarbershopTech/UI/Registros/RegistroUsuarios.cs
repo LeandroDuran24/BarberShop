@@ -18,7 +18,7 @@ namespace BarbershopTech.Registros
             InitializeComponent();
             LlenarCombo();
         }
-        
+
         private void RegistroUsuarios_Load(object sender, EventArgs e)
         {
             ContraseñamaskedTextBox.MaxLength = 14;
@@ -68,13 +68,13 @@ namespace BarbershopTech.Registros
 
         public Usuarios LlenarCampos()
         {
-           
+
             usuario.UsuarioId = Utilidades.TOINT(textBoxId.Text);
             usuario.Nombres = NombretextBox.Text;
             usuario.Email = EmailtextBox.Text;
             usuario.Contrasena = Convert.ToString(ContraseñamaskedTextBox.Text);
             usuario.Confirmar = Convert.ToString(ConfirmarmaskedTextBox.Text);
-            if(comboBox1.SelectedIndex==0)
+            if (comboBox1.SelectedIndex == 0)
             {
                 usuario.Tipo = "Admin";
             }
@@ -157,13 +157,13 @@ namespace BarbershopTech.Registros
                 MessageBox.Show("No existe");
             }
 
-               
+
             Limpiar();
         }
 
         private void Registrarbutton_Click(object sender, EventArgs e)
         {
-          
+
             if (!Validar())
             {
 
@@ -173,7 +173,7 @@ namespace BarbershopTech.Registros
             {
 
                 usuario = LlenarCampos();
-                if (usuario.UsuarioId!=0)
+                if (usuario.UsuarioId != 0)
                 {
                     BLL.UsuarioBLL.Mofidicar(usuario);
                     MessageBox.Show("Se ha Modificado");
@@ -241,8 +241,41 @@ namespace BarbershopTech.Registros
         private void ConfirmarmaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarNumero(e);
-        }
 
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (!Validar())
+                {
+
+                    MessageBox.Show("Favor Llenar");
+                }
+                else
+                {
+
+                    usuario = LlenarCampos();
+                    if (usuario.UsuarioId != 0)
+                    {
+                        BLL.UsuarioBLL.Mofidicar(usuario);
+                        MessageBox.Show("Se ha Modificado");
+                    }
+                    else
+                    {
+                        if (ContraseñamaskedTextBox.Text != ConfirmarmaskedTextBox.Text)
+                        {
+                            ConfirmarmaskedTextBox.Clear();
+                            MessageBox.Show("No coinciden las Clave");
+
+                        }
+                        else
+                        {
+                            BLL.UsuarioBLL.Guardar(usuario);
+                            MessageBox.Show("Se ha Guardado Correctamente..."); ;
+                        }
+                    }
+                    Limpiar();
+                }
+            }
+        }
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();

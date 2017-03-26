@@ -108,6 +108,7 @@
             this.dateTimePickerHasta.Name = "dateTimePickerHasta";
             this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 25);
             this.dateTimePickerHasta.TabIndex = 1;
+            this.dateTimePickerHasta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerHasta_KeyPress);
             // 
             // dateTimePickerDesde
             // 

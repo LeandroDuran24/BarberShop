@@ -17,7 +17,7 @@ namespace DAL
         public DbSet<Turnos> turno { get; set; }
         public DbSet<TipoServicios> servicio { get; set; }
         public DbSet<Facturas> factura { get; set; }
-        public DbSet<Productos> producto { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -30,18 +30,6 @@ namespace DAL
                     mapeo.MapRightKey("FacturaId");
                     mapeo.ToTable("FacturaServicios");
                 });
-
-            modelBuilder.Entity<Facturas>()
-               .HasMany(p => p.ProductoList)
-               .WithMany(p => p.facturalist)
-               .Map(mapeo =>
-               {
-                   mapeo.MapLeftKey("ProductoId");
-                   mapeo.MapRightKey("FacturaId");
-                   mapeo.ToTable("FacturaProductos");
-               });
         }
-
-
     }
 }

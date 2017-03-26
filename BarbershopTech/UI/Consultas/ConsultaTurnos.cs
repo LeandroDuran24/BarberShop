@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BarbershopTech.UI.Reportes;
+using Entidades;
 
 namespace BarbershopTech.Consultas
 {
     public partial class ConsultaTurnos : Form
     {
+        public List<Turnos> lista { get; set; }
         public ConsultaTurnos()
         {
             InitializeComponent();
@@ -50,7 +53,7 @@ namespace BarbershopTech.Consultas
 
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.TurnoBLL.GetListTodo();
+                lista = BLL.TurnoBLL.GetListTodo();
             }
 
             else if (comboBox1.SelectedIndex == 1)
@@ -61,7 +64,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
+                    lista = BLL.TurnoBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
                 }
 
             }
@@ -74,7 +77,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.NombrePeluquero == BuscartextBox.Text);
+                    lista = BLL.TurnoBLL.GetList(p => p.NombrePeluquero == BuscartextBox.Text);
                 }
 
             }
@@ -88,7 +91,7 @@ namespace BarbershopTech.Consultas
                 else
                 {
                     int id = Utilidades.TOINT(BuscartextBox.Text);
-                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.TurnosId == id);
+                    lista = BLL.TurnoBLL.GetList(p => p.TurnosId == id);
                 }
 
             }
@@ -98,9 +101,11 @@ namespace BarbershopTech.Consultas
 
                 if (desdedateTimePicker.Value.Date > hastadateTimePicker.Value.Date)
                 {
-                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.FechaDesde >= desdedateTimePicker.Value.Date && p.FechaHasta < hastadateTimePicker.Value.Date);
+                    lista = BLL.TurnoBLL.GetList(p => p.FechaDesde >= desdedateTimePicker.Value.Date && p.FechaHasta < hastadateTimePicker.Value.Date);
                 }
             }
+
+            dataGridView1.DataSource = lista;
 
         }
 
@@ -123,7 +128,7 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.TurnoBLL.GetListTodo();
+                lista = BLL.TurnoBLL.GetListTodo();
                 BuscartextBox.Enabled = false;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -132,7 +137,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
+                lista = BLL.TurnoBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
             }
@@ -140,7 +145,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 2)
             {
 
-                dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.NombrePeluquero == BuscartextBox.Text);
+                lista = BLL.TurnoBLL.GetList(p => p.NombrePeluquero == BuscartextBox.Text);
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -150,7 +155,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 3)
             {
                 int id = Utilidades.TOINT(BuscartextBox.Text);
-                dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.TurnosId == id);
+                lista = BLL.TurnoBLL.GetList(p => p.TurnosId == id);
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -163,8 +168,23 @@ namespace BarbershopTech.Consultas
                 hastadateTimePicker.Enabled = true;
                 if (desdedateTimePicker.Value.Date > hastadateTimePicker.Value.Date)
                 {
-                    dataGridView1.DataSource = BLL.TurnoBLL.GetList(p => p.FechaDesde >= desdedateTimePicker.Value.Date && p.FechaHasta < hastadateTimePicker.Value.Date);
+                    lista = BLL.TurnoBLL.GetList(p => p.FechaDesde >= desdedateTimePicker.Value.Date && p.FechaHasta < hastadateTimePicker.Value.Date);
                 }
+            }
+            dataGridView1.DataSource = lista;
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            RTurnos turno = new RTurnos(lista);
+            turno.Show();
+        }
+
+        private void BuscartextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SeleccionarCombo();
             }
         }
     }

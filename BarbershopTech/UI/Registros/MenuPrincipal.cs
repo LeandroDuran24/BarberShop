@@ -18,7 +18,7 @@ namespace BarbershopTech.Registros
         private RegistroServicios servicio = null;
         private RegistroUsuarios usuario = null;
         private RegistroTurnos turno = null;
-      
+
         private RegistroFactura factura = null;
         private ConsultaClientes cCliente = null;
         private ConsultaFactura cFactura = null;
@@ -223,7 +223,7 @@ namespace BarbershopTech.Registros
         public void LlenarLabel()
         {
             labelUsuarios.Text = InicioSesion.Label().Tipo;
-            
+
         }
 
         public void Permisos()
@@ -274,14 +274,14 @@ namespace BarbershopTech.Registros
 
         private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroFactura r =this.FormInstanceFactura;
+            RegistroFactura r = this.FormInstanceFactura;
             r.Show();
             r.BringToFront();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
         //consultas
 

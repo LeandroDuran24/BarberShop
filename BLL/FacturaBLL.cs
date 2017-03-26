@@ -34,7 +34,7 @@ namespace BLL
             return Result;
         }
 
-        
+
 
         public static bool Mofidicar(Facturas criterio)
         {
@@ -99,18 +99,5 @@ namespace BLL
 
         }
 
-
-
-        public static bool Mofidicar(Productos criterio)
-        {
-            bool mod = false;
-            using (var db = new Repositorio<Productos>())
-            {
-                mod = db.Modificar(criterio);
-            }
-
-            return mod;
-
-        }
     }
 }

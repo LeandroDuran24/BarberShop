@@ -122,7 +122,7 @@ namespace BarbershopTech.Registros
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             int id = int.Parse(idSeriviciotextBox.Text);
-           servicio = BLL.TipoServicioBLL.Buscar((p => p.ServicioId == id));
+            servicio = BLL.TipoServicioBLL.Buscar((p => p.ServicioId == id));
 
             if (servicio != null)
             {
@@ -179,6 +179,34 @@ namespace BarbershopTech.Registros
         private void CostoButton_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarNumero(e);
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (!Validar())
+                {
+
+                    MessageBox.Show("Favor Llenar");
+                }
+                else
+                {
+
+                    servicio.ServicioId = Utilidades.TOINT(idSeriviciotextBox.Text);
+                    servicio.Nombre = nombretextBox3.Text;
+                    servicio.Costo = Convert.ToInt32(CostoTexBox.Text);
+                    if (servicio.ServicioId != 0)
+                    {
+                        BLL.TipoServicioBLL.Mofidicar(servicio);
+                        MessageBox.Show("Se ha modificado");
+                    }
+                    else
+                    {
+                        BLL.TipoServicioBLL.Guardar(servicio);
+                        MessageBox.Show("Se ha Guardado Correctamente...");
+                    }
+
+                    Limpiar();
+                }
+            }
         }
 
         private void RegistroServicios_Load(object sender, EventArgs e)

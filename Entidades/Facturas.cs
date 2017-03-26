@@ -22,11 +22,11 @@ namespace Entidades
 
 
         public virtual List<TipoServicios> ServicioList { get; set; }
-        public virtual List<Productos> ProductoList { get; set; }
+       
         public Facturas()
         {
             this.ServicioList = new List<TipoServicios>();
-            ProductoList = new List<Productos>();
+           
         }
     }
 }

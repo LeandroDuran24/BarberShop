@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BarbershopTech.UI.Reportes;
+using Entidades;
 
 namespace BarbershopTech.Consultas
 {
     public partial class ConsultaPeluqueros : Form
     {
+        public List<Peluqueros> lista { get; set; }
         public ConsultaPeluqueros()
         {
             InitializeComponent();
@@ -46,7 +49,7 @@ namespace BarbershopTech.Consultas
 
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.PeluqueroBLL.GetListTodo();
+                lista = BLL.PeluqueroBLL.GetListTodo();
             }
 
             else if (comboBox1.SelectedIndex == 1)
@@ -57,7 +60,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.PeluqueroBLL.GetList(p => p.Nombre == BuscartextBox.Text);
+                    lista = BLL.PeluqueroBLL.GetList(p => p.Nombre == BuscartextBox.Text);
                 }
 
             }
@@ -71,9 +74,10 @@ namespace BarbershopTech.Consultas
                 else
                 {
                     int id = Utilidades.TOINT(BuscartextBox.Text);
-                    dataGridView1.DataSource = BLL.PeluqueroBLL.GetList(p => p.PeluqueroId == id);
+                    lista = BLL.PeluqueroBLL.GetList(p => p.PeluqueroId == id);
                 }
             }
+            dataGridView1.DataSource = lista;
 
         }
 
@@ -92,14 +96,14 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.PeluqueroBLL.GetListTodo();
+                lista = BLL.PeluqueroBLL.GetListTodo();
                 BuscartextBox.Enabled = false;
             }
 
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                dataGridView1.DataSource = BLL.PeluqueroBLL.GetList(p => p.Nombre == BuscartextBox.Text);
+                lista = BLL.PeluqueroBLL.GetList(p => p.Nombre == BuscartextBox.Text);
                 BuscartextBox.Enabled = true;
 
             }
@@ -107,8 +111,28 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 2)
             {
 
-                dataGridView1.DataSource = BLL.PeluqueroBLL.GetList(p => p.PeluqueroId == Utilidades.TOINT(BuscartextBox.Text));
+                lista = BLL.PeluqueroBLL.GetList(p => p.PeluqueroId == Utilidades.TOINT(BuscartextBox.Text));
                 BuscartextBox.Enabled = true;
+            }
+            dataGridView1.DataSource = lista;
+        }
+
+        private void ConsultaPeluqueros_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            RPeluqueros peluquero = new RPeluqueros(lista);
+            peluquero.Show();
+        }
+
+        private void BuscartextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SeleccionarCombo();
             }
         }
     }

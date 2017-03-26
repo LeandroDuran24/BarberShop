@@ -46,9 +46,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(244, 40);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(265, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 37;
             this.label2.Text = "Busqueda";
             // 
@@ -56,24 +57,26 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(86, 16);
             this.label1.TabIndex = 36;
             this.label1.Text = "Seleccione";
             // 
             // BuscartextBox
             // 
-            this.BuscartextBox.Location = new System.Drawing.Point(303, 33);
+            this.BuscartextBox.Location = new System.Drawing.Point(349, 39);
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(154, 20);
             this.BuscartextBox.TabIndex = 35;
+            this.BuscartextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BuscartextBox_KeyPress);
             // 
             // comboBox1
             // 
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 33);
+            this.comboBox1.Location = new System.Drawing.Point(106, 36);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 34;
@@ -87,7 +90,7 @@
             this.Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Filtrar.Image = ((System.Drawing.Image)(resources.GetObject("Filtrar.Image")));
             this.Filtrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Filtrar.Location = new System.Drawing.Point(463, 23);
+            this.Filtrar.Location = new System.Drawing.Point(509, 30);
             this.Filtrar.Name = "Filtrar";
             this.Filtrar.Size = new System.Drawing.Size(84, 31);
             this.Filtrar.TabIndex = 33;
@@ -100,9 +103,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 67);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(625, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(663, 225);
             this.dataGridView1.TabIndex = 32;
             // 
             // errorProvider1
@@ -116,7 +119,7 @@
             this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonImprimir.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimir.Image")));
             this.buttonImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImprimir.Location = new System.Drawing.Point(553, 22);
+            this.buttonImprimir.Location = new System.Drawing.Point(599, 30);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(84, 31);
             this.buttonImprimir.TabIndex = 47;
@@ -128,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 308);
+            this.ClientSize = new System.Drawing.Size(741, 308);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

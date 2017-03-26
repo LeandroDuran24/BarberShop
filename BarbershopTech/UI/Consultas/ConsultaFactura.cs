@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BarbershopTech.UI.Reportes;
+using Entidades;
 
 namespace BarbershopTech.Consultas
 {
     public partial class ConsultaFactura : Form
     {
+        public List<Facturas> lista { get; set; }
         public ConsultaFactura()
         {
             InitializeComponent();
@@ -46,7 +49,7 @@ namespace BarbershopTech.Consultas
 
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.FacturaBLL.GetListTodo();
+                lista = BLL.FacturaBLL.GetListTodo();
             }
 
             else if (comboBox1.SelectedIndex == 1)
@@ -57,7 +60,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
+                    lista = BLL.FacturaBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
                 }
 
             }
@@ -70,10 +73,10 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.FacturaId == Utilidades.TOINT(BuscartextBox.Text));
+                    lista = BLL.FacturaBLL.GetList(p => p.FacturaId == Utilidades.TOINT(BuscartextBox.Text));
                 }
             }
-
+            dataGridView1.DataSource = lista;
         }
 
         private void Filtrar_Click(object sender, EventArgs e)
@@ -90,14 +93,14 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.FacturaBLL.GetListTodo();
+                lista = BLL.FacturaBLL.GetListTodo();
                 BuscartextBox.Enabled = false;
             }
 
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
+                lista = BLL.FacturaBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
                 BuscartextBox.Enabled = true;
 
             }
@@ -105,9 +108,24 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 2)
             {
 
-                dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.FacturaId == Utilidades.TOINT(BuscartextBox.Text));
+                lista = BLL.FacturaBLL.GetList(p => p.FacturaId == Utilidades.TOINT(BuscartextBox.Text));
                 BuscartextBox.Enabled = true;
 
+            }
+            dataGridView1.DataSource = lista;
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            RFacturas factura = new RFacturas(lista);
+            factura.Show();
+        }
+
+        private void BuscartextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SeleccionarCombo();
             }
         }
     }

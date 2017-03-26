@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Entidades;
 
 namespace BarbershopTech.Consultas
 {
     public partial class ConsultaServicios : Form
     {
+        public List<TipoServicios> lista { get; set; }
         public ConsultaServicios()
         {
             InitializeComponent();
@@ -46,7 +48,7 @@ namespace BarbershopTech.Consultas
 
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.TipoServicioBLL.GetListTodo();
+                lista = BLL.TipoServicioBLL.GetListTodo();
             }
 
             else if (comboBox1.SelectedIndex == 1)
@@ -57,7 +59,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.TipoServicioBLL.GetList(p => p.Nombre == BuscartextBox.Text);
+                    lista = BLL.TipoServicioBLL.GetList(p => p.Nombre == BuscartextBox.Text);
                 }
 
             }
@@ -71,9 +73,10 @@ namespace BarbershopTech.Consultas
                 else
                 {
                     int id = Utilidades.TOINT(BuscartextBox.Text);
-                    dataGridView1.DataSource = BLL.TipoServicioBLL.GetList(p => p.ServicioId == id);
+                    lista = BLL.TipoServicioBLL.GetList(p => p.ServicioId == id);
                 }
             }
+            dataGridView1.DataSource = lista;
 
         }
 
@@ -92,14 +95,14 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.TipoServicioBLL.GetListTodo();
+                lista = BLL.TipoServicioBLL.GetListTodo();
                 BuscartextBox.Enabled = false;
             }
 
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                dataGridView1.DataSource = BLL.TipoServicioBLL.GetList(p => p.Nombre == BuscartextBox.Text);
+                lista = BLL.TipoServicioBLL.GetList(p => p.Nombre == BuscartextBox.Text);
                 BuscartextBox.Enabled = true;
 
 
@@ -108,9 +111,18 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 2)
             {
 
-                dataGridView1.DataSource = BLL.TipoServicioBLL.GetList(p => p.ServicioId == Utilidades.TOINT(BuscartextBox.Text));
+                lista = BLL.TipoServicioBLL.GetList(p => p.ServicioId == Utilidades.TOINT(BuscartextBox.Text));
                 BuscartextBox.Enabled = true;
 
+            }
+            dataGridView1.DataSource = lista;
+        }
+
+        private void BuscartextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SeleccionarCombo();
             }
         }
     }

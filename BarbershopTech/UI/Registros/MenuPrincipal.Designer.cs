@@ -35,7 +35,6 @@
             this.registroClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,8 +74,7 @@
             this.registrarUsuariosToolStripMenuItem,
             this.registroClientesToolStripMenuItem,
             this.empleadosToolStripMenuItem,
-            this.serviciosToolStripMenuItem,
-            this.productosToolStripMenuItem});
+            this.serviciosToolStripMenuItem});
             this.registrosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registrosToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
@@ -116,14 +114,6 @@
             this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.serviciosToolStripMenuItem.Text = "Servicios";
             this.serviciosToolStripMenuItem.Click += new System.EventHandler(this.serviciosToolStripMenuItem_Click);
-            // 
-            // productosToolStripMenuItem
-            // 
-            this.productosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("productosToolStripMenuItem.Image")));
-            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.productosToolStripMenuItem.Text = "Productos";
-            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -174,6 +164,8 @@
             // 
             // serviciosToolStripMenuItem1
             // 
+            this.serviciosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("serviciosToolStripMenuItem1.Image")));
+            this.serviciosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.serviciosToolStripMenuItem1.Name = "serviciosToolStripMenuItem1";
             this.serviciosToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
             this.serviciosToolStripMenuItem1.Text = "Servicios";
@@ -181,6 +173,7 @@
             // 
             // facturasToolStripMenuItem
             // 
+            this.facturasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("facturasToolStripMenuItem.Image")));
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
             this.facturasToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.facturasToolStripMenuItem.Text = "Facturas";
@@ -279,7 +272,6 @@
         private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.Label labelUsuarios;
     }
 }

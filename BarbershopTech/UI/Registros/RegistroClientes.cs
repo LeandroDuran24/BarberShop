@@ -203,5 +203,34 @@ namespace BarbershopTech.Registros
         {
             Limpiar();
         }
+
+        private void FechadateTimePicker1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (!Validar())
+                {
+
+                    MessageBox.Show("Ha Ocurrido Error...");
+                }
+                else
+                {
+
+                    cliente = LlenarCampos();
+                    if (cliente.ClienteId != 0)
+                    {
+                        BLL.ClienteBLL.Mofidicar(cliente);
+                        MessageBox.Show("Se ha modificado");
+                    }
+                    else
+                    {
+                        BLL.ClienteBLL.Guardar(cliente);
+                        MessageBox.Show("Se ha Guardado Correctamente...");
+                    }
+
+                    Limpiar();
+                }
+            }
+        }
     }
 }

@@ -241,5 +241,14 @@ namespace BarbershopTech.Consultas
             RClientes cliente = new RClientes(lista);
             cliente.Show();
         }
+
+        private void BuscartextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SeleccionarCombo();
+            }
+        }
     }
 }

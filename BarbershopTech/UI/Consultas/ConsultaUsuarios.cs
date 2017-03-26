@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BarbershopTech.UI.Reportes;
+using Entidades;
 
 namespace BarbershopTech.Consultas
 {
     public partial class ConsultaUsuarios : Form
     {
+        public List<Usuarios> lista { get; set; }
         public ConsultaUsuarios()
         {
             InitializeComponent();
@@ -52,7 +55,7 @@ namespace BarbershopTech.Consultas
 
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.UsuarioBLL.GetListTodo();
+                lista = BLL.UsuarioBLL.GetListTodo();
             }
 
             else if (comboBox1.SelectedIndex == 1)
@@ -63,7 +66,7 @@ namespace BarbershopTech.Consultas
                 }
                 else
                 {
-                    dataGridView1.DataSource = BLL.UsuarioBLL.GetList(p => p.Nombres == BuscartextBox.Text);
+                    lista = BLL.UsuarioBLL.GetList(p => p.Nombres == BuscartextBox.Text);
                 }
 
             }
@@ -77,9 +80,10 @@ namespace BarbershopTech.Consultas
                 else
                 {
                     int id = Utilidades.TOINT(BuscartextBox.Text);
-                    dataGridView1.DataSource = BLL.UsuarioBLL.GetList(p => p.UsuarioId == id);
+                    lista = BLL.UsuarioBLL.GetList(p => p.UsuarioId == id);
                 }
             }
+            dataGridView1.DataSource = lista;
 
         }
 
@@ -98,22 +102,41 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.UsuarioBLL.GetListTodo();
+                lista = BLL.UsuarioBLL.GetListTodo();
                 BuscartextBox.Enabled = false;
             }
 
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                dataGridView1.DataSource = BLL.UsuarioBLL.GetList(p => p.Nombres == BuscartextBox.Text);
+                lista = BLL.UsuarioBLL.GetList(p => p.Nombres == BuscartextBox.Text);
                 BuscartextBox.Enabled = true;
             }
 
             else if (comboBox1.SelectedIndex == 2)
             {
-
-                dataGridView1.DataSource = BLL.UsuarioBLL.GetList(p => p.UsuarioId == Utilidades.TOINT(BuscartextBox.Text));
+                int id = Utilidades.TOINT(BuscartextBox.Text);
+                lista = BLL.UsuarioBLL.GetList(p => p.UsuarioId == id);
                 BuscartextBox.Enabled = true;
+            }
+        }
+
+        private void ConsultaUsuarios_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            RUsuarios usuario = new RUsuarios(lista);
+            usuario.Show();
+        }
+
+        private void BuscartextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SeleccionarCombo();
             }
         }
     }

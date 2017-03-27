@@ -308,7 +308,11 @@
       <DependentUpon>BarberShopDb.mdf</DependentUpon>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Resources\images.jpg" />
     <Content Include="UI\Resources\barbershop-inspired-hairstyles-for-men-1108769-TwoByOne.jpg" />
+    <Content Include="UI\Resources\consulta2.jpg" />
+    <Content Include="UI\Resources\images.jpg" />
+    <Content Include="UI\Resources\login.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

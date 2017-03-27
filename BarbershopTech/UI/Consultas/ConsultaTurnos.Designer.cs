@@ -149,6 +149,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 83);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(691, 197);
             this.dataGridView1.TabIndex = 46;
             // 
@@ -176,7 +177,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 292);
+            this.BackgroundImage = global::BarbershopTech.Properties.Resources.consulta2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(726, 339);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

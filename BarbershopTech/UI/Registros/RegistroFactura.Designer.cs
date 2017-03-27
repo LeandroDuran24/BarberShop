@@ -51,7 +51,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.PrecioProductotextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBoxPago = new System.Windows.Forms.ComboBox();
             this.labelAtendido = new System.Windows.Forms.Label();
@@ -72,6 +71,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -134,6 +135,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(18, 416);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(480, 178);
             this.dataGridView1.TabIndex = 81;
             // 
@@ -203,7 +205,7 @@
             // textBoxTotal
             // 
             this.textBoxTotal.BackColor = System.Drawing.Color.White;
-            this.textBoxTotal.ForeColor = System.Drawing.Color.Red;
+            this.textBoxTotal.ForeColor = System.Drawing.Color.Lime;
             this.textBoxTotal.Location = new System.Drawing.Point(109, 54);
             this.textBoxTotal.Multiline = true;
             this.textBoxTotal.Name = "textBoxTotal";
@@ -256,7 +258,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.buttonAgregar);
             this.groupBox2.Controls.Add(this.ProductoIdtextBox);
@@ -332,22 +334,9 @@
             this.label14.Text = "Producto";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Colonna MT", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(312, -1);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(154, 34);
-            this.label16.TabIndex = 83;
-            this.label16.Text = "BaberShop";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.comboBoxPago);
             this.groupBox3.Controls.Add(this.labelAtendido);
             this.groupBox3.Controls.Add(this.label7);
@@ -376,10 +365,12 @@
             this.comboBoxPago.Name = "comboBoxPago";
             this.comboBoxPago.Size = new System.Drawing.Size(317, 26);
             this.comboBoxPago.TabIndex = 94;
+            this.comboBoxPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxPago_KeyPress);
             // 
             // labelAtendido
             // 
             this.labelAtendido.AutoSize = true;
+            this.labelAtendido.ForeColor = System.Drawing.Color.Red;
             this.labelAtendido.Location = new System.Drawing.Point(616, 49);
             this.labelAtendido.Name = "labelAtendido";
             this.labelAtendido.Size = new System.Drawing.Size(127, 18);
@@ -487,6 +478,7 @@
             this.comboBoxNombre.Size = new System.Drawing.Size(317, 26);
             this.comboBoxNombre.TabIndex = 82;
             this.comboBoxNombre.Text = "Nombre cliente";
+            this.comboBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxNombre_KeyPress_1);
             // 
             // label2
             // 
@@ -504,7 +496,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textBoxDevuelta);
             this.groupBox1.Controls.Add(this.textBoxMonto);
             this.groupBox1.Controls.Add(this.label1);
@@ -522,7 +514,7 @@
             // textBoxDevuelta
             // 
             this.textBoxDevuelta.BackColor = System.Drawing.Color.White;
-            this.textBoxDevuelta.ForeColor = System.Drawing.Color.Red;
+            this.textBoxDevuelta.ForeColor = System.Drawing.Color.Aqua;
             this.textBoxDevuelta.Location = new System.Drawing.Point(109, 131);
             this.textBoxDevuelta.Multiline = true;
             this.textBoxDevuelta.Name = "textBoxDevuelta";
@@ -533,7 +525,7 @@
             // textBoxMonto
             // 
             this.textBoxMonto.BackColor = System.Drawing.Color.White;
-            this.textBoxMonto.ForeColor = System.Drawing.Color.Red;
+            this.textBoxMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.textBoxMonto.Location = new System.Drawing.Point(109, 96);
             this.textBoxMonto.Multiline = true;
             this.textBoxMonto.Name = "textBoxMonto";
@@ -572,7 +564,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.White;
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.dateTimePickerDesde);
             this.groupBox4.Location = new System.Drawing.Point(425, 81);
             this.groupBox4.Name = "groupBox4";
@@ -582,7 +574,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.BackColor = System.Drawing.Color.Transparent;
             this.groupBox5.Controls.Add(this.textBoxfacturaId);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.buttonBuscar);
@@ -592,17 +584,43 @@
             this.groupBox5.TabIndex = 88;
             this.groupBox5.TabStop = false;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Script MT Bold", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
+            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label12.Location = new System.Drawing.Point(258, -3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(295, 58);
+            this.label12.TabIndex = 89;
+            this.label12.Text = "   BarberShop";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
+            this.label16.Location = new System.Drawing.Point(535, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 13);
+            this.label16.TabIndex = 90;
+            // 
             // RegistroFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(784, 688);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.Eliminarbutton);
@@ -653,7 +671,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox PrecioProductotextBox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -674,5 +691,7 @@
         private System.Windows.Forms.Label labelAtendido;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxPago;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -46,6 +46,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(70, 69);
             this.pictureBox1.Name = "pictureBox1";
@@ -55,6 +56,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(70, 134);
             this.pictureBox2.Name = "pictureBox2";
@@ -65,6 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(256, 60);
             this.label1.Name = "label1";
@@ -76,6 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(263, 116);
             this.label2.Name = "label2";
@@ -85,6 +89,8 @@
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.BackColor = System.Drawing.Color.Gray;
+            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxEmail.Location = new System.Drawing.Point(188, 84);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(212, 20);
@@ -93,9 +99,12 @@
             // 
             // maskedTextBox1
             // 
+            this.maskedTextBox1.BackColor = System.Drawing.Color.Gray;
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
             this.maskedTextBox1.Location = new System.Drawing.Point(188, 140);
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PasswordChar = '°';
+            this.maskedTextBox1.PasswordChar = '☯';
             this.maskedTextBox1.Size = new System.Drawing.Size(212, 20);
             this.maskedTextBox1.TabIndex = 2;
             this.maskedTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox1_KeyPress);
@@ -140,6 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BarbershopTech.Properties.Resources.login;
             this.ClientSize = new System.Drawing.Size(490, 288);
             this.Controls.Add(this.Salirbutton);
             this.Controls.Add(this.Entrarbutton);
@@ -149,7 +159,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -49,9 +49,10 @@
             this.Eliminarbutton.BackColor = System.Drawing.Color.Transparent;
             this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Eliminarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminarbutton.ForeColor = System.Drawing.Color.White;
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(282, 146);
+            this.Eliminarbutton.Location = new System.Drawing.Point(275, 124);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(104, 29);
             this.Eliminarbutton.TabIndex = 7;
@@ -65,9 +66,10 @@
             this.Guardarbutton.BackColor = System.Drawing.Color.Transparent;
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guardarbutton.ForeColor = System.Drawing.Color.White;
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(171, 146);
+            this.Guardarbutton.Location = new System.Drawing.Point(164, 124);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(105, 29);
             this.Guardarbutton.TabIndex = 3;
@@ -80,7 +82,7 @@
             // 
             this.idSeriviciotextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.idSeriviciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idSeriviciotextBox.Location = new System.Drawing.Point(171, 44);
+            this.idSeriviciotextBox.Location = new System.Drawing.Point(164, 27);
             this.idSeriviciotextBox.Name = "idSeriviciotextBox";
             this.idSeriviciotextBox.Size = new System.Drawing.Size(90, 20);
             this.idSeriviciotextBox.TabIndex = 4;
@@ -90,7 +92,7 @@
             // 
             this.nombretextBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nombretextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombretextBox3.Location = new System.Drawing.Point(171, 77);
+            this.nombretextBox3.Location = new System.Drawing.Point(164, 55);
             this.nombretextBox3.Name = "nombretextBox3";
             this.nombretextBox3.Size = new System.Drawing.Size(208, 20);
             this.nombretextBox3.TabIndex = 1;
@@ -103,8 +105,8 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(72, 46);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(65, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 18);
@@ -117,8 +119,8 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(72, 76);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(65, 54);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 18);
@@ -134,9 +136,10 @@
             this.buttonNuevo.BackColor = System.Drawing.Color.Transparent;
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevo.ForeColor = System.Drawing.Color.White;
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(66, 146);
+            this.buttonNuevo.Location = new System.Drawing.Point(59, 124);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(98, 29);
             this.buttonNuevo.TabIndex = 6;
@@ -150,9 +153,10 @@
             this.buttonBuscar.BackColor = System.Drawing.Color.Transparent;
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscar.ForeColor = System.Drawing.Color.White;
             this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
             this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscar.Location = new System.Drawing.Point(267, 42);
+            this.buttonBuscar.Location = new System.Drawing.Point(260, 20);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(112, 27);
             this.buttonBuscar.TabIndex = 5;
@@ -165,7 +169,7 @@
             // 
             this.CostoTexBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CostoTexBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CostoTexBox.Location = new System.Drawing.Point(171, 117);
+            this.CostoTexBox.Location = new System.Drawing.Point(164, 81);
             this.CostoTexBox.Name = "CostoTexBox";
             this.CostoTexBox.Size = new System.Drawing.Size(208, 20);
             this.CostoTexBox.TabIndex = 2;
@@ -177,8 +181,8 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(72, 116);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(65, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 18);
@@ -189,7 +193,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 293);
+            this.BackgroundImage = global::BarbershopTech.Properties.Resources.images;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(442, 222);
             this.Controls.Add(this.CostoTexBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscar);

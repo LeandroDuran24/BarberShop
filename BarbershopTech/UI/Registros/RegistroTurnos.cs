@@ -295,5 +295,10 @@ namespace BarbershopTech.Registros
                 Limpiar();
             }
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

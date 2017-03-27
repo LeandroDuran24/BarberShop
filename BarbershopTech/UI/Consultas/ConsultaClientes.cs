@@ -158,7 +158,6 @@ namespace BarbershopTech.Consultas
             int criterio = Utilidades.TOINT(BuscartextBox.Text);
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.ClienteBLL.GetListTodo();
                 BuscartextBox.Enabled = false;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -167,7 +166,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.ClienteId == criterio);
+
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -178,7 +177,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 2)
             {
 
-                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Nombres == BuscartextBox.Text);
+
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -189,7 +188,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 3)
             {
 
-                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Apellidos == BuscartextBox.Text);
+
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -200,7 +199,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 4)
             {
 
-                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Direccion == BuscartextBox.Text);
+
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -210,7 +209,7 @@ namespace BarbershopTech.Consultas
 
             else if (comboBox1.SelectedIndex == 5)
             {
-                dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Cedula == (BuscartextBox.Text));
+
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -222,11 +221,7 @@ namespace BarbershopTech.Consultas
                 desdedateTimePicker.Enabled = true;
                 hastadateTimePicker.Enabled = true;
                 BuscartextBox.Enabled = false;
-                if (desdedateTimePicker.Value.Date > hastadateTimePicker.Value.Date)
-                {
-                    dataGridView1.DataSource = BLL.ClienteBLL.GetList(p => p.Fecha >= desdedateTimePicker.Value.Date && p.Fecha < hastadateTimePicker.Value.Date);
 
-                }
             }
 
         }

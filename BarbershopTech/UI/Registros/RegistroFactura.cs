@@ -169,6 +169,7 @@ namespace BarbershopTech.Registros
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = nueva.ServicioList.ToList();
+            this.dataGridView1.Columns["ServicioId"].Visible = false;
         }
 
         public void SacarCuenta()
@@ -218,7 +219,7 @@ namespace BarbershopTech.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-      
+
             if (!Validar())
             {
                 MessageBox.Show("Favor Llenar");
@@ -227,7 +228,7 @@ namespace BarbershopTech.Registros
             {
                 factura = LlenarCampos();
 
-                if ( factura.FacturaId!=0)
+                if (factura.FacturaId != 0)
                 {
                     BLL.FacturaBLL.Mofidicar(factura);
                     MessageBox.Show("Se ha Modificado");
@@ -271,16 +272,15 @@ namespace BarbershopTech.Registros
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(ProductoIdtextBox.Text))
+            if (string.IsNullOrEmpty(ProductoIdtextBox.Text))
             {
                 errorProvider1.SetError(ProductoIdtextBox, "Favor Llenar");
             }
             else
             {
                 int id = Utilidades.TOINT(ProductoIdtextBox.Text);
-                TipoServicios producto = new TipoServicios();
                 factura.ServicioList.Add(BLL.TipoServicioBLL.Buscar(p => p.ServicioId == id));
-
+               
                 LlenarDataGrid(factura);
                 SacarCuenta();
             }
@@ -334,6 +334,40 @@ namespace BarbershopTech.Registros
             ValidarNumero(e);
         }
 
+        private void textBoxfacturaId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
+        }
+
+        private void textBoxMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumero(e);
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+              if(Utilidades.TOINT(textBoxMonto.Text) < Utilidades.TOINT(textBoxTotal.Text))
+              {
+                    MessageBox.Show("El Monto es menor que el total, Favor Completar");
+                    textBoxMonto.Clear();
+              }
+              else
+              {
+                    decimal devuelta = Convert.ToDecimal(Utilidades.TOINT(textBoxMonto.Text) - Utilidades.TOINT(textBoxTotal.Text));
+                    textBoxDevuelta.Text = devuelta.ToString();
+                }
+               
+            }
+        }
+
+        private void comboBoxNombre_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void comboBoxPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        } 
+        
         private void label16_Click(object sender, EventArgs e)
         {
 
@@ -342,21 +376,11 @@ namespace BarbershopTech.Registros
         private void label14_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void textBoxComentario_TextChanged(object sender, EventArgs e)
+        } 
+        
+         private void textBoxPorcientoDescuento_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void textBoxfacturaId_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidarNumero(e);
-        }
-
-        private void textBoxPorcientoDescuento_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-
+            
         }
 
         private void textBoxImpuesto_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -364,13 +388,9 @@ namespace BarbershopTech.Registros
 
         }
 
-        private void textBoxMonto_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxComentario_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                decimal devuelta = Convert.ToDecimal(Utilidades.TOINT(textBoxMonto.Text) - Utilidades.TOINT(textBoxTotal.Text));
-                textBoxDevuelta.Text = devuelta.ToString();
-            }
+
         }
     }
 }

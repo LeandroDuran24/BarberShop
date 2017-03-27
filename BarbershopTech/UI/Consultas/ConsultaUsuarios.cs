@@ -102,21 +102,20 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                lista = BLL.UsuarioBLL.GetListTodo();
+
                 BuscartextBox.Enabled = false;
             }
 
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                lista = BLL.UsuarioBLL.GetList(p => p.Nombres == BuscartextBox.Text);
+
                 BuscartextBox.Enabled = true;
             }
 
             else if (comboBox1.SelectedIndex == 2)
             {
-                int id = Utilidades.TOINT(BuscartextBox.Text);
-                lista = BLL.UsuarioBLL.GetList(p => p.UsuarioId == id);
+
                 BuscartextBox.Enabled = true;
             }
         }

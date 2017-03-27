@@ -95,14 +95,14 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                lista = BLL.TipoServicioBLL.GetListTodo();
+
                 BuscartextBox.Enabled = false;
             }
 
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                lista = BLL.TipoServicioBLL.GetList(p => p.Nombre == BuscartextBox.Text);
+
                 BuscartextBox.Enabled = true;
 
 
@@ -111,7 +111,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 2)
             {
 
-                lista = BLL.TipoServicioBLL.GetList(p => p.ServicioId == Utilidades.TOINT(BuscartextBox.Text));
+
                 BuscartextBox.Enabled = true;
 
             }

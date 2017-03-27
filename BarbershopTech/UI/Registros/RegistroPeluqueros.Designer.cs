@@ -47,9 +47,10 @@
             this.Eliminarbutton.BackColor = System.Drawing.Color.Transparent;
             this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Eliminarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminarbutton.ForeColor = System.Drawing.Color.White;
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(286, 141);
+            this.Eliminarbutton.Location = new System.Drawing.Point(273, 107);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(107, 31);
             this.Eliminarbutton.TabIndex = 54;
@@ -63,9 +64,10 @@
             this.Guardarbutton.BackColor = System.Drawing.Color.Transparent;
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardarbutton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guardarbutton.ForeColor = System.Drawing.Color.White;
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(173, 141);
+            this.Guardarbutton.Location = new System.Drawing.Point(160, 107);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(107, 31);
             this.Guardarbutton.TabIndex = 53;
@@ -78,7 +80,7 @@
             // 
             this.PeluqueroidtextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PeluqueroidtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PeluqueroidtextBox.Location = new System.Drawing.Point(173, 57);
+            this.PeluqueroidtextBox.Location = new System.Drawing.Point(160, 27);
             this.PeluqueroidtextBox.Name = "PeluqueroidtextBox";
             this.PeluqueroidtextBox.Size = new System.Drawing.Size(90, 20);
             this.PeluqueroidtextBox.TabIndex = 52;
@@ -88,7 +90,7 @@
             // 
             this.nombretextBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nombretextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombretextBox3.Location = new System.Drawing.Point(173, 89);
+            this.nombretextBox3.Location = new System.Drawing.Point(160, 55);
             this.nombretextBox3.Name = "nombretextBox3";
             this.nombretextBox3.Size = new System.Drawing.Size(208, 20);
             this.nombretextBox3.TabIndex = 51;
@@ -100,8 +102,8 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(74, 59);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(61, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 18);
@@ -114,8 +116,8 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(74, 89);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(61, 55);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 18);
@@ -131,9 +133,10 @@
             this.buttonNuevo.BackColor = System.Drawing.Color.Transparent;
             this.buttonNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNuevo.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevo.ForeColor = System.Drawing.Color.White;
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(66, 141);
+            this.buttonNuevo.Location = new System.Drawing.Point(52, 107);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(101, 31);
             this.buttonNuevo.TabIndex = 65;
@@ -147,9 +150,10 @@
             this.buttonBuscar.BackColor = System.Drawing.Color.Transparent;
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscar.ForeColor = System.Drawing.Color.White;
             this.buttonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.Image")));
             this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscar.Location = new System.Drawing.Point(269, 55);
+            this.buttonBuscar.Location = new System.Drawing.Point(256, 21);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(112, 28);
             this.buttonBuscar.TabIndex = 66;
@@ -162,7 +166,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 265);
+            this.BackgroundImage = global::BarbershopTech.Properties.Resources.images;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(437, 222);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.Eliminarbutton);

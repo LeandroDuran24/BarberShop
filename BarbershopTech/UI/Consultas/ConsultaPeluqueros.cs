@@ -96,14 +96,14 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                lista = BLL.PeluqueroBLL.GetListTodo();
+
                 BuscartextBox.Enabled = false;
             }
 
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                lista = BLL.PeluqueroBLL.GetList(p => p.Nombre == BuscartextBox.Text);
+
                 BuscartextBox.Enabled = true;
 
             }
@@ -111,7 +111,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 2)
             {
 
-                lista = BLL.PeluqueroBLL.GetList(p => p.PeluqueroId == Utilidades.TOINT(BuscartextBox.Text));
+
                 BuscartextBox.Enabled = true;
             }
             dataGridView1.DataSource = lista;

@@ -128,7 +128,7 @@ namespace BarbershopTech.Consultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                lista = BLL.TurnoBLL.GetListTodo();
+               
                 BuscartextBox.Enabled = false;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -137,7 +137,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 1)
             {
 
-                lista = BLL.TurnoBLL.GetList(p => p.NombreCliente == BuscartextBox.Text);
+               
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
             }
@@ -145,7 +145,7 @@ namespace BarbershopTech.Consultas
             else if (comboBox1.SelectedIndex == 2)
             {
 
-                lista = BLL.TurnoBLL.GetList(p => p.NombrePeluquero == BuscartextBox.Text);
+                
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -154,8 +154,7 @@ namespace BarbershopTech.Consultas
 
             else if (comboBox1.SelectedIndex == 3)
             {
-                int id = Utilidades.TOINT(BuscartextBox.Text);
-                lista = BLL.TurnoBLL.GetList(p => p.TurnosId == id);
+               
                 BuscartextBox.Enabled = true;
                 desdedateTimePicker.Enabled = false;
                 hastadateTimePicker.Enabled = false;
@@ -166,10 +165,7 @@ namespace BarbershopTech.Consultas
                 BuscartextBox.Enabled = false;
                 desdedateTimePicker.Enabled = true;
                 hastadateTimePicker.Enabled = true;
-                if (desdedateTimePicker.Value.Date > hastadateTimePicker.Value.Date)
-                {
-                    lista = BLL.TurnoBLL.GetList(p => p.FechaDesde >= desdedateTimePicker.Value.Date && p.FechaHasta < hastadateTimePicker.Value.Date);
-                }
+               
             }
             dataGridView1.DataSource = lista;
         }
